@@ -32,9 +32,9 @@ namespace suicide_overview.src.model
                     {
                         temp = s.Split(',');
 
-                        s = sr.ReadLine(); 
+                        s = sr.ReadLine();
 
-                        //COdigo para sacar registro
+                        //COdigo para sacar registro 0,1,2,3,4,5,6, arr.le-1
 
                         count++;
 
