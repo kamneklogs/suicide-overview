@@ -6,7 +6,11 @@ namespace suicide_overview.src.model
     {
         private Dictionary<string, List<Record>> countries;
 
+        public void initData()
+        {
+            Loader l = new Loader();
 
+        }
 
     }
 }
