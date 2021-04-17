@@ -83,6 +83,8 @@ namespace suicide_overview.src.model
             return count;
         }
 
+
+        //cuenta de muertes por genero, pais y año dado
         public int DeathsCountByGender(string gender, string country, int year)
         {
             int count = 0;
