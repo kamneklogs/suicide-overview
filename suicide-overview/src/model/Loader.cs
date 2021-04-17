@@ -1,43 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace suicide_overview.src.model
 {
-    class Loader
+    internal class Loader
     {
-        private string path;
+        private string Path;
 
-
-        public void loadData()
+        public void LoadData(int n)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
+            int count = 0;
 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+
+            {
                 try
                 {
-                    path = openFileDialog.FileName;
+                    Path = openFileDialog.FileName;
 
-                    var sr = new StreamReader(path);
+                    var sr = new StreamReader(Path);
 
                     string s = sr.ReadLine();
                     s = sr.ReadLine();
                     string[] temp = null;
 
-                    while (s != null)
+
+                    while (s != null && count < n)
                     {
                         temp = s.Split(',');
 
-                       
-                       
+                        s = sr.ReadLine(); 
 
-                        s = sr.ReadLine();
+                        //COdigo para sacar registro
+
+                        count++;
+
                     }
                     sr.Close();
                 }
@@ -45,15 +45,7 @@ namespace suicide_overview.src.model
                 {
                     MessageBox.Show("Error en la carga de los datos");
                 }
-
             }
-
         }
-
-
     }
-
-
-
-
 }
