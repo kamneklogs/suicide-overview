@@ -7,12 +7,17 @@ namespace suicide_overview.src.model
     internal class Loader
     {
         private string Path;
+        
+        public Loader()
+        {
 
-        public void LoadData(int n)
+        }
+
+        public void LoadData()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            int count = 0;
+          
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
 
@@ -28,7 +33,7 @@ namespace suicide_overview.src.model
                     string[] temp = null;
 
 
-                    while (s != null && count < n)
+                    while (s != null)
                     {
                         temp = s.Split(',');
 
@@ -36,7 +41,7 @@ namespace suicide_overview.src.model
 
                         //COdigo para sacar registro 0,1,2,3,4,5,6, arr.le-1
 
-                        count++;
+                       
 
                     }
                     sr.Close();
