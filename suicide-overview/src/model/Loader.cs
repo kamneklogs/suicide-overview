@@ -7,10 +7,9 @@ namespace suicide_overview.src.model
 {
     internal class Loader
     {
-        private string Path;
-
-        public void LoadData(Dictionary<string, List<Record>> countries)
+        public static void LoadData(Dictionary<string, List<Record>> countries)
         {
+            string Path;
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -26,13 +25,36 @@ namespace suicide_overview.src.model
                     s = sr.ReadLine();
                     string[] temp = null;
 
-
                     while (s != null)
                     {
                         temp = s.Split(',');
 
-                   
-                        Record record = new Record(temp[1], temp[2], temp[3], temp[4], Int32.Parse(temp[5]), Int32.Parse(temp[6]), Convert.ToDouble(temp[7]), temp[temp.Length-1]);
+                        int year = Int32.Parse(temp[1]);
+                        string sex = temp[2];
+                        int ageLower;
+                        int ageUpper;
+
+                        string[] age = temp[3].Split(' ');
+
+                        if (age[0].Contains("-"))
+                        {
+                            string[] ageT = age[0].Split('-');
+                            ageLower = Int32.Parse(ageT[0]);
+                            ageUpper = Int32.Parse(ageT[1]);
+                        }
+                        else
+                        {
+                            ageLower = Int32.Parse(age[0].Substring(0, age[0].Length - 2));
+                            ageUpper = 150;
+                        }
+
+                        int suicide_no = Int32.Parse(temp[4]);
+                        int population = Int32.Parse(temp[5]); ;
+                        double ratio = Convert.ToDouble(temp[6]);
+
+                        string generation = temp[temp.Length - 1];
+
+                        Record record = new Record(year, sex, ageLower, ageUpper, suicide_no, population, ratio, generation);
                         if (countries.ContainsKey(temp[0]))
                         {
                             countries[temp[0]].Add(record);
@@ -42,8 +64,8 @@ namespace suicide_overview.src.model
                             countries.Add(temp[0], new List<Record>());
                             countries[temp[0]].Add(record);
                         }
-                    
-                        //Codigo para sacar registro 0,1,2,3,4,5,6, arr.le-1    
+
+                        //Codigo para sacar registro 0,1,2,3,4,5,6, arr.le-1
                         s = sr.ReadLine();
                     }
                     sr.Close();

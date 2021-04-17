@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace suicide_overview
+namespace suicide_overview.src.view
 {
-    public partial class Form1 : Form
+    public partial class Graphs : UserControl
     {
-        public Form1()
+        public Graphs()
         {
             InitializeComponent();
         }
