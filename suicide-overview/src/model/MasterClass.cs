@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace suicide_overview.src.model
 {
@@ -11,6 +12,8 @@ namespace suicide_overview.src.model
             countries = new Dictionary<string, List<Record>>();
 
             Loader.LoadData(countries);
+
+            MessageBox.Show("Sin errores");
         }
 
         //retorna todos los registros de suicidio sin clasificación por pais
@@ -51,6 +54,24 @@ namespace suicide_overview.src.model
             return result;
         }
 
+
+        public List<Record> RecordsByGeneration(string generation)
+        {
+            List<Record> result = new List<Record>();
+
+
+            foreach (Record item in AllRecords())
+            {
+
+            }
+
+            return result;
+        }
+
+        //***************************
+        //CUENTAS
+        //***************************
+
         //Retorna el numero de suicidios a nivel mundial por genero, se le pasa "male" o "female"
         public int DeathsCountByGender(string gender)
         {
@@ -82,7 +103,6 @@ namespace suicide_overview.src.model
 
             return count;
         }
-
 
         //cuenta de muertes por genero, pais y año dado
         public int DeathsCountByGender(string gender, string country, int year)
