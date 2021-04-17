@@ -25,6 +25,9 @@ namespace suicide_overview
             Console.WriteLine("");
             Console.WriteLine("Casos de suicidio de hombres en Colombia: " + mc.DeathsCountByGender("male", "Colombia"));
             Console.WriteLine("Casos de suicidio de mujeres en Colombia: " + mc.DeathsCountByGender("female", "Colombia"));
+            Console.WriteLine("");
+            Console.WriteLine("Casos de suicidio de hombres en Colombia en 2015: " + mc.DeathsCountByGender("male", "Colombia", 2015));
+            Console.WriteLine("Casos de suicidio de mujeres en Colombia en 2015: " + mc.DeathsCountByGender("female", "Colombia", 2015));
 
             //FINAL DEL BLOQUE PARA PRUEBAS
 

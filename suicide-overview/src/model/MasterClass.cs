@@ -41,13 +41,13 @@ namespace suicide_overview.src.model
         //Retorna lista de todos los registros de muerte en un pais y año dados
         public List<Record> RecordsByCountry(string countryName, int year)
         {
-            List<Record> result = countries[countryName];
+            List<Record> result = new List<Record>();
 
-            foreach (Record item in result)
+            foreach (Record item in countries[countryName])
             {
-                if (item.Year != year)
+                if (item.Year == year)
                 {
-                    result.Remove(item);
+                    result.Add(item);
                 }
             }
 
