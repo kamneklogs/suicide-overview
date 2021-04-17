@@ -29,7 +29,32 @@ namespace suicide_overview.src.model
                     {
                         temp = s.Split(',');
 
-                        Record record = new Record(temp[1], temp[2], temp[3], temp[4], Int32.Parse(temp[5]), Int32.Parse(temp[6]), Convert.ToDouble(temp[7]), temp[temp.Length - 1]);
+                        string year = temp[1];
+                        string sex = temp[2];
+                        int ageLower;
+                        int ageUpper;
+
+                        string[] age = temp[3].Split(' ');
+
+                        if (age[0].Contains("-"))
+                        {
+                            string[] ageT = age[0].Split('-');
+                            ageLower = Int32.Parse(ageT[0]);
+                            ageUpper = Int32.Parse(ageT[1]);
+                        }
+                        else
+                        {
+                            ageLower = Int32.Parse(age[0].Substring(0, age[0].Length - 2));
+                            ageUpper = 150;
+                        }
+
+                        int suicide_no = Int32.Parse(temp[4]);
+                        int population = Int32.Parse(temp[5]); ;
+                        double ratio = Convert.ToDouble(temp[6]);
+
+                        string generation = temp[temp.Length - 1];
+
+                        Record record = new Record(year, sex, ageLower, ageUpper, suicide_no, population, ratio, generation);
                         if (countries.ContainsKey(temp[0]))
                         {
                             countries[temp[0]].Add(record);

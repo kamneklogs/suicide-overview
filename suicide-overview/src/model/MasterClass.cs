@@ -14,5 +14,10 @@ namespace suicide_overview.src.model
             Loader.LoadData(countries);
 
         }
+
+
+
+        
+
     }
 }

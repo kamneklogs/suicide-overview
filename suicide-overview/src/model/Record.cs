@@ -6,9 +6,9 @@
 
         public string Sex { get; set; }
 
-        public string AgeLower { get; set; }
+        public int AgeLower { get; set; }
 
-        public string AgeUpper { get; set; }
+        public int AgeUpper { get; set; }
 
         public int Suicide_no { get; set; }
 
@@ -18,7 +18,7 @@
 
         public string Generation { get; set; }
 
-        public Record(string year, string sex, string ageLower, string ageUpper, int suicide_no, int population, double ratio, string generation)
+        public Record(string year, string sex, int ageLower, int ageUpper, int suicide_no, int population, double ratio, string generation)
         {
             Year = year;
             Sex = sex;
