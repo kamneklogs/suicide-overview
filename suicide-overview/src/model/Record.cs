@@ -2,7 +2,7 @@
 {
     internal class Record
     {
-        public string Year { get; set; }
+        public int Year { get; set; }
 
         public string Sex { get; set; }
 
@@ -18,7 +18,7 @@
 
         public string Generation { get; set; }
 
-        public Record(string year, string sex, int ageLower, int ageUpper, int suicide_no, int population, double ratio, string generation)
+        public Record(int year, string sex, int ageLower, int ageUpper, int suicide_no, int population, double ratio, string generation)
         {
             Year = year;
             Sex = sex;

@@ -29,7 +29,7 @@ namespace suicide_overview.src.model
                     {
                         temp = s.Split(',');
 
-                        string year = temp[1];
+                        int year = Int32.Parse(temp[1]);
                         string sex = temp[2];
                         int ageLower;
                         int ageUpper;
