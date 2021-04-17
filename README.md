@@ -1,4 +1,4 @@
-# suicide-overview
+# Suicide-overview
 This software allows to know how high was the suicide rate of a country given a time and a generation, with the aim of associating these events to historical events that occurred at that time. 
 
 *Description:* Data set that records the suicide rate worldwide from 1985 to 2016. The data set consists of 12 columns and 27820 records. 
@@ -15,3 +15,18 @@ The languague used in this program is C#
 - [Andrea Nuñez](https://github.com/andreanr19)
 - [Danna García](https://github.com/Dannasofiagarcia)
 - [Camilo Escobar](https://github.com/chumbi27escobar3)
+
+
+# Documentation
+- Engineering method click [HERE](docs/MetodoDeIngenieria.pdf)
+- Functional and not functional Requirements  click [HERE](docs/Documentation.pdf)
+
+# Programming environment 
+
+- Microsoft Visual Studio 2019
+
+Demo video [HERE]()
+
+# Program pictures
+
+
