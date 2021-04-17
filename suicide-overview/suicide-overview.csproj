@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,11 +51,17 @@
     <Compile Include="src\model\Loader.cs" />
     <Compile Include="src\model\MasterClass.cs" />
     <Compile Include="src\model\Record.cs" />
-    <Compile Include="src\view\Form1.cs">
+    <Compile Include="src\view\Graphs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\view\Graphs.Designer.cs">
+      <DependentUpon>Graphs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\view\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\view\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="src\view\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="src\view\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +74,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="src\view\Graphs.resx">
+      <DependentUpon>Graphs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\view\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="obj\Debug\suicide-overview.csprojAssemblyReference.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

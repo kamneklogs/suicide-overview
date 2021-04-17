@@ -6,11 +6,13 @@ namespace suicide_overview.src.model
     {
         private Dictionary<string, List<Record>> countries;
 
-        public void initData()
+        public MasterClass()
         {
-            Loader l = new Loader();
+
+            countries = new Dictionary<string, List<Record>>();
+
+            Loader.LoadData(countries);
 
         }
-
     }
 }
