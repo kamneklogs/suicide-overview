@@ -34,12 +34,14 @@ namespace suicide_overview
             this.label2 = new System.Windows.Forms.Label();
             this.mainPane = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.viewColumnsReports = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.mainPane.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.viewColumnsReports);
             this.panel1.Controls.Add(this.linkToGraphs);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -52,10 +54,10 @@ namespace suicide_overview
             this.linkToGraphs.AutoSize = true;
             this.linkToGraphs.Location = new System.Drawing.Point(14, 55);
             this.linkToGraphs.Name = "linkToGraphs";
-            this.linkToGraphs.Size = new System.Drawing.Size(98, 13);
+            this.linkToGraphs.Size = new System.Drawing.Size(95, 13);
             this.linkToGraphs.TabIndex = 2;
             this.linkToGraphs.TabStop = true;
-            this.linkToGraphs.Text = "Carrgar información";
+            this.linkToGraphs.Text = "Cargar información";
             this.linkToGraphs.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
             // 
             // label2
@@ -69,6 +71,7 @@ namespace suicide_overview
             // 
             // mainPane
             // 
+            this.mainPane.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.mainPane.Controls.Add(this.label1);
             this.mainPane.Location = new System.Drawing.Point(189, 12);
             this.mainPane.Name = "mainPane";
@@ -84,6 +87,17 @@ namespace suicide_overview
             this.label1.Size = new System.Drawing.Size(119, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bienvenidos";
+            // 
+            // viewColumnsReports
+            // 
+            this.viewColumnsReports.AutoSize = true;
+            this.viewColumnsReports.Location = new System.Drawing.Point(17, 81);
+            this.viewColumnsReports.Name = "viewColumnsReports";
+            this.viewColumnsReports.Size = new System.Drawing.Size(127, 13);
+            this.viewColumnsReports.TabIndex = 3;
+            this.viewColumnsReports.TabStop = true;
+            this.viewColumnsReports.Text = "Ver reportes de columnas";
+            this.viewColumnsReports.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.viewColumnsReports_LinkClicked);
             // 
             // MainWindow
             // 
@@ -109,6 +123,7 @@ namespace suicide_overview
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkToGraphs;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel viewColumnsReports;
     }
 }
 

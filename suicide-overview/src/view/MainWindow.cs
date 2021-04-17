@@ -29,5 +29,12 @@ namespace suicide_overview
             Graphs gr = new Graphs();
             mainPane.Controls.Add(gr);
         }
+
+        private void viewColumnsReports_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            mainPane.Controls.Clear();
+            ColumnsReports cr = new ColumnsReports();
+            mainPane.Controls.Add(cr);
+        }
     }
 }

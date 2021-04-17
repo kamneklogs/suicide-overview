@@ -51,6 +51,12 @@
     <Compile Include="src\model\Loader.cs" />
     <Compile Include="src\model\MasterClass.cs" />
     <Compile Include="src\model\Record.cs" />
+    <Compile Include="src\view\ColumnsReports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\view\ColumnsReports.Designer.cs">
+      <DependentUpon>ColumnsReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\view\Graphs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -74,6 +80,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="src\view\ColumnsReports.resx">
+      <DependentUpon>ColumnsReports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\view\Graphs.resx">
       <DependentUpon>Graphs.cs</DependentUpon>
     </EmbeddedResource>
