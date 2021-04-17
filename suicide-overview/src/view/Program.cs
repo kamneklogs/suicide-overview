@@ -19,6 +19,13 @@ namespace suicide_overview
 
             MasterClass mc = new MasterClass();
 
+            Console.WriteLine("Casos de suicidio de hombres en todo el mundo: " + mc.DeathsCountByGender("male"));
+            Console.WriteLine("Casos de suicidio de mujeres en todo el mundo: " + mc.DeathsCountByGender("female"));
+
+            Console.WriteLine("");
+            Console.WriteLine("Casos de suicidio de hombres en Colombia: " + mc.DeathsCountByGender("male", "Colombia"));
+            Console.WriteLine("Casos de suicidio de mujeres en Colombia: " + mc.DeathsCountByGender("female", "Colombia"));
+
             //FINAL DEL BLOQUE PARA PRUEBAS
 
             Application.Run(new MainWindow());
