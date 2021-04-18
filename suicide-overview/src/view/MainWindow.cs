@@ -31,7 +31,7 @@ namespace suicide_overview
         private void viewColumnsReports_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             mainPane.Controls.Clear();
-            RecordsViewer cr = new RecordsViewer();
+            RecordsViewer cr = new RecordsViewer(mc);
             mainPane.Controls.Add(cr);
         }
 

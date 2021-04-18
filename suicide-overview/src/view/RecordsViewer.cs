@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace suicide_overview.src.view
 {
-    public partial class RecordsViewer : UserControl
+    internal partial class RecordsViewer : UserControl
     {
         private Loader loader;
         private MasterClass masterClass;
-        public RecordsViewer()
+        public RecordsViewer(MasterClass masterClass)
         {
             //this.masterClass = masterClass;
-            masterClass = new MasterClass();
+            this.masterClass = masterClass;
             InitializeComponent();
             loadDataTable();
         }
