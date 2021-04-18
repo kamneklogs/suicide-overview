@@ -51,6 +51,12 @@
     <Compile Include="src\model\Loader.cs" />
     <Compile Include="src\model\MasterClass.cs" />
     <Compile Include="src\model\Record.cs" />
+    <Compile Include="src\view\GraphicPie1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\view\GraphicPie1.Designer.cs">
+      <DependentUpon>GraphicPie1.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\view\RecordsViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +98,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="src\view\GraphicPie1.resx">
+      <DependentUpon>GraphicPie1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\view\RecordsViewer.resx">
       <DependentUpon>RecordsViewer.cs</DependentUpon>
     </EmbeddedResource>

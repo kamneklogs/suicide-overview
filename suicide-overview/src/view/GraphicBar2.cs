@@ -12,13 +12,13 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace suicide_overview.src.view
 {
-    public partial class GraphicBar2 : UserControl
+    internal partial class GraphicBar2 : UserControl
     {
         private MasterClass mc;
-        public GraphicBar2()
+        public GraphicBar2(MasterClass mc)
         {
             InitializeComponent();
-            mc = new MasterClass();
+            this.mc = mc;
         }
 
         private void viewGraphic_Click(object sender, EventArgs e)
