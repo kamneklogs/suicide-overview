@@ -71,13 +71,12 @@ namespace suicide_overview.src.view
             {
                 GenerationOption();
             }
-           
         }
 
         public void GenerationOption()
         {
             try
-            {        
+            {
                 if ((generationText.Text).Equals(Boo))
                 {
                     for (int i = 0; i < dataGridView1.RowCount - 1; i++)
@@ -138,31 +137,46 @@ namespace suicide_overview.src.view
         public void GenderOption()
         {
             try
-            { 
-                if (!(maleButton.Checked) && !(femaleButton.Checked))
+            {
+                dataGridView1.Rows.Clear();
+
+                int index = 0;
+
+                foreach (Record record in masterClass.RecordsByCountry(CountryText.Text))
                 {
-                    throw new Exception("You must select the type of gender");
-                }
-                if (maleButton.Checked)
-                {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                    index = dataGridView1.Rows.Add();
+
+                    if (maleButton.Checked && !femaleButton.Checked)
                     {
-                        if ((dataGridView1.Rows[i].Cells[6]).Equals("female"))
+                        if (record.Sex.Equals("male"))
                         {
-                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                            dataGridView1.Rows[index].Cells[0].Value = CountryText.Text;
+                            dataGridView1.Rows[index].Cells[1].Value = record.Year;
+                            dataGridView1.Rows[index].Cells[2].Value = record.AgeLower;
+                            dataGridView1.Rows[index].Cells[3].Value = record.AgeUpper;
+                            dataGridView1.Rows[index].Cells[4].Value = record.Generation;
+                            dataGridView1.Rows[index].Cells[5].Value = record.Sex;
+                            dataGridView1.Rows[index].Cells[6].Value = record.Suicide_no;
+                            dataGridView1.Rows[index].Cells[7].Value = record.Population;
+                            dataGridView1.Rows[index].Cells[8].Value = record.Ratio;
+                        }
+                    }
+                    if (femaleButton.Checked && !maleButton.Checked)
+                    {
+                        if (record.Sex.Equals("female"))
+                        {
+                            dataGridView1.Rows[index].Cells[0].Value = CountryText.Text;
+                            dataGridView1.Rows[index].Cells[1].Value = record.Year;
+                            dataGridView1.Rows[index].Cells[2].Value = record.AgeLower;
+                            dataGridView1.Rows[index].Cells[3].Value = record.AgeUpper;
+                            dataGridView1.Rows[index].Cells[4].Value = record.Generation;
+                            dataGridView1.Rows[index].Cells[5].Value = record.Sex;
+                            dataGridView1.Rows[index].Cells[6].Value = record.Suicide_no;
+                            dataGridView1.Rows[index].Cells[7].Value = record.Population;
+                            dataGridView1.Rows[index].Cells[8].Value = record.Ratio;
                         }
                     }
                 }
-                if (femaleButton.Checked)
-                {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                    {
-                        if ((dataGridView1.Rows[i].Cells[6]).Equals("male"))
-                        {
-                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                        }
-                    }
-                }   
             }
             catch (Exception ex)
             {
@@ -172,18 +186,18 @@ namespace suicide_overview.src.view
 
         public void AgeOption()
         {
-            try 
-            { 
+            try
+            {
                 int nInf = Convert.ToInt32(ageTextInf.Text);
                 int nSup = Convert.ToInt32(ageTextSup);
                 for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                 {
-                    if (!(Convert.ToInt32(dataGridView1.Rows[i].Cells[3]) == nInf) 
+                    if (!(Convert.ToInt32(dataGridView1.Rows[i].Cells[3]) == nInf)
                         && !(Convert.ToInt32(dataGridView1.Rows[i].Cells[4]) == nSup))
                     {
                         dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
                     }
-                } 
+                }
             }
             catch (Exception ex)
             {
@@ -194,7 +208,7 @@ namespace suicide_overview.src.view
         public void YearOption()
         {
             try
-            { 
+            {
                 int n = Convert.ToInt32(yearText.Text);
                 for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                 {
