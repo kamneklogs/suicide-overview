@@ -29,5 +29,18 @@ namespace suicide_overview.src.view
 
             graphViewer.Controls.Add(gb);
         }
+
+        private void graphic2_Click(object sender, EventArgs e)
+        {
+            graphViewer.Controls.Clear();
+            GraphicBar2 gb = new GraphicBar2(mc);
+            graphViewer.Controls.Add(gb);
+        }
+
+        private void graphic3_Click(object sender, EventArgs e)
+        {
+            graphViewer.Controls.Clear();
+            
+        }
     }
 }
