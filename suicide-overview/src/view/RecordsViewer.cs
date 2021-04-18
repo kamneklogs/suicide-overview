@@ -65,34 +65,22 @@ namespace suicide_overview.src.view
         {
             if (!(CountryText.Text == ""))
             {
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                {
-                    if (!(dataGridView1.Rows[i].Cells[0].Equals(CountryText.Text)))
-                    {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                    }
-                }
+                CountryOption();
             }
+
             if (!(yearText.Text == ""))
             {
-                int n = Convert.ToInt32(yearText.Text);
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                {
-                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[1]) != n)
-                    {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                    }
-                }
+                YearOption();
             }
 
             if (!(ageTextInf.Text == "") && !(ageTextSup.Text == ""))
             {
-                ageOption();
+                AgeOption();
             }
 
             if ((maleButton.Checked) || (femaleButton.Checked))
             {
-                genderOption();
+                GenderOption();
             }
 
             if (!(generationText.Text == ""))
@@ -104,8 +92,6 @@ namespace suicide_overview.src.view
             {
                 NumberSuicidesOption();
             }
-
-
            
         }
 
@@ -175,7 +161,7 @@ namespace suicide_overview.src.view
             }
         }
 
-        public void genderOption()
+        public void GenderOption()
         {
             if (maleButton.Checked)
             {
@@ -199,7 +185,7 @@ namespace suicide_overview.src.view
             }
         }
 
-        public void ageOption()
+        public void AgeOption()
         {
             int nInf = Convert.ToInt32(ageTextInf.Text);
             int nSup = Convert.ToInt32(ageTextSup);
@@ -211,6 +197,30 @@ namespace suicide_overview.src.view
                 }
             }
         }
+
+        public void YearOption()
+        {
+            int n = Convert.ToInt32(yearText.Text);
+            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            {
+                if (Convert.ToInt32(dataGridView1.Rows[i].Cells[1]) != n)
+                {
+                    dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                }
+            }
+        }
+
+        public void CountryOption()
+        {
+            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            {
+                if (!(dataGridView1.Rows[i].Cells[0].Equals(CountryText.Text)))
+                {
+                    dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                }
+            }
+        }
+
 
     }
 }
