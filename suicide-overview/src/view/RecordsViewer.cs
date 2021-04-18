@@ -13,14 +13,6 @@ namespace suicide_overview.src.view
         private const String GIG = "G.I. Generation";
         private const String Mil = "Millenials";
 
-        /*
-            Generation X
-            Silent
-            Boomers
-            G.I. Generation
-            Millenials
-            */
-
         private Loader loader;
         private MasterClass masterClass;
 
@@ -262,6 +254,9 @@ namespace suicide_overview.src.view
             }
         }
 
-
+        private void resetDataSet(object sender, EventArgs e)
+        {
+            loadDataTable(CountryText.Text);
+        }
     }
 }
