@@ -17,9 +17,10 @@ namespace suicide_overview.src.view
         private MasterClass masterClass;
         public RecordsViewer()
         {
-            InitializeComponent();
+            //this.masterClass = masterClass;
             masterClass = new MasterClass();
-           
+            InitializeComponent();
+            loadDataTable();
         }
 
         public void loadDataTable()
@@ -38,14 +39,14 @@ namespace suicide_overview.src.view
                     index = dataGridView1.Rows.Add();
                     //   dataTownGridRecord.Rows[index].Cells[0].Value = temp[0];
                     dataGridView1.Rows[index].Cells[0].Value = item;
-                    dataGridView1.Rows[index].Cells[0].Value = record.Year;
-                    dataGridView1.Rows[index].Cells[1].Value = record.AgeLower;
-                    dataGridView1.Rows[index].Cells[2].Value = record.AgeUpper;
-                    dataGridView1.Rows[index].Cells[3].Value = record.Generation;
-                    dataGridView1.Rows[index].Cells[4].Value = record.Sex;
-                    dataGridView1.Rows[index].Cells[5].Value = record.Suicide_no;
-                    dataGridView1.Rows[index].Cells[6].Value = record.Population;
-                    dataGridView1.Rows[index].Cells[7].Value = record.Ratio;
+                    dataGridView1.Rows[index].Cells[1].Value = record.Year;
+                    dataGridView1.Rows[index].Cells[2].Value = record.AgeLower;
+                    dataGridView1.Rows[index].Cells[3].Value = record.AgeUpper;
+                    dataGridView1.Rows[index].Cells[4].Value = record.Generation;
+                    dataGridView1.Rows[index].Cells[5].Value = record.Sex;
+                    dataGridView1.Rows[index].Cells[6].Value = record.Suicide_no;
+                    dataGridView1.Rows[index].Cells[7].Value = record.Population;
+                    dataGridView1.Rows[index].Cells[8].Value = record.Ratio;
                 }
             }
 
