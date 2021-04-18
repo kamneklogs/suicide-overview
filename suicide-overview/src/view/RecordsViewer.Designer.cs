@@ -40,7 +40,7 @@ namespace suicide_overview.src.view
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CountryToLoadText = new System.Windows.Forms.TextBox();
+            this.CountryText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.runLoadTable = new System.Windows.Forms.Button();
             this.yearText = new System.Windows.Forms.TextBox();
@@ -170,12 +170,12 @@ namespace suicide_overview.src.view
             this.Column9.ReadOnly = true;
             this.Column9.Width = 200;
             // 
-            // CountryToLoadText
+            // CountryText
             // 
-            this.CountryToLoadText.Location = new System.Drawing.Point(14, 57);
-            this.CountryToLoadText.Name = "CountryToLoadText";
-            this.CountryToLoadText.Size = new System.Drawing.Size(100, 20);
-            this.CountryToLoadText.TabIndex = 2;
+            this.CountryText.Location = new System.Drawing.Point(14, 57);
+            this.CountryText.Name = "CountryText";
+            this.CountryText.Size = new System.Drawing.Size(100, 20);
+            this.CountryText.TabIndex = 2;
             // 
             // label2
             // 
@@ -270,6 +270,7 @@ namespace suicide_overview.src.view
             this.button2.TabIndex = 12;
             this.button2.Text = "Cargar ";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.loadFilters);
             // 
             // label3
             // 
@@ -326,7 +327,7 @@ namespace suicide_overview.src.view
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(276, 42);
+            this.textBox1.Location = new System.Drawing.Point(276, 40);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(42, 20);
             this.textBox1.TabIndex = 19;
@@ -399,7 +400,7 @@ namespace suicide_overview.src.view
             this.Controls.Add(this.yearText);
             this.Controls.Add(this.runLoadTable);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.CountryToLoadText);
+            this.Controls.Add(this.CountryText);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "RecordsViewer";
@@ -423,7 +424,7 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.TextBox CountryToLoadText;
+        private System.Windows.Forms.TextBox CountryText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button runLoadTable;
         private System.Windows.Forms.TextBox yearText;

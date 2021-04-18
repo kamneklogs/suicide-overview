@@ -44,33 +44,22 @@ namespace suicide_overview.src.view
         private void RunLoadTable_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
-            loadDataTable(CountryToLoadText.Text);
+            loadDataTable(CountryText.Text);
         }
 
         // filtro paises 
-        /*
+      
         private void country_Click(object sender, EventArgs e)
         {
-
-            for (int i = 0; i < dataGridView1.RowCount-1; i++)
-			{
-                if(!(dataGridView1.Rows[i].cell[0].equals(country))){
-                    dataGridView1.Rows.Remove(i);
-                }
-			}
+            
+           
 
         }
 
         private void Year_Click(object sender, EventArgs e)
         {
 
-            for (int i = 0; i < dataGridView1.RowCount-1; i++)
-			{
-                int year = yearText.Text;
-                if(dataGridView1.Rows[i].cell[0] != year){
-                    dataGridView1.Rows.Remove(i);
-                }
-			}
+           
 
         }
 
@@ -101,6 +90,42 @@ namespace suicide_overview.src.view
 			}
 
         }
-        */
+
+        private void loadFilters(object sender, EventArgs e)
+        {
+            if (!(CountryText.Text == ""))
+            {
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    if (!(dataGridView1.Rows[i].Cells[0].Equals(CountryText.Text)))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                }
+            }
+            int n = Convert.ToInt32(yearText.Text);
+            if (!(yearText.Text == ""))
+            {
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[0]) != n)
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                }
+            }
+
+            if (!(CountryText.Text == ""))
+            {
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    if (!(dataGridView1.Rows[i].Cells[0].Equals(CountryText.Text)))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                }
+            }
+
+        }
     }
 }
