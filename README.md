@@ -21,7 +21,7 @@ The languague used in this program is C#
 - Engineering method click [HERE](/docs/EngineeringMethod.pdf)
 - Functional and not functional Requirements click [HERE](docs/FunctionalNotFunctionalRequirements.pdf)
 - Class diagram click [HERE](docs/SuicideProjectDiagramClass.pdf)
-- Objects diagram click [HERE](docs/ObjectDiagram.png)
+- Objects diagram click [HERE](docs/ObjectDiagram.PNG)
 
 # Authors 
 
