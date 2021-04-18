@@ -9,13 +9,13 @@ This software allows to know how high was the suicide rate of a country given a 
 
 The languague used in this program is C#
 
-# Authors 
+# Operating system
 
-- [Camilo Cordoba](https://github.com/kamneklogs)
-- [Andrea Nuñez](https://github.com/andreanr19)
-- [Danna García](https://github.com/Dannasofiagarcia)
-- [Camilo Escobar](https://github.com/chumbi27escobar3)
+ The operating system is windows.
+ 
+# Development environment
 
+The Visual development environment estduio 2019.
 
 # Documentation
 - Engineering method click [HERE](docs/MetodoDeIngenieria.pdf)
@@ -27,6 +27,14 @@ The languague used in this program is C#
 
 Demo video [HERE]()
 
-# Program pictures
+# Program pictures 
+
+# Authors 
+
+- [Camilo Cordoba](https://github.com/kamneklogs)
+- [Andrea Nuñez](https://github.com/andreanr19)
+- [Danna García](https://github.com/Dannasofiagarcia)
+- [Camilo Escobar](https://github.com/chumbi27escobar3)
+
 
 
