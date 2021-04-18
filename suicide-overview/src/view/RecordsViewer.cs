@@ -47,18 +47,10 @@ namespace suicide_overview.src.view
             }
         }
 
-        private void RunLoadTable_Click(object sender, EventArgs e)
+        private void loadFilters(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
             loadDataTable(CountryText.Text);
-        }
-
-        private void loadFilters(object sender, EventArgs e)
-        {
-            if (!(CountryText.Text == ""))
-            {
-                CountryOption();
-            }
 
             if (!(yearText.Text == ""))
             {
@@ -79,31 +71,7 @@ namespace suicide_overview.src.view
             {
                 GenerationOption();
             }
-
-            if (!(numberSuices.Text == ""))
-            {
-                NumberSuicidesOption();
-            }
            
-        }
-
-        public void NumberSuicidesOption()
-        {
-            try
-            { 
-                int nSui = Convert.ToInt32(numberSuices.Text);
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                {
-                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[7]) != nSui)
-                    {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                    }
-                } 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("You must enter numbers in this text box");
-            }
         }
 
         public void GenerationOption()
@@ -169,31 +137,37 @@ namespace suicide_overview.src.view
 
         public void GenderOption()
         {
-            if (!(maleButton.Checked) && !(femaleButton.Checked))
-            {
-                throw new Exception("You must select the type of gender");
-            }
-            if (maleButton.Checked)
-            {
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            try
+            { 
+                if (!(maleButton.Checked) && !(femaleButton.Checked))
                 {
-                    if ((dataGridView1.Rows[i].Cells[6]).Equals("female"))
+                    throw new Exception("You must select the type of gender");
+                }
+                if (maleButton.Checked)
+                {
+                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                     {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        if ((dataGridView1.Rows[i].Cells[6]).Equals("female"))
+                        {
+                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        }
                     }
                 }
-            }
-            else if (femaleButton.Checked)
-            {
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                if (femaleButton.Checked)
                 {
-                    if ((dataGridView1.Rows[i].Cells[6]).Equals("male"))
+                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                     {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        if ((dataGridView1.Rows[i].Cells[6]).Equals("male"))
+                        {
+                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        }
                     }
-                }
-            }   
-
+                }   
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void AgeOption()
@@ -204,7 +178,8 @@ namespace suicide_overview.src.view
                 int nSup = Convert.ToInt32(ageTextSup);
                 for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                 {
-                    if (!(Convert.ToInt32(dataGridView1.Rows[i].Cells[3]) == nInf) && !(Convert.ToInt32(dataGridView1.Rows[i].Cells[4]) == nSup))
+                    if (!(Convert.ToInt32(dataGridView1.Rows[i].Cells[3]) == nInf) 
+                        && !(Convert.ToInt32(dataGridView1.Rows[i].Cells[4]) == nSup))
                     {
                         dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
                     }
@@ -232,25 +207,6 @@ namespace suicide_overview.src.view
             catch (Exception ex)
             {
                 MessageBox.Show("You must enter numbers in this text box");
-            }
-        }
-
-        public void CountryOption()
-        {
-            try
-            {
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                {
-                    if (!(dataGridView1.Rows[i].Cells[1].Equals(CountryText.Text)))
-                    {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("You must enter a country in this text box");
             }
         }
 
