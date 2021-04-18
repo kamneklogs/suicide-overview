@@ -5,7 +5,7 @@ namespace suicide_overview.src.model
 {
     internal class MasterClass
     {
-        private Dictionary<string, List<Record>> countries;
+        public Dictionary<string, List<Record>> countries;
 
         public MasterClass()
         {
