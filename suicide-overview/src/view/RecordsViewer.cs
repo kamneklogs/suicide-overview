@@ -41,7 +41,7 @@ namespace suicide_overview.src.view
 
         private void loadFilters(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
+            //dataGridView1.Rows.Clear();
 
             try
             {
