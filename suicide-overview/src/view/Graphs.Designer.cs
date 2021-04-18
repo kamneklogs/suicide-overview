@@ -105,6 +105,7 @@ namespace suicide_overview.src.view
             this.graphic5.TabIndex = 6;
             this.graphic5.Text = "Suicidios de las generaciones dado un  país";
             this.graphic5.UseVisualStyleBackColor = true;
+            this.graphic5.Click += new System.EventHandler(this.graphic5_Click);
             // 
             // Graphs
             // 
