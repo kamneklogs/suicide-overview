@@ -38,6 +38,7 @@ namespace suicide_overview.src.view
             this.country1 = new System.Windows.Forms.TextBox();
             this.country2 = new System.Windows.Forms.TextBox();
             this.country3 = new System.Windows.Forms.TextBox();
+            this.clearBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,10 +100,22 @@ namespace suicide_overview.src.view
             this.country3.Size = new System.Drawing.Size(100, 20);
             this.country3.TabIndex = 6;
             // 
+            // clearBtn
+            // 
+            this.clearBtn.Enabled = false;
+            this.clearBtn.Location = new System.Drawing.Point(219, 51);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(101, 31);
+            this.clearBtn.TabIndex = 7;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
             // GraphicPie1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.country3);
             this.Controls.Add(this.country2);
             this.Controls.Add(this.country1);
@@ -125,5 +138,6 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.TextBox country1;
         private System.Windows.Forms.TextBox country2;
         private System.Windows.Forms.TextBox country3;
+        private System.Windows.Forms.Button clearBtn;
     }
 }
