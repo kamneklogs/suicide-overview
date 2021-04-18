@@ -40,19 +40,20 @@ namespace suicide_overview.src.view
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CountryToLoadText = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.runLoadTable = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 44);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(22, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 25);
+            this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Registros";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "Visor de registros";
             // 
             // dataGridView1
             // 
@@ -70,12 +71,11 @@ namespace suicide_overview.src.view
             this.Column7,
             this.Column8,
             this.Column9});
-            this.dataGridView1.Location = new System.Drawing.Point(28, 312);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 162);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(1130, 467);
+            this.dataGridView1.Size = new System.Drawing.Size(565, 243);
             this.dataGridView1.TabIndex = 1;
             // 
             // Column1
@@ -150,16 +150,44 @@ namespace suicide_overview.src.view
             this.Column9.ReadOnly = true;
             this.Column9.Width = 200;
             // 
+            // CountryToLoadText
+            // 
+            this.CountryToLoadText.Location = new System.Drawing.Point(14, 77);
+            this.CountryToLoadText.Name = "CountryToLoadText";
+            this.CountryToLoadText.Size = new System.Drawing.Size(100, 20);
+            this.CountryToLoadText.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Ingrese pais:";
+            // 
+            // runLoadTable
+            // 
+            this.runLoadTable.Location = new System.Drawing.Point(120, 77);
+            this.runLoadTable.Name = "runLoadTable";
+            this.runLoadTable.Size = new System.Drawing.Size(75, 23);
+            this.runLoadTable.TabIndex = 4;
+            this.runLoadTable.Text = "Cargar";
+            this.runLoadTable.UseVisualStyleBackColor = true;
+            this.runLoadTable.Click += new System.EventHandler(this.RunLoadTable_Click);
+            // 
             // RecordsViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.runLoadTable);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.CountryToLoadText);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "RecordsViewer";
-            this.Size = new System.Drawing.Size(1198, 819);
+            this.Size = new System.Drawing.Size(599, 426);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -179,5 +207,8 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.TextBox CountryToLoadText;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button runLoadTable;
     }
 }
