@@ -37,7 +37,7 @@ namespace suicide_overview.src.view
             this.graphic1 = new System.Windows.Forms.Button();
             this.graphic2 = new System.Windows.Forms.Button();
             this.graphic3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.graphic4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -86,20 +86,21 @@ namespace suicide_overview.src.view
             this.graphic3.UseVisualStyleBackColor = true;
             this.graphic3.Click += new System.EventHandler(this.graphic3_Click);
             // 
-            // button1
+            // graphic4
             // 
-            this.button1.Location = new System.Drawing.Point(4, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Suicidios según  un país y un año";
-            this.button1.UseVisualStyleBackColor = true;
+            this.graphic4.Location = new System.Drawing.Point(4, 226);
+            this.graphic4.Name = "graphic4";
+            this.graphic4.Size = new System.Drawing.Size(200, 23);
+            this.graphic4.TabIndex = 5;
+            this.graphic4.Text = "Suicidios según  un país y un año";
+            this.graphic4.UseVisualStyleBackColor = true;
+            this.graphic4.Click += new System.EventHandler(this.graphic4_Click);
             // 
             // Graphs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.graphic4);
             this.Controls.Add(this.graphic3);
             this.Controls.Add(this.graphic2);
             this.Controls.Add(this.graphic1);
@@ -119,6 +120,6 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.Button graphic1;
         private System.Windows.Forms.Button graphic2;
         private System.Windows.Forms.Button graphic3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button graphic4;
     }
 }
