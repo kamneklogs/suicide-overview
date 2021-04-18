@@ -97,127 +97,171 @@ namespace suicide_overview.src.view
 
         public void NumberSuicidesOption()
         {
-            int nSui = Convert.ToInt32(numberSuices.Text);
-            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-            {
-                if (Convert.ToInt32(dataGridView1.Rows[i].Cells[7]) != nSui)
+            try
+            { 
+                int nSui = Convert.ToInt32(numberSuices.Text);
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                 {
-                    dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                }
+                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[7]) != nSui)
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("You must enter numbers in this text box");
             }
         }
 
         public void GenerationOption()
         {
-            if ((generationText.Text).Equals(Boo))
-            {
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            try
+            {        
+                if ((generationText.Text).Equals(Boo))
                 {
-                    if (!(dataGridView1.Rows[i].Cells[5]).Equals(Boo))
+                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                     {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        if (!(dataGridView1.Rows[i].Cells[5]).Equals(Boo))
+                        {
+                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        }
+                    }
+                }
+                else if ((generationText.Text).Equals(GeX))
+                {
+                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                    {
+                        if (!(dataGridView1.Rows[i].Cells[5]).Equals(GeX))
+                        {
+                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        }
+                    }
+                }
+                else if ((generationText.Text).Equals(Sil))
+                {
+                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                    {
+                        if (!(dataGridView1.Rows[i].Cells[5]).Equals(Sil))
+                        {
+                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        }
+                    }
+                }
+                else if ((generationText.Text).Equals(GIG))
+                {
+                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                    {
+                        if (!(dataGridView1.Rows[i].Cells[5]).Equals(GIG))
+                        {
+                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        }
+                    }
+                }
+                else if ((generationText.Text).Equals(Mil))
+                {
+                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                    {
+                        if (!(dataGridView1.Rows[i].Cells[5]).Equals(Mil))
+                        {
+                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        }
                     }
                 }
             }
-            else if ((generationText.Text).Equals(GeX))
+            catch (Exception ex)
             {
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                {
-                    if (!(dataGridView1.Rows[i].Cells[5]).Equals(GeX))
-                    {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                    }
-                }
-            }
-            else if ((generationText.Text).Equals(Sil))
-            {
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                {
-                    if (!(dataGridView1.Rows[i].Cells[5]).Equals(Sil))
-                    {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                    }
-                }
-            }
-            else if ((generationText.Text).Equals(GIG))
-            {
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                {
-                    if (!(dataGridView1.Rows[i].Cells[5]).Equals(GIG))
-                    {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                    }
-                }
-            }
-            else if ((generationText.Text).Equals(Mil))
-            {
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                {
-                    if (!(dataGridView1.Rows[i].Cells[5]).Equals(Mil))
-                    {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                    }
-                }
+                MessageBox.Show("Select one of the options that is in the arrow of the text box.");
             }
         }
 
         public void GenderOption()
         {
-            if (maleButton.Checked)
+            try
             {
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                if (maleButton.Checked)
                 {
-                    if ((dataGridView1.Rows[i].Cells[4]).Equals("female"))
+                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                     {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        if ((dataGridView1.Rows[i].Cells[6]).Equals("female"))
+                        {
+                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        }
+                    }
+                }
+                else if (femaleButton.Checked)
+                {
+                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                    {
+                        if ((dataGridView1.Rows[i].Cells[6]).Equals("male"))
+                        {
+                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                        }
                     }
                 }
             }
-            else if (femaleButton.Checked)
+            catch (Exception ex)
             {
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                {
-                    if ((dataGridView1.Rows[i].Cells[4]).Equals("male"))
-                    {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                    }
-                }
+                MessageBox.Show("you must select only one type of gender");
             }
+
         }
 
         public void AgeOption()
         {
-            int nInf = Convert.ToInt32(ageTextInf.Text);
-            int nSup = Convert.ToInt32(ageTextSup);
-            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-            {
-                if (!(Convert.ToInt32(dataGridView1.Rows[i].Cells[3]) == nInf) && !(Convert.ToInt32(dataGridView1.Rows[i].Cells[4]) == nSup))
+            try 
+            { 
+                int nInf = Convert.ToInt32(ageTextInf.Text);
+                int nSup = Convert.ToInt32(ageTextSup);
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                 {
-                    dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                }
+                    if (!(Convert.ToInt32(dataGridView1.Rows[i].Cells[3]) == nInf) && !(Convert.ToInt32(dataGridView1.Rows[i].Cells[4]) == nSup))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("You must enter numbers in this text boxs");
             }
         }
 
         public void YearOption()
         {
-            int n = Convert.ToInt32(yearText.Text);
-            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-            {
-                if (Convert.ToInt32(dataGridView1.Rows[i].Cells[1]) != n)
+            try
+            { 
+                int n = Convert.ToInt32(yearText.Text);
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                 {
-                    dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[2]) != n)
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("You must enter numbers in this text box");
             }
         }
 
         public void CountryOption()
         {
-            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            try
             {
-                if (!(dataGridView1.Rows[i].Cells[0].Equals(CountryText.Text)))
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                 {
-                    dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    if (!(dataGridView1.Rows[i].Cells[1].Equals(CountryText.Text)))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("You must enter a country in this text box");
             }
         }
 
