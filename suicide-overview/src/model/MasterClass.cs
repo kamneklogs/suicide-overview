@@ -201,12 +201,51 @@ namespace suicide_overview.src.model
             return count;
         }
 
-        //Cuenta de
+        //Cuenta de suicidios dada una generacion
         public int DeathsCountByGeneration(string generation)
         {
             int count = 0;
 
             foreach (Record item in RecordsByGeneration(generation))
+            {
+                count += item.Suicide_no;
+            }
+
+            return count;
+        }
+
+        //Cuenta de suicidios dada una generacion y un pais
+        public int DeathsCountByGeneration(string generation, string country)
+        {
+            int count = 0;
+
+            foreach (Record item in RecordsByGeneration(generation, country))
+            {
+                count += item.Suicide_no;
+            }
+
+            return count;
+        }
+
+        //Cuenta de suicidios dado un pais
+        public int DeathsCountByCountry(string country)
+        {
+            int count = 0;
+
+            foreach (Record item in RecordsByCountry(country))
+            {
+                count += item.Suicide_no;
+            }
+
+            return count;
+        }
+
+        //Cuenta de suicidios dado un pais y un año especifico.
+        public int DeathsCountByCountry(string country, int year)
+        {
+            int count = 0;
+
+            foreach (Record item in RecordsByCountry(country, year))
             {
                 count += item.Suicide_no;
             }
