@@ -33,17 +33,17 @@ namespace suicide_overview.src.model
         }
 
         //Retorna lista de todos los registros de suicidio en un pais dado
-        public List<Record> RecordsByCountry(string countryName)
+        public List<Record> RecordsByCountry(string country)
         {
-            return countries[countryName];
+            return countries[country];
         }
 
         //Retorna lista de todos los registros de muerte en un pais y año dados
-        public List<Record> RecordsByCountry(string countryName, int year)
+        public List<Record> RecordsByCountry(string country, int year)
         {
             List<Record> result = new List<Record>();
 
-            foreach (Record item in countries[countryName])
+            foreach (Record item in countries[country])
             {
                 if (item.Year == year)
                 {
@@ -54,13 +54,77 @@ namespace suicide_overview.src.model
             return result;
         }
 
+        private IEnumerable<Record> RecordsByCountry(string country, int year, string sex)
+        {
+            List<Record> result = new List<Record>();
+
+            foreach (Record item in countries[country])
+            {
+                if ((item.Year == year) && (item.Sex.Equals(sex)))
+                {
+                    result.Add(item);
+                }
+            }
+
+            return result;
+        }
+
+        //Retorna lista de todos los registros de suicidio en una generacion dada
         public List<Record> RecordsByGeneration(string generation)
         {
             List<Record> result = new List<Record>();
 
             foreach (Record item in AllRecords())
             {
-                if (item.Equals(generation))
+                if (item.Generation.Equals(generation))
+                {
+                    result.Add(item);
+                }
+            }
+
+            return result;
+        }
+
+        //Retorna lista de todos los registros de suicidio en una generacion y pais dado
+        public List<Record> RecordsByGeneration(string generation, string country)
+        {
+            List<Record> result = new List<Record>();
+
+            foreach (Record item in RecordsByCountry(country))
+            {
+                if (item.Generation.Equals(generation))
+                {
+                    result.Add(item);
+                }
+            }
+
+            return result;
+        }
+
+        //Retorna lista de todos los registros de suicidio en una generacion, pais y año dada
+        public List<Record> RecordsByGeneration(string generation, string country, int year)
+        {
+            List<Record> result = new List<Record>();
+
+            foreach (Record item in RecordsByCountry(country, year))
+            {
+                if (item.Generation.Equals(generation))
+                {
+                    result.Add(item);
+                }
+            }
+
+            return result;
+        }
+
+        //Retorna lista de todos los registros de suicidio en una generacion, pais y año dada
+        public List<Record> RecordsByGeneration(string generation, string country, int year, string sex)
+        {
+            List<Record> result = new List<Record>();
+
+            foreach (Record item in RecordsByCountry(country, year, sex))
+            {
+                if (item.Generation.Equals(generation))
                 {
                     result.Add(item);
                 }

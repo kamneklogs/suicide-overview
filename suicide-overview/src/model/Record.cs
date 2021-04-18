@@ -28,9 +28,6 @@
             Population = population;
             Ratio = ratio;
             Generation = generation;
-
-            // hola mundo 
-            // hola mundo 
         }
     }
 }
