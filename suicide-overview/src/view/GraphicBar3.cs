@@ -23,7 +23,7 @@ namespace suicide_overview.src.view
 
         private void viewGraphic_Click(object sender, EventArgs e)
         {
-            string[] series = { "Silent Generation", "G.I. Generation", "Boomers", "Millenials", "Generación X" };
+            string[] series = { "Silent Generation", "G.I. Generation", "Boomers", "Millenials", "Generation  X" };
             int[] puntos = {mc.DeathsCountByGeneration("Silent", country.Text), mc.DeathsCountByGeneration("G.I. Generation", country.Text),
                 mc.DeathsCountByGeneration("Boomers", country.Text), mc.DeathsCountByGeneration("Millenials", country.Text), 
                 mc.DeathsCountByGeneration("Generation X", country.Text)};
