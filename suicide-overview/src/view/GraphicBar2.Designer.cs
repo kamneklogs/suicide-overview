@@ -65,7 +65,7 @@ namespace suicide_overview.src.view
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(99, 16);
+            this.label1.Location = new System.Drawing.Point(112, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 13);
             this.label1.TabIndex = 3;
@@ -73,7 +73,7 @@ namespace suicide_overview.src.view
             // 
             // viewGraphic
             // 
-            this.viewGraphic.Location = new System.Drawing.Point(126, 58);
+            this.viewGraphic.Location = new System.Drawing.Point(139, 58);
             this.viewGraphic.Name = "viewGraphic";
             this.viewGraphic.Size = new System.Drawing.Size(75, 23);
             this.viewGraphic.TabIndex = 4;
@@ -87,13 +87,13 @@ namespace suicide_overview.src.view
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(69, 87);
+            this.chart1.Location = new System.Drawing.Point(33, 87);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(245, 208);
+            this.chart1.Size = new System.Drawing.Size(286, 220);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
             // 
