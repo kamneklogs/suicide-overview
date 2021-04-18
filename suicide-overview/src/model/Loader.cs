@@ -70,9 +70,9 @@ namespace suicide_overview.src.model
                     }
                     sr.Close();
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    MessageBox.Show("Error en la carga de los datos");
+                    MessageBox.Show(e.Message);
                 }
             }
         }
