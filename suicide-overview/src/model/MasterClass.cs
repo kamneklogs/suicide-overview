@@ -200,5 +200,17 @@ namespace suicide_overview.src.model
 
             return count;
         }
+
+        public int DeathsCountByGeneration(string generation)
+        {
+            int count = 0;
+
+            foreach (Record item in RecordsByGeneration(generation))
+            {
+                count++;
+            }
+
+            return count;
+        }
     }
 }
