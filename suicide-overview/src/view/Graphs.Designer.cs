@@ -29,29 +29,11 @@ namespace suicide_overview.src.view
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.viewGraphic = new System.Windows.Forms.Panel();
+            this.viewBarGraphic = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(206, 56);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(300, 300);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
             // 
             // label1
             // 
@@ -62,24 +44,55 @@ namespace suicide_overview.src.view
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
+            // viewGraphic
+            // 
+            this.viewGraphic.Location = new System.Drawing.Point(204, 54);
+            this.viewGraphic.Name = "viewGraphic";
+            this.viewGraphic.Size = new System.Drawing.Size(350, 323);
+            this.viewGraphic.TabIndex = 2;
+            this.viewGraphic.TabStop = true;
+            // 
+            // viewBarGraphic
+            // 
+            this.viewBarGraphic.AutoSize = true;
+            this.viewBarGraphic.Location = new System.Drawing.Point(34, 78);
+            this.viewBarGraphic.Name = "viewBarGraphic";
+            this.viewBarGraphic.Size = new System.Drawing.Size(342, 13);
+            this.viewBarGraphic.TabIndex = 3;
+            this.viewBarGraphic.TabStop = true;
+            this.viewBarGraphic.Text = "Ver gráfico de barras  de los hombres y mujeres muertos a nivel mundial";
+            this.viewBarGraphic.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.viewBarGraphic_LinkClicked);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(37, 120);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(214, 13);
+            this.linkLabel1.TabIndex = 4;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Hombres y mujeres según un  año y un país";
+            // 
             // Graphs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.viewGraphic);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.viewBarGraphic);
             this.Name = "Graphs";
             this.Size = new System.Drawing.Size(599, 426);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel viewGraphic;
+        private System.Windows.Forms.LinkLabel viewBarGraphic;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

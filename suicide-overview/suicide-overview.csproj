@@ -57,6 +57,18 @@
     <Compile Include="src\view\ColumnsReports.Designer.cs">
       <DependentUpon>ColumnsReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\view\GraphicBar1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\view\GraphicBar1.Designer.cs">
+      <DependentUpon>GraphicBar1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\view\GraphicBar2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\view\GraphicBar2.Designer.cs">
+      <DependentUpon>GraphicBar2.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\view\Graphs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,6 +94,12 @@
     </Compile>
     <EmbeddedResource Include="src\view\ColumnsReports.resx">
       <DependentUpon>ColumnsReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\view\GraphicBar1.resx">
+      <DependentUpon>GraphicBar1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\view\GraphicBar2.resx">
+      <DependentUpon>GraphicBar2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\view\Graphs.resx">
       <DependentUpon>Graphs.cs</DependentUpon>
