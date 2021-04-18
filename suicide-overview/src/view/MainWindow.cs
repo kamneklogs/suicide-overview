@@ -16,10 +16,6 @@ namespace suicide_overview
             mc = new MasterClass();
         }
 
-        private void RunChange_Click(object sender, EventArgs e)
-        {
-        }
-
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             mainPane.Controls.Clear();
