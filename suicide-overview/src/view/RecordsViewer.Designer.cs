@@ -48,7 +48,7 @@ namespace suicide_overview.src.view
             this.numberSuices = new System.Windows.Forms.TextBox();
             this.maleButton = new System.Windows.Forms.RadioButton();
             this.femaleButton = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.generationText = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -240,19 +240,19 @@ namespace suicide_overview.src.view
             this.femaleButton.Text = "Female";
             this.femaleButton.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // generationText
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.generationText.FormattingEnabled = true;
+            this.generationText.Items.AddRange(new object[] {
             "Generation X",
             "Silent",
             "Boomers",
             "G.I. Generation",
             "Millenials"});
-            this.comboBox1.Location = new System.Drawing.Point(334, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 10;
+            this.generationText.Location = new System.Drawing.Point(334, 28);
+            this.generationText.Name = "generationText";
+            this.generationText.Size = new System.Drawing.Size(121, 21);
+            this.generationText.TabIndex = 10;
             // 
             // button1
             // 
@@ -393,7 +393,7 @@ namespace suicide_overview.src.view
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.generationText);
             this.Controls.Add(this.femaleButton);
             this.Controls.Add(this.maleButton);
             this.Controls.Add(this.numberSuices);
@@ -433,7 +433,7 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.TextBox numberSuices;
         private System.Windows.Forms.RadioButton maleButton;
         private System.Windows.Forms.RadioButton femaleButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox generationText;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
