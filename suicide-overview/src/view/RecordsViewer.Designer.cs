@@ -43,6 +43,19 @@ namespace suicide_overview.src.view
             this.CountryToLoadText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.runLoadTable = new System.Windows.Forms.Button();
+            this.yearText = new System.Windows.Forms.TextBox();
+            this.sexText = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.maleButton = new System.Windows.Forms.RadioButton();
+            this.femaleButton = new System.Windows.Forms.RadioButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,11 +189,141 @@ namespace suicide_overview.src.view
             this.runLoadTable.UseVisualStyleBackColor = true;
             this.runLoadTable.Click += new System.EventHandler(this.RunLoadTable_Click);
             // 
+            // yearText
+            // 
+            this.yearText.Location = new System.Drawing.Point(224, 23);
+            this.yearText.Name = "yearText";
+            this.yearText.Size = new System.Drawing.Size(100, 20);
+            this.yearText.TabIndex = 5;
+            // 
+            // sexText
+            // 
+            this.sexText.Location = new System.Drawing.Point(224, 66);
+            this.sexText.Name = "sexText";
+            this.sexText.Size = new System.Drawing.Size(100, 20);
+            this.sexText.TabIndex = 6;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(364, 77);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 7;
+            // 
+            // maleButton
+            // 
+            this.maleButton.AutoSize = true;
+            this.maleButton.Location = new System.Drawing.Point(224, 106);
+            this.maleButton.Name = "maleButton";
+            this.maleButton.Size = new System.Drawing.Size(48, 17);
+            this.maleButton.TabIndex = 8;
+            this.maleButton.TabStop = true;
+            this.maleButton.Text = "Male";
+            this.maleButton.UseVisualStyleBackColor = true;
+            // 
+            // femaleButton
+            // 
+            this.femaleButton.AutoSize = true;
+            this.femaleButton.Location = new System.Drawing.Point(224, 129);
+            this.femaleButton.Name = "femaleButton";
+            this.femaleButton.Size = new System.Drawing.Size(59, 17);
+            this.femaleButton.TabIndex = 9;
+            this.femaleButton.TabStop = true;
+            this.femaleButton.Text = "Female";
+            this.femaleButton.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Generation X",
+            "Silent"});
+            this.comboBox1.Location = new System.Drawing.Point(364, 22);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(488, 64);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(488, 114);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(361, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Ingrese pais:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(361, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Ingrese pais:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(221, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Ingrese pais:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(221, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Ingrese pais:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(221, 90);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Ingrese pais:";
+            // 
             // RecordsViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.femaleButton);
+            this.Controls.Add(this.maleButton);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.sexText);
+            this.Controls.Add(this.yearText);
             this.Controls.Add(this.runLoadTable);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CountryToLoadText);
@@ -210,5 +353,18 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.TextBox CountryToLoadText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button runLoadTable;
+        private System.Windows.Forms.TextBox yearText;
+        private System.Windows.Forms.TextBox sexText;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.RadioButton maleButton;
+        private System.Windows.Forms.RadioButton femaleButton;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

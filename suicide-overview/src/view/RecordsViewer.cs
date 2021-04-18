@@ -46,5 +46,61 @@ namespace suicide_overview.src.view
             dataGridView1.Rows.Clear();
             loadDataTable(CountryToLoadText.Text);
         }
+
+        // filtro paises 
+        /*
+        private void country_Click(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < dataGridView1.RowCount-1; i++)
+			{
+                if(!(dataGridView1.Rows[i].cell[0].equals(country))){
+                    dataGridView1.Rows.Remove(i);
+                }
+			}
+
+        }
+
+        private void Year_Click(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < dataGridView1.RowCount-1; i++)
+			{
+                int year = yearText.Text;
+                if(dataGridView1.Rows[i].cell[0] != year){
+                    dataGridView1.Rows.Remove(i);
+                }
+			}
+
+        }
+
+        private void Sex_Click(object sender, EventArgs e)
+        {
+            TextBox sexTex;
+            String sex =  sexTex.Text;
+
+            for (int i = 0; i < dataGridView1.RowCount-1; i++)
+			{
+                int year = yearText.Text;
+                if(dataGridView1.Rows[i].cell[0] != year){
+                    dataGridView1.Rows.Remove(i);
+                }
+			}
+
+        }
+
+        private void age_Click(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < dataGridView1.RowCount-1; i++)
+			{
+                int year = yearText.Text;
+                if(dataGridView1.Rows[i].cell[0] != year){
+                    dataGridView1.Rows.Remove(i);
+                }
+			}
+
+        }
+        */
     }
 }
