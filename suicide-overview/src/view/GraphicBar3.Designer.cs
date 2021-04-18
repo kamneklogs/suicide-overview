@@ -29,68 +29,77 @@ namespace suicide_overview.src.view
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.label1 = new System.Windows.Forms.Label();
             this.country = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.viewGraphic = new System.Windows.Forms.Button();
+            this.clearBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 18);
+            this.label1.Location = new System.Drawing.Point(3, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 13);
+            this.label1.Size = new System.Drawing.Size(137, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ingrese el país a consultar";
+            this.label1.Text = "Enter the country to consult";
             // 
             // country
             // 
-            this.country.Location = new System.Drawing.Point(156, 15);
+            this.country.Location = new System.Drawing.Point(146, 15);
             this.country.Name = "country";
             this.country.Size = new System.Drawing.Size(100, 20);
             this.country.TabIndex = 1;
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(21, 41);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(265, 264);
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
+            this.chart1.Size = new System.Drawing.Size(388, 330);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
             // 
             // viewGraphic
             // 
-            this.viewGraphic.Location = new System.Drawing.Point(262, 15);
+            this.viewGraphic.Location = new System.Drawing.Point(252, 3);
             this.viewGraphic.Name = "viewGraphic";
-            this.viewGraphic.Size = new System.Drawing.Size(75, 23);
+            this.viewGraphic.Size = new System.Drawing.Size(76, 36);
             this.viewGraphic.TabIndex = 3;
-            this.viewGraphic.Text = "Ver gráfico";
+            this.viewGraphic.Text = "Show graphic";
             this.viewGraphic.UseVisualStyleBackColor = true;
             this.viewGraphic.Click += new System.EventHandler(this.viewGraphic_Click);
+            // 
+            // clearBtn
+            // 
+            this.clearBtn.Enabled = false;
+            this.clearBtn.Location = new System.Drawing.Point(334, 12);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(75, 23);
+            this.clearBtn.TabIndex = 4;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // GraphicBar3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.viewGraphic);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.country);
             this.Controls.Add(this.label1);
             this.Name = "GraphicBar3";
-            this.Size = new System.Drawing.Size(350, 323);
+            this.Size = new System.Drawing.Size(421, 374);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -103,5 +112,6 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.TextBox country;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button viewGraphic;
+        private System.Windows.Forms.Button clearBtn;
     }
 }
