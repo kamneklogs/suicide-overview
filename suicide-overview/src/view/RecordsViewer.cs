@@ -87,56 +87,29 @@ namespace suicide_overview.src.view
 
             if (!(ageTextInf.Text == "") && !(ageTextSup.Text == ""))
             {
-                int nInf = Convert.ToInt32(ageTextInf.Text);
-                int nSup = Convert.ToInt32(ageTextSup);
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                {
-                    if (!(Convert.ToInt32(dataGridView1.Rows[i].Cells[3]) == nInf) && !(Convert.ToInt32(dataGridView1.Rows[i].Cells[4]) == nSup))
-                    {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                    }
-                }
+                ageOption();
             }
 
             if ((maleButton.Checked) || (femaleButton.Checked))
             {
-                if (maleButton.Checked)
-                {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                    {
-                        if ((dataGridView1.Rows[i].Cells[4]).Equals("female"))
-                        {
-                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                        }
-                    }
-                }
-                else if(femaleButton.Checked)
-                {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                    {
-                        if ((dataGridView1.Rows[i].Cells[4]).Equals("male"))
-                        {
-                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                        }
-                    }
-                }
+                genderOption();
             }
 
             if (!(generationText.Text == ""))
             {
-                GenerationOpcion();
+                GenerationOption();
             }
 
             if (!(numberSuices.Text == ""))
             {
-                NumberSuicidesOpcion();
+                NumberSuicidesOption();
             }
 
 
            
         }
 
-        public void NumberSuicidesOpcion()
+        public void NumberSuicidesOption()
         {
             int nSui = Convert.ToInt32(numberSuices.Text);
             for (int i = 0; i < dataGridView1.RowCount - 1; i++)
@@ -148,7 +121,7 @@ namespace suicide_overview.src.view
             }
         }
 
-        public void GenerationOpcion()
+        public void GenerationOption()
         {
             if ((generationText.Text).Equals(Boo))
             {
@@ -202,6 +175,42 @@ namespace suicide_overview.src.view
             }
         }
 
+        public void genderOption()
+        {
+            if (maleButton.Checked)
+            {
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    if ((dataGridView1.Rows[i].Cells[4]).Equals("female"))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                }
+            }
+            else if (femaleButton.Checked)
+            {
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    if ((dataGridView1.Rows[i].Cells[4]).Equals("male"))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                }
+            }
+        }
+
+        public void ageOption()
+        {
+            int nInf = Convert.ToInt32(ageTextInf.Text);
+            int nSup = Convert.ToInt32(ageTextSup);
+            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            {
+                if (!(Convert.ToInt32(dataGridView1.Rows[i].Cells[3]) == nInf) && !(Convert.ToInt32(dataGridView1.Rows[i].Cells[4]) == nSup))
+                {
+                    dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                }
+            }
+        }
 
     }
 }
