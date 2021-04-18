@@ -43,5 +43,12 @@ namespace suicide_overview.src.view
             GraphicPie1 gp = new GraphicPie1(mc);
             graphViewer.Controls.Add(gp);
         }
+
+        private void graphic4_Click(object sender, EventArgs e)
+        {
+            graphViewer.Controls.Clear();
+            GraphicDonnut1 gd = new GraphicDonnut1(mc);
+            graphViewer.Controls.Add(gd);
+        }
     }
 }
