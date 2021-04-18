@@ -124,68 +124,84 @@ namespace suicide_overview.src.view
 
             if (!(generationText.Text == ""))
             {
-                if ((generationText.Text).Equals(Boo))
-                {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                    {
-                        if (!(dataGridView1.Rows[i].Cells[5]).Equals(Boo))
-                        {
-                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                        }
-                    }
-                } else if ((generationText.Text).Equals(GeX))
-                {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                    {
-                        if (!(dataGridView1.Rows[i].Cells[5]).Equals(GeX))
-                        {
-                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                        }
-                    }
-                } else if ((generationText.Text).Equals(Sil))
-                {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                    {
-                        if (!(dataGridView1.Rows[i].Cells[5]).Equals(Sil))
-                        {
-                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                        }
-                    }
-                } else if ((generationText.Text).Equals(GIG))
-                {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                    {
-                        if (!(dataGridView1.Rows[i].Cells[5]).Equals(GIG))
-                        {
-                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                        }
-                    }
-                } else if ((generationText.Text).Equals(Mil))
-                {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                    {
-                        if (!(dataGridView1.Rows[i].Cells[5]).Equals(Mil))
-                        {
-                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                        }
-                    }
-                }
+                GenerationOpcion();
             }
 
             if (!(numberSuices.Text == ""))
             {
-                int nSui = Convert.ToInt32(numberSuices.Text);
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                {
-                    if (Convert.ToInt32(dataGridView1.Rows[i].Cells[7]) != nSui)
-                    {
-                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                    }
-                }
+                NumberSuicidesOpcion();
             }
 
 
            
         }
+
+        public void NumberSuicidesOpcion()
+        {
+            int nSui = Convert.ToInt32(numberSuices.Text);
+            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            {
+                if (Convert.ToInt32(dataGridView1.Rows[i].Cells[7]) != nSui)
+                {
+                    dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                }
+            }
+        }
+
+        public void GenerationOpcion()
+        {
+            if ((generationText.Text).Equals(Boo))
+            {
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    if (!(dataGridView1.Rows[i].Cells[5]).Equals(Boo))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                }
+            }
+            else if ((generationText.Text).Equals(GeX))
+            {
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    if (!(dataGridView1.Rows[i].Cells[5]).Equals(GeX))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                }
+            }
+            else if ((generationText.Text).Equals(Sil))
+            {
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    if (!(dataGridView1.Rows[i].Cells[5]).Equals(Sil))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                }
+            }
+            else if ((generationText.Text).Equals(GIG))
+            {
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    if (!(dataGridView1.Rows[i].Cells[5]).Equals(GIG))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                }
+            }
+            else if ((generationText.Text).Equals(Mil))
+            {
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    if (!(dataGridView1.Rows[i].Cells[5]).Equals(Mil))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                }
+            }
+        }
+
+
     }
 }
