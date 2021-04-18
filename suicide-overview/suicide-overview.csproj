@@ -51,6 +51,12 @@
     <Compile Include="src\model\Loader.cs" />
     <Compile Include="src\model\MasterClass.cs" />
     <Compile Include="src\model\Record.cs" />
+    <Compile Include="src\view\GraphicBar3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\view\GraphicBar3.Designer.cs">
+      <DependentUpon>GraphicBar3.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\view\GraphicDonnut1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,6 +110,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="src\view\GraphicBar3.resx">
+      <DependentUpon>GraphicBar3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\view\GraphicDonnut1.resx">
       <DependentUpon>GraphicDonnut1.cs</DependentUpon>
     </EmbeddedResource>

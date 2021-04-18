@@ -38,6 +38,7 @@ namespace suicide_overview.src.view
             this.graphic2 = new System.Windows.Forms.Button();
             this.graphic3 = new System.Windows.Forms.Button();
             this.graphic4 = new System.Windows.Forms.Button();
+            this.graphic5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -96,10 +97,20 @@ namespace suicide_overview.src.view
             this.graphic4.UseVisualStyleBackColor = true;
             this.graphic4.Click += new System.EventHandler(this.graphic4_Click);
             // 
+            // graphic5
+            // 
+            this.graphic5.Location = new System.Drawing.Point(4, 256);
+            this.graphic5.Name = "graphic5";
+            this.graphic5.Size = new System.Drawing.Size(199, 38);
+            this.graphic5.TabIndex = 6;
+            this.graphic5.Text = "Suicidios de las generaciones dado un  país";
+            this.graphic5.UseVisualStyleBackColor = true;
+            // 
             // Graphs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.graphic5);
             this.Controls.Add(this.graphic4);
             this.Controls.Add(this.graphic3);
             this.Controls.Add(this.graphic2);
@@ -121,5 +132,6 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.Button graphic2;
         private System.Windows.Forms.Button graphic3;
         private System.Windows.Forms.Button graphic4;
+        private System.Windows.Forms.Button graphic5;
     }
 }
