@@ -41,10 +41,10 @@ namespace suicide_overview.src.view
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(29, 17);
+            this.chart1.Location = new System.Drawing.Point(3, 3);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            this.chart1.Size = new System.Drawing.Size(298, 285);
+            this.chart1.Size = new System.Drawing.Size(415, 368);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -54,7 +54,7 @@ namespace suicide_overview.src.view
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.chart1);
             this.Name = "GraphicBar1";
-            this.Size = new System.Drawing.Size(350, 323);
+            this.Size = new System.Drawing.Size(421, 374);
             this.Load += new System.EventHandler(this.graphicBar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
