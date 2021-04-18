@@ -17,13 +17,13 @@ namespace suicide_overview.src.view
 
         private void graphicBar_Load(object sender, EventArgs e)
         {
-            string[] series = { "Mujer", "Hombre" };
+            string[] series = { "Women", "Men" };
             int[] puntos = { mc.DeathsCountByGender("female"), mc.DeathsCountByGender("male") };
 
             chart1.Palette = ChartColorPalette.Pastel;
 
-            chart1.Titles.Add("Muertes de hombres y mujeres a través de los años a nivel mundial");
-
+            chart1.Titles.Add("Deaths of men and women over the years worldwide");
+            
             for (int i = 0; i < series.Length; i++)
             {
                 //titulos

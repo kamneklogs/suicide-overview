@@ -44,66 +44,67 @@ namespace suicide_overview.src.view
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 12);
+            this.label1.Location = new System.Drawing.Point(159, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.Size = new System.Drawing.Size(260, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Graficos Estadisticos";
+            this.label1.Text = "STATISTICAL REPORTS ON SUICIDES GLOBALLY";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // graphViewer
             // 
-            this.graphViewer.Location = new System.Drawing.Point(224, 73);
+            this.graphViewer.Location = new System.Drawing.Point(162, 49);
             this.graphViewer.Name = "graphViewer";
-            this.graphViewer.Size = new System.Drawing.Size(350, 323);
+            this.graphViewer.Size = new System.Drawing.Size(421, 374);
             this.graphViewer.TabIndex = 1;
             // 
             // graphic1
             // 
-            this.graphic1.Location = new System.Drawing.Point(4, 125);
+            this.graphic1.Location = new System.Drawing.Point(4, 55);
             this.graphic1.Name = "graphic1";
-            this.graphic1.Size = new System.Drawing.Size(200, 37);
+            this.graphic1.Size = new System.Drawing.Size(144, 37);
             this.graphic1.TabIndex = 2;
-            this.graphic1.Text = "Suicidios masculinos y femeninos a nivel global";
+            this.graphic1.Text = "Male and female suicides globally";
             this.graphic1.UseVisualStyleBackColor = true;
             this.graphic1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // graphic2
             // 
-            this.graphic2.Location = new System.Drawing.Point(4, 168);
+            this.graphic2.Location = new System.Drawing.Point(4, 98);
             this.graphic2.Name = "graphic2";
-            this.graphic2.Size = new System.Drawing.Size(200, 23);
+            this.graphic2.Size = new System.Drawing.Size(144, 37);
             this.graphic2.TabIndex = 3;
-            this.graphic2.Text = "Suicidios masculinos dado un país";
+            this.graphic2.Text = "Male suicides given a country";
             this.graphic2.UseVisualStyleBackColor = true;
             this.graphic2.Click += new System.EventHandler(this.graphic2_Click);
             // 
             // graphic3
             // 
-            this.graphic3.Location = new System.Drawing.Point(4, 197);
+            this.graphic3.Location = new System.Drawing.Point(4, 141);
             this.graphic3.Name = "graphic3";
-            this.graphic3.Size = new System.Drawing.Size(199, 23);
+            this.graphic3.Size = new System.Drawing.Size(144, 36);
             this.graphic3.TabIndex = 4;
-            this.graphic3.Text = "Suicidios femeninos dado un país";
+            this.graphic3.Text = "Female suicides given a country";
             this.graphic3.UseVisualStyleBackColor = true;
             this.graphic3.Click += new System.EventHandler(this.graphic3_Click);
             // 
             // graphic4
             // 
-            this.graphic4.Location = new System.Drawing.Point(4, 226);
+            this.graphic4.Location = new System.Drawing.Point(4, 183);
             this.graphic4.Name = "graphic4";
-            this.graphic4.Size = new System.Drawing.Size(200, 23);
+            this.graphic4.Size = new System.Drawing.Size(144, 35);
             this.graphic4.TabIndex = 5;
-            this.graphic4.Text = "Suicidios según  un país y un año";
+            this.graphic4.Text = "Suicides according to a country and a year";
             this.graphic4.UseVisualStyleBackColor = true;
             this.graphic4.Click += new System.EventHandler(this.graphic4_Click);
             // 
             // graphic5
             // 
-            this.graphic5.Location = new System.Drawing.Point(4, 256);
+            this.graphic5.Location = new System.Drawing.Point(3, 224);
             this.graphic5.Name = "graphic5";
-            this.graphic5.Size = new System.Drawing.Size(199, 38);
+            this.graphic5.Size = new System.Drawing.Size(145, 49);
             this.graphic5.TabIndex = 6;
-            this.graphic5.Text = "Suicidios de las generaciones dado un  país";
+            this.graphic5.Text = "Suicides of generations given a country";
             this.graphic5.UseVisualStyleBackColor = true;
             this.graphic5.Click += new System.EventHandler(this.graphic5_Click);
             // 
