@@ -28,7 +28,7 @@ namespace suicide_overview.src.view
             {
                 //titulos
                 Series sr = chart1.Series.Add(series[i]);
-
+                
                 //cantidades
                 sr.Label = puntos[i].ToString();
 

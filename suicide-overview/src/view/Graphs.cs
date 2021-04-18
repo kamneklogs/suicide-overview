@@ -40,7 +40,8 @@ namespace suicide_overview.src.view
         private void graphic3_Click(object sender, EventArgs e)
         {
             graphViewer.Controls.Clear();
-            
+            GraphicPie1 gp = new GraphicPie1(mc);
+            graphViewer.Controls.Add(gp);
         }
     }
 }
