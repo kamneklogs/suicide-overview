@@ -29,14 +29,15 @@ namespace suicide_overview.src.view
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.country1 = new System.Windows.Forms.TextBox();
             this.country2 = new System.Windows.Forms.TextBox();
             this.country3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.viewGraphic = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cleartBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@ namespace suicide_overview.src.view
             // 
             // viewGraphic
             // 
-            this.viewGraphic.Location = new System.Drawing.Point(139, 58);
+            this.viewGraphic.Location = new System.Drawing.Point(73, 58);
             this.viewGraphic.Name = "viewGraphic";
             this.viewGraphic.Size = new System.Drawing.Size(97, 23);
             this.viewGraphic.TabIndex = 4;
@@ -82,10 +83,10 @@ namespace suicide_overview.src.view
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(3, 87);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
@@ -93,10 +94,22 @@ namespace suicide_overview.src.view
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
             // 
+            // cleartBtn
+            // 
+            this.cleartBtn.Enabled = false;
+            this.cleartBtn.Location = new System.Drawing.Point(177, 58);
+            this.cleartBtn.Name = "cleartBtn";
+            this.cleartBtn.Size = new System.Drawing.Size(99, 23);
+            this.cleartBtn.TabIndex = 6;
+            this.cleartBtn.Text = "Clear";
+            this.cleartBtn.UseVisualStyleBackColor = true;
+            this.cleartBtn.Click += new System.EventHandler(this.cleartBtn_Click);
+            // 
             // GraphicBar2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cleartBtn);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.viewGraphic);
             this.Controls.Add(this.label1);
@@ -119,5 +132,6 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button viewGraphic;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Button cleartBtn;
     }
 }
