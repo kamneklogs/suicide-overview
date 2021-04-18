@@ -11,23 +11,15 @@ The languague used in this program is C#
 
 # Operating system
 
- The operating system is windows.
+- The operating system is windows.
  
 # Development environment
 
-The Visual development environment estduio 2019.
-
-# Documentation
-- Engineering method click [HERE](docs/MetodoDeIngenieria.pdf)
-- Functional and not functional Requirements  click [HERE](docs/Documentation.pdf)
-
-# Programming environment 
-
 - Microsoft Visual Studio 2019
 
-Demo video [HERE]()
-
-# Program pictures 
+# Documentation
+- Engineering method click [HERE](/docs/EngineeringMethod.pdf)
+- Functional and not functional Requirements click [HERE](docs/FunctionalNotFunctionalRequirements.pdf)
 
 # Authors 
 
@@ -35,6 +27,29 @@ Demo video [HERE]()
 - [Andrea Nuñez](https://github.com/andreanr19)
 - [Danna García](https://github.com/Dannasofiagarcia)
 - [Camilo Escobar](https://github.com/chumbi27escobar3)
+
+# Program pictures 
+
+- Main interface 
+<img src="/img/Sc1.png" width = 600>
+- Table view and filters 
+<img src="/img/Sc2.png" width = 600>
+- Table working
+<img src="/img/Sc3.png" width = 600>
+- Graph interface
+<img src="/img/Sc4.png" width = 600>
+- Graph 1
+<img src="/img/Sc5.png" width = 600>
+- Graph 2:
+<img src="/img/Sc6.png" width = 600>
+- Graph 3:
+<img src="/img/Sc7.png" width = 600>
+- Graph 4:
+<img src="/img/Sc8.png" width = 600>
+- Graph 5:
+<img src="/img/Sc9.png" width = 600>
+
+Demo video [HERE]()
 
 
 
