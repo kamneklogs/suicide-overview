@@ -18,7 +18,7 @@ The languague used in this program is C#
 The Visual development environment estduio 2019.
 
 # Documentation
-- Engineering method click [HERE](docs/MetodoDeIngenieria.pdf)
+- Engineering method click [HERE](/docs/Engineering method.pdf)
 - Functional and not functional Requirements  click [HERE](docs/Documentation.pdf)
 
 # Programming environment 
