@@ -31,21 +31,30 @@ The languague used in this program is C#
 # Program pictures 
 
 - Main interface 
+
 <img src="/img/Sc1.png" width = 600>
+
 - Table view and filters 
 <img src="/img/Sc2.png" width = 600>
+
 - Table working
 <img src="/img/Sc3.png" width = 600>
+
 - Graph interface
 <img src="/img/Sc4.png" width = 600>
+
 - Graph 1
 <img src="/img/Sc5.png" width = 600>
+
 - Graph 2:
 <img src="/img/Sc6.png" width = 600>
+
 - Graph 3:
 <img src="/img/Sc7.png" width = 600>
+
 - Graph 4:
 <img src="/img/Sc8.png" width = 600>
+
 - Graph 5:
 <img src="/img/Sc9.png" width = 600>
 
