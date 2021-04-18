@@ -115,7 +115,7 @@ namespace suicide_overview.src.view
                 }
             }
 
-            if (!(CountryText.Text == ""))
+            if (!(ageTextInf.Text == "") && !(ageTextSup.Text == ""))
             {
                 for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                 {
@@ -124,7 +124,7 @@ namespace suicide_overview.src.view
                         dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
                     }
                 }
-            }
+            } 
 
         }
     }

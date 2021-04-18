@@ -57,7 +57,7 @@ namespace suicide_overview.src.view
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ageTextSup = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cantPopulation = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -209,6 +209,7 @@ namespace suicide_overview.src.view
             this.ageTextInf.Name = "ageTextInf";
             this.ageTextInf.Size = new System.Drawing.Size(41, 20);
             this.ageTextInf.TabIndex = 6;
+            this.ageTextInf.TabStop = false;
             // 
             // numberSuices
             // 
@@ -325,12 +326,12 @@ namespace suicide_overview.src.view
             this.label8.TabIndex = 18;
             this.label8.Text = "Ingrese la edad:";
             // 
-            // textBox1
+            // ageTextSup
             // 
-            this.textBox1.Location = new System.Drawing.Point(276, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(42, 20);
-            this.textBox1.TabIndex = 19;
+            this.ageTextSup.Location = new System.Drawing.Point(276, 40);
+            this.ageTextSup.Name = "ageTextSup";
+            this.ageTextSup.Size = new System.Drawing.Size(42, 20);
+            this.ageTextSup.TabIndex = 19;
             // 
             // label9
             // 
@@ -383,7 +384,7 @@ namespace suicide_overview.src.view
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cantPopulation);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ageTextSup);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -441,7 +442,7 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ageTextSup;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox cantPopulation;
         private System.Windows.Forms.Label label10;
