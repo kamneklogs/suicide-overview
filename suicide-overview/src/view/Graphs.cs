@@ -8,21 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 namespace suicide_overview.src.view
 {
-    public partial class Graphs : UserControl
+    internal partial class Graphs : UserControl
     {
-        public Graphs()
+        MasterClass mc;
+        public Graphs(MasterClass mc)
         {
+            InitializeComponent();
+
+            this.mc = mc;
 
         }
 
-        private void viewBarGraphic_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            viewGraphic.Controls.Clear();
-            GraphicBar1 gb = new GraphicBar1();
-            viewGraphic.Controls.Add(gb);
-          
+            graphViewer.Controls.Clear();
+          GraphicBar1 gb = new GraphicBar1(mc);
+
+            graphViewer.Controls.Add(gb);
         }
     }
 }

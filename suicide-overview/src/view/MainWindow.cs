@@ -1,21 +1,19 @@
-﻿using suicide_overview.src.view;
+﻿using suicide_overview.src.model;
+using suicide_overview.src.view;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace suicide_overview
 {
     public partial class MainWindow : Form
     {
+        private MasterClass mc;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            mc = new MasterClass();
         }
 
         private void RunChange_Click(object sender, EventArgs e)
@@ -24,24 +22,28 @@ namespace suicide_overview
 
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
             mainPane.Controls.Clear();
-            Graphs gr = new Graphs();
+            Graphs gr = new Graphs(mc);
+
             mainPane.Controls.Add(gr);
         }
 
         private void viewColumnsReports_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             mainPane.Controls.Clear();
-            ColumnsReports cr = new ColumnsReports();
+            RecordsViewer cr = new RecordsViewer();
             mainPane.Controls.Add(cr);
         }
 
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             mainPane.Controls.Clear();
-            Graphs br = new Graphs();
+            Graphs br = new Graphs(mc);
             mainPane.Controls.Add(br);
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
         }
     }
 }

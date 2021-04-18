@@ -30,12 +30,11 @@ namespace suicide_overview
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.viewColumnsReports = new System.Windows.Forms.LinkLabel();
-            this.linkToGraphs = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.mainPane = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.mainPane.SuspendLayout();
             this.SuspendLayout();
@@ -44,34 +43,33 @@ namespace suicide_overview
             // 
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.viewColumnsReports);
-            this.panel1.Controls.Add(this.linkToGraphs);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(171, 426);
             this.panel1.TabIndex = 0;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(14, 108);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(123, 13);
+            this.linkLabel1.TabIndex = 4;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Ver gráficos estadísticos";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
+            // 
             // viewColumnsReports
             // 
             this.viewColumnsReports.AutoSize = true;
-            this.viewColumnsReports.Location = new System.Drawing.Point(17, 81);
+            this.viewColumnsReports.Location = new System.Drawing.Point(14, 73);
             this.viewColumnsReports.Name = "viewColumnsReports";
-            this.viewColumnsReports.Size = new System.Drawing.Size(127, 13);
+            this.viewColumnsReports.Size = new System.Drawing.Size(87, 13);
             this.viewColumnsReports.TabIndex = 3;
             this.viewColumnsReports.TabStop = true;
-            this.viewColumnsReports.Text = "Ver reportes de columnas";
+            this.viewColumnsReports.Text = "Visor de registros";
             this.viewColumnsReports.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.viewColumnsReports_LinkClicked);
-            // 
-            // linkToGraphs
-            // 
-            this.linkToGraphs.AutoSize = true;
-            this.linkToGraphs.Location = new System.Drawing.Point(14, 55);
-            this.linkToGraphs.Name = "linkToGraphs";
-            this.linkToGraphs.Size = new System.Drawing.Size(95, 13);
-            this.linkToGraphs.TabIndex = 2;
-            this.linkToGraphs.TabStop = true;
-            this.linkToGraphs.Text = "Cargar información";
-            this.linkToGraphs.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
             // 
             // label2
             // 
@@ -101,17 +99,6 @@ namespace suicide_overview
             this.label1.TabIndex = 0;
             this.label1.Text = "Bienvenidos";
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(14, 108);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(123, 13);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Ver gráficos estadísticos";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,6 +108,7 @@ namespace suicide_overview
             this.Controls.Add(this.panel1);
             this.Name = "MainWindow";
             this.Text = "Suicide Overview Reports";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.mainPane.ResumeLayout(false);
@@ -134,7 +122,6 @@ namespace suicide_overview
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel mainPane;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkToGraphs;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel viewColumnsReports;
         private System.Windows.Forms.LinkLabel linkLabel1;

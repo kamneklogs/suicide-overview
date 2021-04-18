@@ -51,11 +51,11 @@
     <Compile Include="src\model\Loader.cs" />
     <Compile Include="src\model\MasterClass.cs" />
     <Compile Include="src\model\Record.cs" />
-    <Compile Include="src\view\ColumnsReports.cs">
+    <Compile Include="src\view\RecordsViewer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="src\view\ColumnsReports.Designer.cs">
-      <DependentUpon>ColumnsReports.cs</DependentUpon>
+    <Compile Include="src\view\RecordsViewer.Designer.cs">
+      <DependentUpon>RecordsViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="src\view\GraphicBar1.cs">
       <SubType>UserControl</SubType>
@@ -92,8 +92,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="src\view\ColumnsReports.resx">
-      <DependentUpon>ColumnsReports.cs</DependentUpon>
+    <EmbeddedResource Include="src\view\RecordsViewer.resx">
+      <DependentUpon>RecordsViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\view\GraphicBar1.resx">
       <DependentUpon>GraphicBar1.cs</DependentUpon>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace suicide_overview.src.view
 {
-    public partial class ColumnsReports : UserControl
+    public partial class RecordsViewer : UserControl
     {
-        public ColumnsReports()
+        public RecordsViewer()
         {
             InitializeComponent();
         }

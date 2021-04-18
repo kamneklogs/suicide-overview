@@ -54,15 +54,16 @@ namespace suicide_overview.src.model
             return result;
         }
 
-
         public List<Record> RecordsByGeneration(string generation)
         {
             List<Record> result = new List<Record>();
 
-
             foreach (Record item in AllRecords())
             {
-
+                if (item.Equals(generation))
+                {
+                    result.Add(item);
+                }
             }
 
             return result;

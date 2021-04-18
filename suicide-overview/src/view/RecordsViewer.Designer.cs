@@ -1,7 +1,7 @@
 ﻿
 namespace suicide_overview.src.view
 {
-    partial class ColumnsReports
+    partial class RecordsViewer
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -35,19 +35,19 @@ namespace suicide_overview.src.view
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 24);
+            this.label1.Location = new System.Drawing.Point(22, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Reporte de columnas";
+            this.label1.Text = "Registros";
             // 
-            // ColumnsReports
+            // RecordsViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Controls.Add(this.label1);
-            this.Name = "ColumnsReports";
+            this.Name = "RecordsViewer";
             this.Size = new System.Drawing.Size(599, 426);
             this.ResumeLayout(false);
             this.PerformLayout();

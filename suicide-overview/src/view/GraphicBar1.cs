@@ -1,24 +1,18 @@
 ﻿using suicide_overview.src.model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace suicide_overview.src.view
 {
-    public partial class GraphicBar1 : UserControl
+    internal partial class GraphicBar1 : UserControl
     {
         private MasterClass mc;
-        public GraphicBar1()
+
+        public GraphicBar1(MasterClass mc)
         {
             InitializeComponent();
-            mc = new MasterClass();
+            this.mc = mc;
         }
 
         private void graphicBar_Load(object sender, EventArgs e)
@@ -30,7 +24,7 @@ namespace suicide_overview.src.view
 
             chart1.Titles.Add("Muertes de hombres y mujeres a través de los años a nivel mundial");
 
-            for(int i=0; i < series.Length; i++)
+            for (int i = 0; i < series.Length; i++)
             {
                 //titulos
                 Series sr = chart1.Series.Add(series[i]);
@@ -38,7 +32,7 @@ namespace suicide_overview.src.view
                 //cantidades
                 sr.Label = puntos[i].ToString();
 
-                sr.Points.Add( puntos[i]);
+                sr.Points.Add(puntos[i]);
             }
         }
     }
