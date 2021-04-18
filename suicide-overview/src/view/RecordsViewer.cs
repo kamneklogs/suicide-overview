@@ -177,33 +177,30 @@ namespace suicide_overview.src.view
 
         public void GenderOption()
         {
-            try
+            if (!(maleButton.Checked) && !(femaleButton.Checked))
             {
-                if (maleButton.Checked)
+                throw new Exception("You must select the type of gender");
+            }
+            if (maleButton.Checked)
+            {
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                 {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                    if ((dataGridView1.Rows[i].Cells[6]).Equals("female"))
                     {
-                        if ((dataGridView1.Rows[i].Cells[6]).Equals("female"))
-                        {
-                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                        }
-                    }
-                }
-                else if (femaleButton.Checked)
-                {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                    {
-                        if ((dataGridView1.Rows[i].Cells[6]).Equals("male"))
-                        {
-                            dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-                        }
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
                     }
                 }
             }
-            catch (Exception ex)
+            else if (femaleButton.Checked)
             {
-                MessageBox.Show("you must select only one type of gender");
-            }
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    if ((dataGridView1.Rows[i].Cells[6]).Equals("male"))
+                    {
+                        dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+                    }
+                }
+            }   
 
         }
 

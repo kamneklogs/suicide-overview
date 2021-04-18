@@ -46,8 +46,6 @@ namespace suicide_overview.src.view
             this.yearText = new System.Windows.Forms.TextBox();
             this.ageTextInf = new System.Windows.Forms.TextBox();
             this.numberSuices = new System.Windows.Forms.TextBox();
-            this.maleButton = new System.Windows.Forms.RadioButton();
-            this.femaleButton = new System.Windows.Forms.RadioButton();
             this.generationText = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -63,6 +61,8 @@ namespace suicide_overview.src.view
             this.label10 = new System.Windows.Forms.Label();
             this.ratioText = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.femaleButton = new System.Windows.Forms.CheckBox();
+            this.maleButton = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -218,28 +218,6 @@ namespace suicide_overview.src.view
             this.numberSuices.Size = new System.Drawing.Size(100, 20);
             this.numberSuices.TabIndex = 7;
             // 
-            // maleButton
-            // 
-            this.maleButton.AutoSize = true;
-            this.maleButton.Location = new System.Drawing.Point(162, 88);
-            this.maleButton.Name = "maleButton";
-            this.maleButton.Size = new System.Drawing.Size(48, 17);
-            this.maleButton.TabIndex = 8;
-            this.maleButton.TabStop = true;
-            this.maleButton.Text = "Male";
-            this.maleButton.UseVisualStyleBackColor = true;
-            // 
-            // femaleButton
-            // 
-            this.femaleButton.AutoSize = true;
-            this.femaleButton.Location = new System.Drawing.Point(162, 111);
-            this.femaleButton.Name = "femaleButton";
-            this.femaleButton.Size = new System.Drawing.Size(59, 17);
-            this.femaleButton.TabIndex = 9;
-            this.femaleButton.TabStop = true;
-            this.femaleButton.Text = "Female";
-            this.femaleButton.UseVisualStyleBackColor = true;
-            // 
             // generationText
             // 
             this.generationText.FormattingEnabled = true;
@@ -311,7 +289,7 @@ namespace suicide_overview.src.view
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(149, 69);
+            this.label7.Location = new System.Drawing.Point(137, 69);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(110, 13);
             this.label7.TabIndex = 17;
@@ -374,11 +352,33 @@ namespace suicide_overview.src.view
             this.label11.TabIndex = 24;
             this.label11.Text = "Ingrese el ratio:";
             // 
+            // femaleButton
+            // 
+            this.femaleButton.AutoSize = true;
+            this.femaleButton.Location = new System.Drawing.Point(152, 108);
+            this.femaleButton.Name = "femaleButton";
+            this.femaleButton.Size = new System.Drawing.Size(60, 17);
+            this.femaleButton.TabIndex = 25;
+            this.femaleButton.Text = "Female";
+            this.femaleButton.UseVisualStyleBackColor = true;
+            // 
+            // maleButton
+            // 
+            this.maleButton.AutoSize = true;
+            this.maleButton.Location = new System.Drawing.Point(152, 85);
+            this.maleButton.Name = "maleButton";
+            this.maleButton.Size = new System.Drawing.Size(49, 17);
+            this.maleButton.TabIndex = 26;
+            this.maleButton.Text = "Male";
+            this.maleButton.UseVisualStyleBackColor = true;
+            // 
             // RecordsViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.maleButton);
+            this.Controls.Add(this.femaleButton);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.ratioText);
             this.Controls.Add(this.label10);
@@ -394,8 +394,6 @@ namespace suicide_overview.src.view
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.generationText);
-            this.Controls.Add(this.femaleButton);
-            this.Controls.Add(this.maleButton);
             this.Controls.Add(this.numberSuices);
             this.Controls.Add(this.ageTextInf);
             this.Controls.Add(this.yearText);
@@ -431,8 +429,6 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.TextBox yearText;
         private System.Windows.Forms.TextBox ageTextInf;
         private System.Windows.Forms.TextBox numberSuices;
-        private System.Windows.Forms.RadioButton maleButton;
-        private System.Windows.Forms.RadioButton femaleButton;
         private System.Windows.Forms.ComboBox generationText;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -448,5 +444,7 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox ratioText;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.CheckBox femaleButton;
+        private System.Windows.Forms.CheckBox maleButton;
     }
 }
