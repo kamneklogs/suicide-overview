@@ -43,22 +43,22 @@ The languague used in this program is C#
 - Graph interface
 <img src="/img/Sc4.png" width = 600>
 
-- Graph 1
+- Graph 1: Male and female suicides globally
 <img src="/img/Sc5.png" width = 600>
 
-- Graph 2:
+- Graph 2: Male suicides given a country
 <img src="/img/Sc6.png" width = 600>
 
-- Graph 3:
+- Graph 3: Female suicides given a country
 <img src="/img/Sc7.png" width = 600>
 
-- Graph 4:
+- Graph 4: Suicides according to a country and a year
 <img src="/img/Sc8.png" width = 600>
 
-- Graph 5:
+- Graph 5: Suicides of generations given a country
 <img src="/img/Sc9.png" width = 600>
 
-Demo video [HERE]()
+Demo video v 1.0 [HERE]()
 
 
 
