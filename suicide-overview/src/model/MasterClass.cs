@@ -201,14 +201,10 @@ namespace suicide_overview.src.model
             return count;
         }
 
+        //Cuenta de
         public int DeathsCountByGeneration(string generation)
         {
-            int count = 0;
-
-            foreach (Record item in RecordsByGeneration(generation))
-            {
-                count++;
-            }
+            int count = RecordsByGeneration(generation).Count;
 
             return count;
         }
