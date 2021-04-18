@@ -35,7 +35,14 @@ namespace suicide_overview.src.model
         //Retorna lista de todos los registros de suicidio en un pais dado
         public List<Record> RecordsByCountry(string country)
         {
-            return countries[country];
+            try
+            {
+                return countries[country];
+            }
+            catch (System.Exception e)
+            {
+                throw new System.Exception("inexist country");
+            }
         }
 
         //Retorna lista de todos los registros de muerte en un pais y año dados

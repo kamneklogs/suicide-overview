@@ -18,6 +18,8 @@
 
         public string Generation { get; set; }
 
+        public bool ToAdd { get; set; }
+
         public Record(int year, string sex, int ageLower, int ageUpper, int suicide_no, int population, double ratio, string generation)
         {
             Year = year;
@@ -28,6 +30,8 @@
             Population = population;
             Ratio = ratio;
             Generation = generation;
+
+            ToAdd = true;
         }
     }
 }
