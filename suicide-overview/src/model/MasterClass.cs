@@ -117,7 +117,7 @@ namespace suicide_overview.src.model
             return result;
         }
 
-        //Retorna lista de todos los registros de suicidio en una generacion, pais y año dada
+        //Retorna lista de todos los registros de suicidio en una generacion, pais, año y genero dada
         public List<Record> RecordsByGeneration(string generation, string country, int year, string sex)
         {
             List<Record> result = new List<Record>();
@@ -177,6 +177,22 @@ namespace suicide_overview.src.model
             foreach (Record item in RecordsByCountry(country, year))
             {
                 if (item.Sex.Equals(gender))
+                {
+                    count += item.Suicide_no;
+                }
+            }
+
+            return count;
+        }
+
+        //cuenta de suicidios dada un genero, pais, año y generación dada
+        public int DeathsCountByGender(string gender, string country, int year, string generation)
+        {
+            int count = 0;
+
+            foreach (Record item in RecordsByCountry(country, year))
+            {
+                if (item.Sex.Equals(gender) && item.Generation.Equals(generation))
                 {
                     count += item.Suicide_no;
                 }
