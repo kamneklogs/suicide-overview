@@ -171,13 +171,13 @@ namespace suicide_overview.src.view
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(174, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Enter country:";
+            this.label2.Text = "Enter country (Colombia by default):";
             // 
             // yearText
             // 
-            this.yearText.Location = new System.Drawing.Point(14, 119);
+            this.yearText.Location = new System.Drawing.Point(14, 120);
             this.yearText.Name = "yearText";
             this.yearText.Size = new System.Drawing.Size(100, 20);
             this.yearText.TabIndex = 5;
@@ -191,7 +191,7 @@ namespace suicide_overview.src.view
             "Boomers",
             "G.I. Generation",
             "Millenials"});
-            this.generationText.Location = new System.Drawing.Point(270, 95);
+            this.generationText.Location = new System.Drawing.Point(269, 96);
             this.generationText.Name = "generationText";
             this.generationText.Size = new System.Drawing.Size(121, 21);
             this.generationText.TabIndex = 10;
@@ -212,7 +212,7 @@ namespace suicide_overview.src.view
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;
-            this.button2.Text = "Upload";
+            this.button2.Text = "Apply";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.loadFilters);
             // 

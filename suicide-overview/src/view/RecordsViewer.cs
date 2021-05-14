@@ -14,20 +14,45 @@ namespace suicide_overview.src.view
             //this.masterClass = masterClass;
             this.masterClass = masterClass;
             InitializeComponent();
-        }
 
-        public void loadDataTable(string country)
-        {
             int index = 0;
             Dictionary<string, List<Record>> dictionary = masterClass.countries;
-
-            List<Record> records = masterClass.RecordsByCountry(country);
+            List<Record> records;
+            records = masterClass.RecordsByCountry("Colombia");
 
             for (int i = 0; i < records.Count; i++)
             {
                 Record record = records[i];
                 index = dataGridView1.Rows.Add();
-                dataGridView1.Rows[index].Cells[0].Value = country;
+                dataGridView1.Rows[index].Cells[0].Value = "Colombia";
+                dataGridView1.Rows[index].Cells[1].Value = record.Year;
+                dataGridView1.Rows[index].Cells[2].Value = record.AgeLower;
+                dataGridView1.Rows[index].Cells[3].Value = record.AgeUpper;
+                dataGridView1.Rows[index].Cells[4].Value = record.Generation;
+                dataGridView1.Rows[index].Cells[5].Value = record.Sex;
+                dataGridView1.Rows[index].Cells[6].Value = record.Suicide_no;
+                dataGridView1.Rows[index].Cells[7].Value = record.Population;
+                dataGridView1.Rows[index].Cells[8].Value = record.Ratio;
+            }
+        }
+
+        public void loadDataTable(string country)
+        {
+            dataGridView1.Rows.Clear();
+
+            int index = 0;
+            Dictionary<string, List<Record>> dictionary = masterClass.countries;
+            List<Record> records;
+
+            string currentCountry = (country.Equals("")) ? "Colombia" : country;
+
+            records = masterClass.RecordsByCountry(currentCountry);
+
+            for (int i = 0; i < records.Count; i++)
+            {
+                Record record = records[i];
+                index = dataGridView1.Rows.Add();
+                dataGridView1.Rows[index].Cells[0].Value = currentCountry;
                 dataGridView1.Rows[index].Cells[1].Value = record.Year;
                 dataGridView1.Rows[index].Cells[2].Value = record.AgeLower;
                 dataGridView1.Rows[index].Cells[3].Value = record.AgeUpper;
@@ -41,7 +66,7 @@ namespace suicide_overview.src.view
 
         private void loadFilters(object sender, EventArgs e)
         {
-            //dataGridView1.Rows.Clear();
+            dataGridView1.Rows.Clear();
 
             try
             {
@@ -121,6 +146,7 @@ namespace suicide_overview.src.view
             femaleButton.Checked = false;
             generationText.Text = "";
             yearText.Text = "";
+
             loadDataTable(CountryText.Text);
         }
     }

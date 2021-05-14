@@ -50,7 +50,7 @@ namespace suicide_overview.src.view
                 {
                     MessageBox.Show("Please fill the field!");
                 }
-            }catch(Exception exc)
+            }catch(Exception)
             {
                 clearBtn.Enabled = false;
                 viewGraphic.Enabled = true;

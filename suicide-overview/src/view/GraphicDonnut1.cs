@@ -50,7 +50,7 @@ namespace suicide_overview.src.view
                     MessageBox.Show("One of the fields is empty. Please fill all the fields");
                 }
             }
-            catch (Exception exc)
+            catch (Exception)
             {
                 MessageBox.Show("Make sure the country you entered is well written");
             }

@@ -41,7 +41,7 @@ namespace suicide_overview.src.view
                 {
                     MessageBox.Show("One of the fields is empty. Please  enter all the countries");
                 }
-            } catch (Exception exc)
+            } catch (Exception)
             {
                 MessageBox.Show("Make sure the countries you entered are well written ");
             }

@@ -13,7 +13,20 @@ namespace suicide_overview.src.model
 
             Loader.LoadData(countries);
 
-            MessageBox.Show("Sin errores");
+            MessageBox.Show("Load successful");
+        }
+
+        //Retorna lista de strings con todos los paises
+        public List<string> getAllCountries()
+        {
+            List<string> keysList = new List<string>();
+
+            foreach (string item in countries.Keys)
+            {
+                keysList.Add(item);
+            }
+
+            return keysList;
         }
 
         //retorna todos los registros de suicidio sin clasificación por pais
@@ -39,9 +52,9 @@ namespace suicide_overview.src.model
             {
                 return countries[country];
             }
-            catch (System.Exception e)
+            catch (System.Exception)
             {
-                throw new System.Exception("inexist country");
+                throw new System.Exception("Error 404: Country not found");
             }
         }
 
