@@ -31,7 +31,7 @@ namespace suicide_overview
             mainPane.Controls.Add(cr);
         }
 
-        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        private void viewGraphicalReport(object sender, LinkLabelLinkClickedEventArgs e)
         {
             mainPane.Controls.Clear();
             Graphs br = new Graphs(mc);
