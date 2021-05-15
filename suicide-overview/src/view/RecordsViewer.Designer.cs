@@ -214,7 +214,7 @@ namespace suicide_overview.src.view
             this.button2.TabIndex = 12;
             this.button2.Text = "Apply";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.loadFilters);
+            this.button2.Click += new System.EventHandler(this.applyFilters);
             // 
             // label4
             // 
