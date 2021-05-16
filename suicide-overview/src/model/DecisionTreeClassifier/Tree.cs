@@ -1,24 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace suicide_overview.src.model.DecisionTreeClassifier
 {
-    class Tree
+    internal class Tree
     {
-        List<Dictionary<string, Object>> values;
+        private List<Dictionary<string, Object>> values;
 
-        Node root;
+        private Node root;
 
-        Dictionary<string, int> variables;
+        private Dictionary<string, int> variables;
 
-        Tree(Dictionary<string,int> variables)
+        private Tree(Dictionary<string, int> variables)
         {
             this.variables = variables;
-        }    
-
+        }
 
         public void training(List<Dictionary<string, Object>> values)
         {
@@ -26,6 +22,5 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
 
             root = new Node();
         }
-
     }
 }
