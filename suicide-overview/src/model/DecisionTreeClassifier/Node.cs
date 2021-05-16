@@ -16,9 +16,16 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
 
         public Dictionary<string, int> variables { get; set; }
 
-        public Node(Dictionary<string, int> variables)
+        public string targetVariableName { get; set; }
+        public HashSet<string> targetValues { get; set; }
+
+        public Node(Dictionary<string, int> variables, string targetVariableName, HashSet<string> targetValues)
         {
             this.variables = variables;
+
+            this.targetValues = targetValues;
+
+            this.targetVariableName = targetVariableName;
         }
 
         public void training(List<Dictionary<string, object>> values)
@@ -47,9 +54,9 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
                     }
                     else
                     {
-                        double result = (double)dictionary[d.variableName];
+                        string result = (string)dictionary[d.variableName];
 
-                        if (result < (double)d.value)
+                        if (result.Equals(d.value))
                         {
                             trueList.Add(dictionary);
                         }
@@ -59,7 +66,38 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
                         }
                     }
                 }
+
+                //verify
+                double giniTrue = calculateGini(trueList);
+                double giniFalse = calculateGini(falseList);
+
+                double giniTotal = (giniTrue * (trueList.Count / values.Count)) + (giniFalse * (falseList.Count / values.Count));
             }
+        }
+
+        //J G(k) = Σ P(i) * (1 - P(i)) i=1
+        private double calculateGini(List<Dictionary<string, object>> list)
+        {
+            double result = 0;
+
+            Dictionary<string, int> counts = new Dictionary<string, int>();
+
+            foreach (string tv in targetValues)
+            {
+                counts[tv] = 0;
+            }
+
+            foreach (Dictionary<string, object> item in list)
+            {
+                counts[(string)item[targetVariableName]]++;
+            }
+
+            foreach (string item in targetValues)
+            {
+                result += (counts[item] / list.Count) * (1 - (counts[item] / list.Count));
+            }
+
+            return result;
         }
 
         private List<Decision> generateDecisions(List<Dictionary<string, object>> values)
@@ -92,19 +130,19 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
                 }
                 else
                 {
-                    HashSet<object> variableValues = new HashSet<object>();
+                    HashSet<string> variableValues = new HashSet<string>();
 
                     foreach (Dictionary<string, object> dictionary in values)
                     {
-                        if (!variableValues.Contains(dictionary[variableName]))
+                        if (!variableValues.Contains((string)dictionary[variableName]))
                         {
-                            variableValues.Add(dictionary[variableName]);
+                            variableValues.Add((string)dictionary[variableName]);
                         }
                     }
 
                     if (variableValues.Count > 1)
 
-                        foreach (object item in variableValues)
+                        foreach (string item in variableValues)
                         {
                             decisionsList.Add(new Decision(variableName, 1, item));
                         }
