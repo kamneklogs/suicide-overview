@@ -9,7 +9,6 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
         public bool isLeaf { get; set; }
 
         public Decision decision { get; set; }
-        public double giniValue { get; set; }
 
         public Node trueNode { get; set; }
         public Node falseNode { get; set; }
@@ -31,6 +30,11 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
         public void training(List<Dictionary<string, object>> values)
         {
             List<Decision> decisionsList = generateDecisions(values);
+            double giniValue = calculateGini(values);
+            double minGini = 1;
+            Decision minGiniDecision = null;
+            List<Dictionary<string, object>> minGiniTrueList = null;
+            List<Dictionary<string, object>> minGiniFalseList = null;
 
             foreach (Decision d in decisionsList)
             {
@@ -72,6 +76,29 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
                 double giniFalse = calculateGini(falseList);
 
                 double giniTotal = (giniTrue * (trueList.Count / values.Count)) + (giniFalse * (falseList.Count / values.Count));
+                if (giniTotal < minGini)
+                {
+                    minGini = giniTotal;
+                    minGiniDecision = d;
+                    minGiniTrueList = trueList;
+                    minGiniFalseList = falseList;
+                }
+            }
+
+            if (giniValue >= minGini)
+            {
+                trueNode = new Node(variables, targetVariableName, targetValues);
+                falseNode = new Node(variables, targetVariableName, targetValues);
+
+                trueNode.training(minGiniTrueList);
+                falseNode.training(minGiniFalseList);
+
+                decision = minGiniDecision;
+                isLeaf = false;
+            }
+            else
+            {
+                isLeaf = true;
             }
         }
 
