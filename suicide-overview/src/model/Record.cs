@@ -1,4 +1,6 @@
-﻿namespace suicide_overview.src.model
+﻿using System.Collections.Generic;
+
+namespace suicide_overview.src.model
 {
     internal class Record
     {
@@ -18,6 +20,8 @@
 
         public string Generation { get; set; }
 
+        public string Risk { get; set; }
+
         public bool ToAdd { get; set; }
 
         public Record(int year, string sex, int ageLower, int ageUpper, int suicide_no, int population, double ratio, string generation)
@@ -31,7 +35,32 @@
             Ratio = ratio;
             Generation = generation;
 
+            if (ratio < 20)
+            {
+                Risk = "Low risk";
+            }
+            else if (ratio < 40)
+            {
+                Risk = "Moderated risk";
+            }
+            else
+            {
+                Risk = "High risk ";
+            }
+
             ToAdd = true;
+        }
+
+        public Dictionary<string, object> getData()
+        {
+            Dictionary<string, object> data = new Dictionary<string, object>();
+
+            data.Add("Year", Year);
+            data.Add("Sex", Sex);
+            data.Add("Generation", Generation);
+            data.Add("Risk", Risk);
+
+            return data;
         }
     }
 }

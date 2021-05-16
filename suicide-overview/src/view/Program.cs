@@ -1,4 +1,5 @@
-﻿using suicide_overview.src.model.DecisionTreeClassifier;
+﻿using suicide_overview.src.model;
+using suicide_overview.src.model.DecisionTreeClassifier;
 using System;
 using System.Collections.Generic;
 
@@ -11,36 +12,35 @@ namespace suicide_overview
         /// </summary>
         [STAThread]
         private static void Main()
+
         {
+            MasterClass mc = new MasterClass();
 
+            List<Record> records = mc.RecordsByCountry("Republic of Korea");
 
-            //Para prueba
             List<Dictionary<string, object>> setToTraining = new List<Dictionary<string, object>>();
-          
-            setToTraining.Add(new Dictionary<string, object>() { { "color", "Green" }, { "diameter", 3 }, { "label", "Apple" } });
-            setToTraining.Add(new Dictionary<string, object>() { { "color", "Yellow" }, { "diameter", 3 }, { "label", "Apple" } });
-            setToTraining.Add(new Dictionary<string, object>() { { "color", "Red" }, { "diameter", 1 }, { "label", "Grape" } });
-            setToTraining.Add(new Dictionary<string, object>() { { "color", "Red" }, { "diameter", 1 }, { "label", "Grape" } });
-            setToTraining.Add(new Dictionary<string, object>() { { "color", "Yellow" }, { "diameter", 3 }, { "label", "Lemon" } });
-            setToTraining.Add(new Dictionary<string, object>() { { "color", "Yellow" }, { "diameter", 1 }, { "label", "Lemon" } });
+
+            for (int i = 0; i < records.Count; i++)
+            {
+                setToTraining.Add(records[i].getData());
+            }
 
             Dictionary<string, int> variables = new Dictionary<string, int>();
-            variables.Add("color", 1);
-            variables.Add("diameter", 0);
 
-            Tree myTree = new Tree(variables, "label");
+            variables.Add("Year", 0);
+            variables.Add("Sex", 1);
+            variables.Add("Generation", 1);
+
+            Tree myTree = new Tree(variables, "Risk");
 
             myTree.training(setToTraining);
 
-            Dictionary<string, double> p = myTree.Classifier(new Dictionary<string, object>() { { "color", "Yellow" }, { "diameter", 1 } });
+            Dictionary<string, double> p = myTree.Classifier(new Dictionary<string, object>() { { "Year", 2017 }, { "Sex", "male" }, { "Generation", "Millenials" } });
 
-            Console.WriteLine("Probabilidad de limon "+p["Lemon"]);
-            Console.WriteLine("Probabilidad de manzana " + p["Apple"]);
-            Console.WriteLine("Probabilidad de uva " + p["Grape"]);
-
-            myTree.printTree();
-
-            Console.ReadLine();
+            foreach (string item in p.Keys)
+            {
+                Console.WriteLine("Probabilidad de riesgo " + item + ": " + (p[item] * 100) + "%");
+            }
 
             //        Application.EnableVisualStyles();
             //          Application.SetCompatibleTextRenderingDefault(true);
