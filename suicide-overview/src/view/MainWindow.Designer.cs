@@ -30,18 +30,20 @@ namespace suicide_overview
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.viewColumnsReports = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.mainPane = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.mainPane.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.linkLabel2);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.viewColumnsReports);
             this.panel1.Controls.Add(this.label2);
@@ -49,6 +51,17 @@ namespace suicide_overview
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(171, 426);
             this.panel1.TabIndex = 0;
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(17, 147);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(72, 13);
+            this.linkLabel2.TabIndex = 5;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Risk simulator";
+            this.linkLabel2.Click += new System.EventHandler(this.loadSimulator);
             // 
             // linkLabel1
             // 
@@ -91,6 +104,15 @@ namespace suicide_overview
             this.mainPane.Size = new System.Drawing.Size(599, 426);
             this.mainPane.TabIndex = 1;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(216, 148);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(180, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Suicide rates overview 1985 to 2016";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -101,15 +123,6 @@ namespace suicide_overview
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome to the suicide database!";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(216, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Suicide rates overview 1985 to 2016";
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,7 +132,6 @@ namespace suicide_overview
             this.Controls.Add(this.panel1);
             this.Name = "MainWindow";
             this.Text = "Suicide Overview Reports";
-            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.mainPane.ResumeLayout(false);
@@ -137,6 +149,7 @@ namespace suicide_overview
         private System.Windows.Forms.LinkLabel viewColumnsReports;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }
 

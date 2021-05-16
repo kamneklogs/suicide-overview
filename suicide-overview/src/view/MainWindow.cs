@@ -1,6 +1,5 @@
 ﻿using suicide_overview.src.model;
 using suicide_overview.src.view;
-using System;
 using System.Windows.Forms;
 
 namespace suicide_overview
@@ -38,8 +37,11 @@ namespace suicide_overview
             mainPane.Controls.Add(br);
         }
 
-        private void MainWindow_Load(object sender, EventArgs e)
+        private void loadSimulator(object sender, System.EventArgs e)
         {
+            mainPane.Controls.Clear();
+            SimulatorWindow sw = new SimulatorWindow(mc);
+            mainPane.Controls.Add(sw);
         }
     }
 }
