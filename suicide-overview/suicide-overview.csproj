@@ -48,6 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="src\model\DecisionTreeClassifier\Decision.cs" />
+    <Compile Include="src\model\DecisionTreeClassifier\Node.cs" />
+    <Compile Include="src\model\DecisionTreeClassifier\Tree.cs" />
     <Compile Include="src\model\Loader.cs" />
     <Compile Include="src\model\MasterClass.cs" />
     <Compile Include="src\model\Record.cs" />

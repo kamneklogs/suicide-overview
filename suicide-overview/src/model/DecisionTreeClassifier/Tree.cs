@@ -13,7 +13,7 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
 
         public string targetVariableName { get; set; }
 
-        private Tree(Dictionary<string, int> variables, string targetVariableName)
+        public Tree(Dictionary<string, int> variables, string targetVariableName)
         {
             this.variables = variables;
 
@@ -34,7 +34,21 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
                 }
             }
 
-            root = new Node(variables);
+            root = new Node(variables, targetVariableName, targetValues);
+
+            root.training(values);
+        }
+
+        public Dictionary<string, double> Classifier(Dictionary<string, object> input)
+        {
+            Dictionary<string, double> probabilities = root.Classifier(input);
+
+            return probabilities;
+        }
+
+        public void printTree()
+        {
+            root.printTree("");
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace suicide_overview.src.model.DecisionTreeClassifier
 
@@ -18,6 +19,8 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
         public string targetVariableName { get; set; }
         public HashSet<string> targetValues { get; set; }
 
+        public Dictionary<string, double> Probabilities { get; set; }
+
         public Node(Dictionary<string, int> variables, string targetVariableName, HashSet<string> targetValues)
         {
             this.variables = variables;
@@ -25,13 +28,15 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
             this.targetValues = targetValues;
 
             this.targetVariableName = targetVariableName;
+
+            Probabilities = new Dictionary<string, double>();
         }
 
         public void training(List<Dictionary<string, object>> values)
         {
             List<Decision> decisionsList = generateDecisions(values);
             double giniValue = calculateGini(values);
-            double minGini = 1;
+            double minGini = 1.1;
             Decision minGiniDecision = null;
             List<Dictionary<string, object>> minGiniTrueList = null;
             List<Dictionary<string, object>> minGiniFalseList = null;
@@ -45,9 +50,9 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
                 {
                     if (d.typeVariable == 0)
                     {
-                        double result = (double)dictionary[d.variableName];
+                        double result = Convert.ToDouble(dictionary[d.variableName]);
 
-                        if (result < (double)d.value)
+                        if (result < Convert.ToDouble(d.value))
                         {
                             trueList.Add(dictionary);
                         }
@@ -75,7 +80,8 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
                 double giniTrue = calculateGini(trueList);
                 double giniFalse = calculateGini(falseList);
 
-                double giniTotal = (giniTrue * (trueList.Count / values.Count)) + (giniFalse * (falseList.Count / values.Count));
+                double giniTotal = (giniTrue * (Convert.ToDouble(trueList.Count) / Convert.ToDouble(values.Count))) + (giniFalse * (Convert.ToDouble(falseList.Count) / Convert.ToDouble(values.Count)));
+
                 if (giniTotal < minGini)
                 {
                     minGini = giniTotal;
@@ -85,7 +91,7 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
                 }
             }
 
-            if (giniValue >= minGini)
+            if (giniValue > minGini)
             {
                 trueNode = new Node(variables, targetVariableName, targetValues);
                 falseNode = new Node(variables, targetVariableName, targetValues);
@@ -99,6 +105,62 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
             else
             {
                 isLeaf = true;
+
+                Dictionary<string, int> counts = new Dictionary<string, int>();
+
+                foreach (string tv in targetValues)
+                {
+                    counts[tv] = 0;
+                }
+
+                foreach (Dictionary<string, object> item in values)
+                {
+                    counts[(string)item[targetVariableName]]++;
+                }
+
+                foreach (string tv in targetValues)
+                {
+                    Probabilities[tv] = (double)counts[tv] / (double)values.Count;
+                }
+            }
+        }
+
+        internal void printTree(string separador)
+        {
+            if (!isLeaf)
+            {
+                Console.WriteLine(separador + decision.toString());
+                trueNode.printTree(separador + "  ");
+
+                falseNode.printTree(separador + "  ");
+            }
+            else
+            {
+                foreach (string item in targetValues)
+                {
+                    Console.WriteLine(separador + "Probabilidad de " + item + ": " + (Probabilities[item] * 100) + "%\n");
+                }
+            }
+        }
+
+        internal Dictionary<string, double> Classifier(Dictionary<string, object> input)
+        {
+            if (isLeaf)
+                return Probabilities;
+
+            if (decision.typeVariable == 0)
+            {
+                if (Convert.ToDouble(input[decision.variableName]) < Convert.ToDouble(decision.value))
+                    return trueNode.Classifier(input);
+
+                return falseNode.Classifier(input);
+            }
+            else
+            {
+                if (((string)input[decision.variableName]).Equals((string)decision.value))
+                    return trueNode.Classifier(input);
+
+                return falseNode.Classifier(input);
             }
         }
 
@@ -107,11 +169,11 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
         {
             double result = 0;
 
-            Dictionary<string, int> counts = new Dictionary<string, int>();
+            Dictionary<string, double> counts = new Dictionary<string, double>();
 
             foreach (string tv in targetValues)
             {
-                counts[tv] = 0;
+                counts[tv] = 0.0;
             }
 
             foreach (Dictionary<string, object> item in list)
@@ -121,7 +183,7 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
 
             foreach (string item in targetValues)
             {
-                result += (counts[item] / list.Count) * (1 - (counts[item] / list.Count));
+                result += (counts[item] / Convert.ToDouble(list.Count)) * (1 - (counts[item] / Convert.ToDouble(list.Count)));
             }
 
             return result;
@@ -138,9 +200,9 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
 
                     foreach (Dictionary<string, object> dictionary in values)
                     {
-                        if (!variableValues.Contains((double)dictionary[variableName]))
+                        if (!variableValues.Contains(Convert.ToDouble(dictionary[variableName])))
                         {
-                            variableValues.Add((double)dictionary[variableName]);
+                            variableValues.Add(Convert.ToDouble(dictionary[variableName]));
                         }
                     }
 

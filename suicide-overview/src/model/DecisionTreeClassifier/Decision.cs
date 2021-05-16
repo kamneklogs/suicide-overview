@@ -14,5 +14,10 @@
             this.typeVariable = typeVariable;
             this.value = value;
         }
+
+        public string toString()
+        {
+            return "Nombre: " + variableName + " Tipo: " + typeVariable +  " Valor: " + value;
+        }
     }
 }
