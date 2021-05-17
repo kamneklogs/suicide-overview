@@ -1,4 +1,4 @@
-# Suicide-overview
+# Suicide-overview💀
 This software allows to know how high was the suicide rate of a country given a time and a generation, with the aim of associating these events to historical events that occurred at that time. 
 
 *Description:* Data set that records the suicide rate worldwide from 1985 to 2016. The data set consists of 12 columns and 27820 records. 
