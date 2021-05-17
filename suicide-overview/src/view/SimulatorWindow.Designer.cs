@@ -56,7 +56,7 @@ namespace suicide_overview.src.view
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(31, 86);
+            this.label2.Location = new System.Drawing.Point(32, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 1;
@@ -64,7 +64,7 @@ namespace suicide_overview.src.view
             // 
             // year
             // 
-            this.year.Location = new System.Drawing.Point(167, 105);
+            this.year.Location = new System.Drawing.Point(168, 158);
             this.year.Name = "year";
             this.year.Size = new System.Drawing.Size(100, 20);
             this.year.TabIndex = 4;
@@ -73,7 +73,7 @@ namespace suicide_overview.src.view
             // 
             this.femaleRB.AutoSize = true;
             this.femaleRB.ForeColor = System.Drawing.Color.White;
-            this.femaleRB.Location = new System.Drawing.Point(479, 86);
+            this.femaleRB.Location = new System.Drawing.Point(480, 139);
             this.femaleRB.Name = "femaleRB";
             this.femaleRB.Size = new System.Drawing.Size(59, 17);
             this.femaleRB.TabIndex = 5;
@@ -85,7 +85,7 @@ namespace suicide_overview.src.view
             // 
             this.maleRB.AutoSize = true;
             this.maleRB.ForeColor = System.Drawing.Color.White;
-            this.maleRB.Location = new System.Drawing.Point(479, 110);
+            this.maleRB.Location = new System.Drawing.Point(480, 163);
             this.maleRB.Name = "maleRB";
             this.maleRB.Size = new System.Drawing.Size(48, 17);
             this.maleRB.TabIndex = 6;
@@ -97,7 +97,7 @@ namespace suicide_overview.src.view
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(176, 85);
+            this.label3.Location = new System.Drawing.Point(177, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 7;
@@ -107,7 +107,7 @@ namespace suicide_overview.src.view
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(311, 86);
+            this.label4.Location = new System.Drawing.Point(312, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 8;
@@ -115,7 +115,7 @@ namespace suicide_overview.src.view
             // 
             // runSimulation
             // 
-            this.runSimulation.Location = new System.Drawing.Point(206, 241);
+            this.runSimulation.Location = new System.Drawing.Point(210, 264);
             this.runSimulation.Name = "runSimulation";
             this.runSimulation.Size = new System.Drawing.Size(140, 23);
             this.runSimulation.TabIndex = 9;
@@ -127,7 +127,7 @@ namespace suicide_overview.src.view
             // 
             this.countries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.countries.FormattingEnabled = true;
-            this.countries.Location = new System.Drawing.Point(20, 105);
+            this.countries.Location = new System.Drawing.Point(21, 158);
             this.countries.Name = "countries";
             this.countries.Size = new System.Drawing.Size(121, 21);
             this.countries.TabIndex = 10;
@@ -136,7 +136,7 @@ namespace suicide_overview.src.view
             // 
             this.generation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.generation.FormattingEnabled = true;
-            this.generation.Location = new System.Drawing.Point(299, 104);
+            this.generation.Location = new System.Drawing.Point(300, 157);
             this.generation.Name = "generation";
             this.generation.Size = new System.Drawing.Size(121, 21);
             this.generation.TabIndex = 11;
@@ -145,7 +145,7 @@ namespace suicide_overview.src.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.generation);
             this.Controls.Add(this.countries);
             this.Controls.Add(this.runSimulation);
