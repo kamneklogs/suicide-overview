@@ -18,7 +18,7 @@ The languague used in this program is C#
 - Microsoft Visual Studio 2019
 
 # Documentation
-- Engineering method click [HERE](/docs/MetodoIngenieria.pdf)
+- Engineering method click [HERE](/docs/MetodoDeIngenieria.pdf)
 - Functional and not functional Requirements click [HERE](docs/FunctionalNotFunctionalRequirements.pdf)
 - Class diagram click [HERE](docs/SuicideProject_DiagramClass.pdf)
 - Objects diagram click [HERE](docs/ObjectDiagram.PNG)
