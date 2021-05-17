@@ -22,8 +22,8 @@ The languague used in this program is C#
 - Functional and not functional Requirements click [HERE](docs/FunctionalNotFunctionalRequirements.pdf)
 - Class diagram click [HERE](docs/SuicideProject_DiagramClass.pdf)
 - Objects diagram click [HERE](docs/ObjectDiagram.PNG)
-- Diagram of sequence filters(docs/Filters.pdf)
-- Diagram of sequence graphs (docs/Graficos.pdf)
+- Diagram of sequence filters [HERE](docs/Filters.pdf)
+- Diagram of sequence graphs [HERE](docs/Graficos.pdf)
 
 # References:
 
