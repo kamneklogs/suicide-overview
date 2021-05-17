@@ -31,6 +31,10 @@ namespace suicide_overview
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.riskSimulator = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.viewGraphs = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.viewColumnsReports = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,10 +44,6 @@ namespace suicide_overview
             this.tittleBar = new System.Windows.Forms.Panel();
             this.minimizedButton = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.viewGraphs = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.riskSimulator = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.mainPane.SuspendLayout();
@@ -62,10 +62,64 @@ namespace suicide_overview
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.viewColumnsReports);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(183, 461);
+            this.panel1.Size = new System.Drawing.Size(183, 466);
             this.panel1.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel5.Location = new System.Drawing.Point(0, 197);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(5, 30);
+            this.panel5.TabIndex = 9;
+            // 
+            // riskSimulator
+            // 
+            this.riskSimulator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.riskSimulator.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.riskSimulator.FlatAppearance.BorderSize = 0;
+            this.riskSimulator.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.riskSimulator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.riskSimulator.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.riskSimulator.ForeColor = System.Drawing.Color.White;
+            this.riskSimulator.Image = ((System.Drawing.Image)(resources.GetObject("riskSimulator.Image")));
+            this.riskSimulator.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.riskSimulator.Location = new System.Drawing.Point(5, 197);
+            this.riskSimulator.Name = "riskSimulator";
+            this.riskSimulator.Size = new System.Drawing.Size(178, 30);
+            this.riskSimulator.TabIndex = 10;
+            this.riskSimulator.Text = "          Simulator";
+            this.riskSimulator.UseVisualStyleBackColor = false;
+            this.riskSimulator.Click += new System.EventHandler(this.RiskSimulator_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel4.Location = new System.Drawing.Point(0, 163);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(5, 30);
+            this.panel4.TabIndex = 7;
+            // 
+            // viewGraphs
+            // 
+            this.viewGraphs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.viewGraphs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.viewGraphs.FlatAppearance.BorderSize = 0;
+            this.viewGraphs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.viewGraphs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewGraphs.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewGraphs.ForeColor = System.Drawing.Color.White;
+            this.viewGraphs.Image = ((System.Drawing.Image)(resources.GetObject("viewGraphs.Image")));
+            this.viewGraphs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.viewGraphs.Location = new System.Drawing.Point(5, 163);
+            this.viewGraphs.Name = "viewGraphs";
+            this.viewGraphs.Size = new System.Drawing.Size(178, 30);
+            this.viewGraphs.TabIndex = 8;
+            this.viewGraphs.Text = "          View graphs";
+            this.viewGraphs.UseVisualStyleBackColor = false;
+            this.viewGraphs.Click += new System.EventHandler(this.ViewGraphs_Click);
             // 
             // panel3
             // 
@@ -148,7 +202,7 @@ namespace suicide_overview
             this.tittleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.tittleBar.Location = new System.Drawing.Point(0, 0);
             this.tittleBar.Name = "tittleBar";
-            this.tittleBar.Size = new System.Drawing.Size(800, 30);
+            this.tittleBar.Size = new System.Drawing.Size(800, 25);
             this.tittleBar.TabIndex = 2;
             this.tittleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TittleBar_MouseDown);
             // 
@@ -156,9 +210,9 @@ namespace suicide_overview
             // 
             this.minimizedButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizedButton.Image = ((System.Drawing.Image)(resources.GetObject("minimizedButton.Image")));
-            this.minimizedButton.Location = new System.Drawing.Point(740, 3);
+            this.minimizedButton.Location = new System.Drawing.Point(745, 2);
             this.minimizedButton.Name = "minimizedButton";
-            this.minimizedButton.Size = new System.Drawing.Size(22, 22);
+            this.minimizedButton.Size = new System.Drawing.Size(20, 20);
             this.minimizedButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.minimizedButton.TabIndex = 1;
             this.minimizedButton.TabStop = false;
@@ -168,67 +222,13 @@ namespace suicide_overview
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(771, 3);
+            this.closeButton.Location = new System.Drawing.Point(774, 2);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(22, 22);
+            this.closeButton.Size = new System.Drawing.Size(20, 20);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.closeButton.TabIndex = 0;
             this.closeButton.TabStop = false;
             this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel4.Location = new System.Drawing.Point(0, 163);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 30);
-            this.panel4.TabIndex = 7;
-            // 
-            // viewGraphs
-            // 
-            this.viewGraphs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.viewGraphs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.viewGraphs.FlatAppearance.BorderSize = 0;
-            this.viewGraphs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.viewGraphs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewGraphs.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewGraphs.ForeColor = System.Drawing.Color.White;
-            this.viewGraphs.Image = ((System.Drawing.Image)(resources.GetObject("viewGraphs.Image")));
-            this.viewGraphs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.viewGraphs.Location = new System.Drawing.Point(5, 163);
-            this.viewGraphs.Name = "viewGraphs";
-            this.viewGraphs.Size = new System.Drawing.Size(178, 30);
-            this.viewGraphs.TabIndex = 8;
-            this.viewGraphs.Text = "          View graphs";
-            this.viewGraphs.UseVisualStyleBackColor = false;
-            this.viewGraphs.Click += new System.EventHandler(this.ViewGraphs_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel5.Location = new System.Drawing.Point(0, 197);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 30);
-            this.panel5.TabIndex = 9;
-            // 
-            // riskSimulator
-            // 
-            this.riskSimulator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.riskSimulator.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.riskSimulator.FlatAppearance.BorderSize = 0;
-            this.riskSimulator.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.riskSimulator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.riskSimulator.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.riskSimulator.ForeColor = System.Drawing.Color.White;
-            this.riskSimulator.Image = ((System.Drawing.Image)(resources.GetObject("riskSimulator.Image")));
-            this.riskSimulator.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.riskSimulator.Location = new System.Drawing.Point(5, 197);
-            this.riskSimulator.Name = "riskSimulator";
-            this.riskSimulator.Size = new System.Drawing.Size(178, 30);
-            this.riskSimulator.TabIndex = 10;
-            this.riskSimulator.Text = "          Simulator";
-            this.riskSimulator.UseVisualStyleBackColor = false;
-            this.riskSimulator.Click += new System.EventHandler(this.RiskSimulator_Click);
             // 
             // label4
             // 

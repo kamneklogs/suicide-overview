@@ -283,7 +283,7 @@ namespace suicide_overview.src.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.Controls.Add(this.maleButton);
             this.Controls.Add(this.femaleButton);
             this.Controls.Add(this.label7);

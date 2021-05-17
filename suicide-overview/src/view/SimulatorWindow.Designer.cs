@@ -29,6 +29,7 @@ namespace suicide_overview.src.view
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimulatorWindow));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.year = new System.Windows.Forms.TextBox();
@@ -39,6 +40,8 @@ namespace suicide_overview.src.view
             this.runSimulation = new System.Windows.Forms.Button();
             this.countries = new System.Windows.Forms.ComboBox();
             this.generation = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -115,7 +118,7 @@ namespace suicide_overview.src.view
             // 
             // runSimulation
             // 
-            this.runSimulation.Location = new System.Drawing.Point(210, 264);
+            this.runSimulation.Location = new System.Drawing.Point(180, 251);
             this.runSimulation.Name = "runSimulation";
             this.runSimulation.Size = new System.Drawing.Size(140, 23);
             this.runSimulation.TabIndex = 9;
@@ -141,11 +144,22 @@ namespace suicide_overview.src.view
             this.generation.Size = new System.Drawing.Size(121, 21);
             this.generation.TabIndex = 11;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(356, 209);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(183, 186);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // SimulatorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.generation);
             this.Controls.Add(this.countries);
             this.Controls.Add(this.runSimulation);
@@ -159,6 +173,7 @@ namespace suicide_overview.src.view
             this.Name = "SimulatorWindow";
             this.Size = new System.Drawing.Size(599, 456);
             this.Load += new System.EventHandler(this.SimulatorWindow_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +191,6 @@ namespace suicide_overview.src.view
         private System.Windows.Forms.Button runSimulation;
         private System.Windows.Forms.ComboBox countries;
         private System.Windows.Forms.ComboBox generation;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
