@@ -43,5 +43,10 @@ namespace suicide_overview
             SimulatorWindow sw = new SimulatorWindow(mc);
             mainPane.Controls.Add(sw);
         }
+
+        private void MainWindow_Load(object sender, System.EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+        }
     }
 }

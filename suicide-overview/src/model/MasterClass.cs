@@ -5,6 +5,7 @@ namespace suicide_overview.src.model
 {
     internal class MasterClass
     {
+        public string[] GENERATIONS = { "Generation X", "Silent", "Millenials", "Boomers", "G.I.Generation" };
         public Dictionary<string, List<Record>> countries;
 
         public MasterClass()
@@ -28,6 +29,8 @@ namespace suicide_overview.src.model
 
             return keysList;
         }
+
+       
 
         //retorna todos los registros de suicidio sin clasificación por pais
         public List<Record> AllRecords()

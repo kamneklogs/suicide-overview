@@ -1,20 +1,12 @@
 ﻿using suicide_overview.src.model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace suicide_overview.src.view
 {
     internal partial class SimulatorWindow : UserControl
     {
-
-        MasterClass mc;
+        private MasterClass mc;
 
         public SimulatorWindow(MasterClass mc)
         {
@@ -25,6 +17,20 @@ namespace suicide_overview.src.view
         private void executeSimulation(object sender, EventArgs e)
         {
             MessageBox.Show("Hace algo");
+        }
+
+        private void SimulatorWindow_Load(object sender, EventArgs e)
+        {
+
+            
+            countries.Items.AddRange(mc.getAllCountries().ToArray());
+
+            ToolTip myToolTip = new ToolTip();
+            myToolTip.SetToolTip(year, "Valid range 1985-2016");
+
+     
+            generation.Items.AddRange(mc.GENERATIONS);
+            //generation.
         }
     }
 }

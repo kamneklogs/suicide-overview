@@ -31,14 +31,14 @@ namespace suicide_overview.src.view
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.year = new System.Windows.Forms.TextBox();
+            this.femaleRB = new System.Windows.Forms.RadioButton();
+            this.maleRB = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.runSimulation = new System.Windows.Forms.Button();
+            this.countries = new System.Windows.Forms.ComboBox();
+            this.generation = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -59,48 +59,34 @@ namespace suicide_overview.src.view
             this.label2.TabIndex = 1;
             this.label2.Text = "Select country";
             // 
-            // textBox1
+            // year
             // 
-            this.textBox1.Location = new System.Drawing.Point(311, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.year.Location = new System.Drawing.Point(167, 105);
+            this.year.Name = "year";
+            this.year.Size = new System.Drawing.Size(100, 20);
+            this.year.TabIndex = 4;
             // 
-            // textBox2
+            // femaleRB
             // 
-            this.textBox2.Location = new System.Drawing.Point(34, 105);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.femaleRB.AutoSize = true;
+            this.femaleRB.Location = new System.Drawing.Point(479, 86);
+            this.femaleRB.Name = "femaleRB";
+            this.femaleRB.Size = new System.Drawing.Size(59, 17);
+            this.femaleRB.TabIndex = 5;
+            this.femaleRB.TabStop = true;
+            this.femaleRB.Text = "Female";
+            this.femaleRB.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // maleRB
             // 
-            this.textBox3.Location = new System.Drawing.Point(167, 105);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(479, 86);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(59, 17);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Female";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(479, 110);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(48, 17);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Male";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.maleRB.AutoSize = true;
+            this.maleRB.Location = new System.Drawing.Point(479, 110);
+            this.maleRB.Name = "maleRB";
+            this.maleRB.Size = new System.Drawing.Size(48, 17);
+            this.maleRB.TabIndex = 6;
+            this.maleRB.TabStop = true;
+            this.maleRB.Text = "Male";
+            this.maleRB.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -116,9 +102,9 @@ namespace suicide_overview.src.view
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(311, 86);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 13);
+            this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Year of birth";
+            this.label4.Text = "Generation";
             // 
             // runSimulation
             // 
@@ -130,22 +116,41 @@ namespace suicide_overview.src.view
             this.runSimulation.UseVisualStyleBackColor = true;
             this.runSimulation.Click += new System.EventHandler(this.executeSimulation);
             // 
+            // countries
+            // 
+            this.countries.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.countries.FormattingEnabled = true;
+            this.countries.Location = new System.Drawing.Point(20, 105);
+            this.countries.Name = "countries";
+            this.countries.Size = new System.Drawing.Size(121, 21);
+            this.countries.TabIndex = 10;
+            // 
+            // generation
+            // 
+            this.generation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.generation.FormattingEnabled = true;
+            this.generation.Location = new System.Drawing.Point(299, 104);
+            this.generation.Name = "generation";
+            this.generation.Size = new System.Drawing.Size(121, 21);
+            this.generation.TabIndex = 11;
+            // 
             // SimulatorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.generation);
+            this.Controls.Add(this.countries);
             this.Controls.Add(this.runSimulation);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.maleRB);
+            this.Controls.Add(this.femaleRB);
+            this.Controls.Add(this.year);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "SimulatorWindow";
             this.Size = new System.Drawing.Size(599, 456);
+            this.Load += new System.EventHandler(this.SimulatorWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,13 +160,13 @@ namespace suicide_overview.src.view
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox year;
+        private System.Windows.Forms.RadioButton femaleRB;
+        private System.Windows.Forms.RadioButton maleRB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button runSimulation;
+        private System.Windows.Forms.ComboBox countries;
+        private System.Windows.Forms.ComboBox generation;
     }
 }

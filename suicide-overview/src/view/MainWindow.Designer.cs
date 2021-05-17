@@ -130,8 +130,10 @@ namespace suicide_overview
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.mainPane);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Text = "Suicide Overview Reports";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.mainPane.ResumeLayout(false);
