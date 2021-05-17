@@ -62,17 +62,19 @@ namespace suicide_overview
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.viewColumnsReports);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Location = new System.Drawing.Point(0, 48);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(183, 466);
+            this.panel1.Size = new System.Drawing.Size(366, 896);
             this.panel1.TabIndex = 0;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel5.Location = new System.Drawing.Point(0, 197);
+            this.panel5.Location = new System.Drawing.Point(0, 379);
+            this.panel5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 30);
+            this.panel5.Size = new System.Drawing.Size(10, 58);
             this.panel5.TabIndex = 9;
             // 
             // riskSimulator
@@ -86,9 +88,10 @@ namespace suicide_overview
             this.riskSimulator.ForeColor = System.Drawing.Color.White;
             this.riskSimulator.Image = ((System.Drawing.Image)(resources.GetObject("riskSimulator.Image")));
             this.riskSimulator.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.riskSimulator.Location = new System.Drawing.Point(5, 197);
+            this.riskSimulator.Location = new System.Drawing.Point(10, 379);
+            this.riskSimulator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.riskSimulator.Name = "riskSimulator";
-            this.riskSimulator.Size = new System.Drawing.Size(178, 30);
+            this.riskSimulator.Size = new System.Drawing.Size(356, 58);
             this.riskSimulator.TabIndex = 10;
             this.riskSimulator.Text = "          Simulator";
             this.riskSimulator.UseVisualStyleBackColor = false;
@@ -97,9 +100,10 @@ namespace suicide_overview
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel4.Location = new System.Drawing.Point(0, 163);
+            this.panel4.Location = new System.Drawing.Point(0, 313);
+            this.panel4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 30);
+            this.panel4.Size = new System.Drawing.Size(10, 58);
             this.panel4.TabIndex = 7;
             // 
             // viewGraphs
@@ -113,9 +117,10 @@ namespace suicide_overview
             this.viewGraphs.ForeColor = System.Drawing.Color.White;
             this.viewGraphs.Image = ((System.Drawing.Image)(resources.GetObject("viewGraphs.Image")));
             this.viewGraphs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.viewGraphs.Location = new System.Drawing.Point(5, 163);
+            this.viewGraphs.Location = new System.Drawing.Point(10, 313);
+            this.viewGraphs.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.viewGraphs.Name = "viewGraphs";
-            this.viewGraphs.Size = new System.Drawing.Size(178, 30);
+            this.viewGraphs.Size = new System.Drawing.Size(356, 58);
             this.viewGraphs.TabIndex = 8;
             this.viewGraphs.Text = "          View graphs";
             this.viewGraphs.UseVisualStyleBackColor = false;
@@ -124,9 +129,10 @@ namespace suicide_overview
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel3.Location = new System.Drawing.Point(0, 129);
+            this.panel3.Location = new System.Drawing.Point(0, 248);
+            this.panel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 30);
+            this.panel3.Size = new System.Drawing.Size(10, 58);
             this.panel3.TabIndex = 2;
             // 
             // viewColumnsReports
@@ -140,9 +146,10 @@ namespace suicide_overview
             this.viewColumnsReports.ForeColor = System.Drawing.Color.White;
             this.viewColumnsReports.Image = ((System.Drawing.Image)(resources.GetObject("viewColumnsReports.Image")));
             this.viewColumnsReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.viewColumnsReports.Location = new System.Drawing.Point(5, 129);
+            this.viewColumnsReports.Location = new System.Drawing.Point(10, 248);
+            this.viewColumnsReports.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.viewColumnsReports.Name = "viewColumnsReports";
-            this.viewColumnsReports.Size = new System.Drawing.Size(178, 30);
+            this.viewColumnsReports.Size = new System.Drawing.Size(356, 58);
             this.viewColumnsReports.TabIndex = 6;
             this.viewColumnsReports.Text = "          Records";
             this.viewColumnsReports.UseVisualStyleBackColor = false;
@@ -154,11 +161,12 @@ namespace suicide_overview
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 85);
+            this.label2.Location = new System.Drawing.Point(6, 163);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 16);
+            this.label2.Size = new System.Drawing.Size(184, 30);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Option menu";
+            this.label2.Text = "Menu Options";
             // 
             // mainPane
             // 
@@ -166,9 +174,10 @@ namespace suicide_overview
             this.mainPane.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mainPane.Controls.Add(this.label3);
             this.mainPane.Controls.Add(this.label1);
-            this.mainPane.Location = new System.Drawing.Point(189, 49);
+            this.mainPane.Location = new System.Drawing.Point(378, 94);
+            this.mainPane.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.mainPane.Name = "mainPane";
-            this.mainPane.Size = new System.Drawing.Size(599, 426);
+            this.mainPane.Size = new System.Drawing.Size(1196, 817);
             this.mainPane.TabIndex = 1;
             // 
             // label3
@@ -176,9 +185,10 @@ namespace suicide_overview
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(216, 148);
+            this.label3.Location = new System.Drawing.Point(432, 285);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(219, 16);
+            this.label3.Size = new System.Drawing.Size(424, 30);
             this.label3.TabIndex = 1;
             this.label3.Text = "Suicide rates overview 1985 to 2016";
             // 
@@ -187,9 +197,10 @@ namespace suicide_overview
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(158, 108);
+            this.label1.Location = new System.Drawing.Point(316, 208);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 25);
+            this.label1.Size = new System.Drawing.Size(646, 48);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome to the suicide database!";
             // 
@@ -201,8 +212,9 @@ namespace suicide_overview
             this.tittleBar.Controls.Add(this.label4);
             this.tittleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.tittleBar.Location = new System.Drawing.Point(0, 0);
+            this.tittleBar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tittleBar.Name = "tittleBar";
-            this.tittleBar.Size = new System.Drawing.Size(800, 25);
+            this.tittleBar.Size = new System.Drawing.Size(1600, 48);
             this.tittleBar.TabIndex = 2;
             this.tittleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TittleBar_MouseDown);
             // 
@@ -210,9 +222,10 @@ namespace suicide_overview
             // 
             this.minimizedButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minimizedButton.Image = ((System.Drawing.Image)(resources.GetObject("minimizedButton.Image")));
-            this.minimizedButton.Location = new System.Drawing.Point(745, 2);
+            this.minimizedButton.Location = new System.Drawing.Point(1490, 4);
+            this.minimizedButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.minimizedButton.Name = "minimizedButton";
-            this.minimizedButton.Size = new System.Drawing.Size(20, 20);
+            this.minimizedButton.Size = new System.Drawing.Size(40, 38);
             this.minimizedButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.minimizedButton.TabIndex = 1;
             this.minimizedButton.TabStop = false;
@@ -222,9 +235,10 @@ namespace suicide_overview
             // 
             this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
-            this.closeButton.Location = new System.Drawing.Point(774, 2);
+            this.closeButton.Location = new System.Drawing.Point(1548, 4);
+            this.closeButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(20, 20);
+            this.closeButton.Size = new System.Drawing.Size(40, 38);
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.closeButton.TabIndex = 0;
             this.closeButton.TabStop = false;
@@ -235,23 +249,25 @@ namespace suicide_overview
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(10, 7);
+            this.label4.Location = new System.Drawing.Point(20, 13);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(186, 16);
+            this.label4.Size = new System.Drawing.Size(365, 30);
             this.label4.TabIndex = 2;
             this.label4.Text = "Suicide Overview (1986-2016) ";
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(800, 488);
+            this.ClientSize = new System.Drawing.Size(1600, 938);
             this.Controls.Add(this.tittleBar);
             this.Controls.Add(this.mainPane);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
