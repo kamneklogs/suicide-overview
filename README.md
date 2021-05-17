@@ -75,4 +75,4 @@ Demo video v 1.0 [HERE](https://youtu.be/pzVcx0yo6co)
 
 # Portable version 
 
-[CLICK HERE TO DOWNLOAD](/execuatable.zip)
+[CLICK HERE TO DOWNLOAD](https://github.com/kamneklogs/suicide-overview/raw/main/executable.zip)
