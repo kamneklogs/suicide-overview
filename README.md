@@ -1,4 +1,4 @@
-# Suicide-overview
+# Suicide-overview💀
 This software allows to know how high was the suicide rate of a country given a time and a generation, with the aim of associating these events to historical events that occurred at that time. 
 
 *Description:* Data set that records the suicide rate worldwide from 1985 to 2016. The data set consists of 12 columns and 27820 records. 
@@ -18,9 +18,9 @@ The languague used in this program is C#
 - Microsoft Visual Studio 2019
 
 # Documentation
-- Engineering method click [HERE](/docs/EngineeringMethod.pdf)
+- Engineering method click [HERE](/docs/MetodoDeIngenieria.pdf)
 - Functional and not functional Requirements click [HERE](docs/FunctionalNotFunctionalRequirements.pdf)
-- Class diagram click [HERE](docs/SuicideProjectDiagramClass.pdf)
+- Class diagram click [HERE](docs/SuicideProject_DiagramClass.pdf)
 - Objects diagram click [HERE](docs/ObjectDiagram.PNG)
 
 # References:
@@ -69,6 +69,15 @@ The languague used in this program is C#
 
 - Graph 5: Suicides of generations given a country
 <img src="/img/Sc9.png" width = 600>
+
+- Simulation with decision tree
+<img src="/img/Sc10.png" width = 600>
+
+- Simulation example
+<img src="/img/Sc11.png" width = 600>
+
+<img src="/img/Sc12.png" width = 600>
+
 
 Demo video v 1.0 [HERE](https://youtu.be/pzVcx0yo6co)
 
