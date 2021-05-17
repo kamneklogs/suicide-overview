@@ -31,7 +31,7 @@ The languague used in this program is C#
 - World Health Organization. (2018). Suicide prevention. Retrieved from [HERE](http://www.who.int/mental_health/suicide-prevention/en/)
 
 # Data set repository
-- Page containing the data set [HERE](https://www.kaggle.com/russellyates88/suicide-rates-overview-1985-to-2016)
+- Public datasets platform [HERE](https://www.kaggle.com/russellyates88/suicide-rates-overview-1985-to-2016)
 
 # Authors 
 
