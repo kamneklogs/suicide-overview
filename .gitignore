@@ -1,3 +1,4 @@
 suicide-overview/obj/
 suicide-overview/bin/
 .vs/
+*.DS_Store
