@@ -35,7 +35,7 @@ namespace suicide_overview.src.model
             Ratio = ratio;
             Generation = generation;
 
-            if (ratio < 20)
+            if (ratio < 10)
             {
                 Risk = "Low risk";
             }

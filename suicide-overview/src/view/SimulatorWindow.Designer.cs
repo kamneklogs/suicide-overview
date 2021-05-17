@@ -44,15 +44,18 @@ namespace suicide_overview.src.view
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(17, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Simulator";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(31, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
@@ -69,6 +72,7 @@ namespace suicide_overview.src.view
             // femaleRB
             // 
             this.femaleRB.AutoSize = true;
+            this.femaleRB.ForeColor = System.Drawing.Color.White;
             this.femaleRB.Location = new System.Drawing.Point(479, 86);
             this.femaleRB.Name = "femaleRB";
             this.femaleRB.Size = new System.Drawing.Size(59, 17);
@@ -80,6 +84,7 @@ namespace suicide_overview.src.view
             // maleRB
             // 
             this.maleRB.AutoSize = true;
+            this.maleRB.ForeColor = System.Drawing.Color.White;
             this.maleRB.Location = new System.Drawing.Point(479, 110);
             this.maleRB.Name = "maleRB";
             this.maleRB.Size = new System.Drawing.Size(48, 17);
@@ -91,6 +96,7 @@ namespace suicide_overview.src.view
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(176, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
@@ -100,6 +106,7 @@ namespace suicide_overview.src.view
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(311, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
@@ -138,6 +145,7 @@ namespace suicide_overview.src.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Add(this.generation);
             this.Controls.Add(this.countries);
             this.Controls.Add(this.runSimulation);

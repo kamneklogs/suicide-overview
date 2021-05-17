@@ -1,5 +1,6 @@
 ﻿using suicide_overview.src.model;
 using suicide_overview.src.view;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace suicide_overview
@@ -15,38 +16,47 @@ namespace suicide_overview
             mc = new MasterClass();
         }
 
-        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            mainPane.Controls.Clear();
-            Graphs gr = new Graphs(mc);
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
 
-            mainPane.Controls.Add(gr);
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void CloseButton_Click(object sender, System.EventArgs e)
+        {
+            Application.Exit();
         }
 
-        private void viewColumnsReports_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void MinimizedButton_Click(object sender, System.EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void ViewColumnsReports_Click(object sender, System.EventArgs e)
         {
             mainPane.Controls.Clear();
             RecordsViewer cr = new RecordsViewer(mc);
             mainPane.Controls.Add(cr);
         }
 
-        private void viewGraphicalReport(object sender, LinkLabelLinkClickedEventArgs e)
+        private void ViewGraphs_Click(object sender, System.EventArgs e)
         {
             mainPane.Controls.Clear();
             Graphs br = new Graphs(mc);
             mainPane.Controls.Add(br);
         }
 
-        private void loadSimulator(object sender, System.EventArgs e)
+        private void RiskSimulator_Click(object sender, System.EventArgs e)
         {
             mainPane.Controls.Clear();
             SimulatorWindow sw = new SimulatorWindow(mc);
             mainPane.Controls.Add(sw);
         }
 
-        private void MainWindow_Load(object sender, System.EventArgs e)
+        private void TittleBar_MouseDown(object sender, MouseEventArgs e)
         {
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

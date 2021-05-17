@@ -1,16 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using suicide_overview.src.model.DecisionTreeClassifier;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace suicide_overview.src.model
 {
     internal class MasterClass
     {
-        public string[] GENERATIONS = { "Generation X", "Silent", "Millenials", "Boomers", "G.I.Generation" };
+        private static readonly string[] p = { "Generation X", "Silent", "Millenials", "Boomers", "G.I.Generation" };
+        public string[] GENERATIONS = p;
+        private static readonly string[] p1 = { "Low risk", "Moderated risk", "High risk" };
+        public string[] RISKLEVELS = p1;
+
         public Dictionary<string, List<Record>> countries;
+
+        public Dictionary<string, Tree> treesByCountry;
 
         public MasterClass()
         {
             countries = new Dictionary<string, List<Record>>();
+            treesByCountry = new Dictionary<string, Tree>();
 
             Loader.LoadData(countries);
 
@@ -29,8 +37,6 @@ namespace suicide_overview.src.model
 
             return keysList;
         }
-
-       
 
         //retorna todos los registros de suicidio sin clasificación por pais
         public List<Record> AllRecords()
@@ -274,6 +280,39 @@ namespace suicide_overview.src.model
             }
 
             return count;
+        }
+
+        public Dictionary<string, double> simulateSuicideRisk(string countryName, int year, string generation, string sex)
+        {
+            Dictionary<string, double> risks;
+
+            if (!treesByCountry.ContainsKey(countryName))
+            {
+                List<Record> records = RecordsByCountry(countryName);
+
+                List<Dictionary<string, object>> setToTraining = new List<Dictionary<string, object>>();
+
+                for (int i = 0; i < records.Count; i++)
+                {
+                    setToTraining.Add(records[i].getData());
+                }
+
+                Dictionary<string, int> variables = new Dictionary<string, int>();
+
+                variables.Add("Year", 0);
+                variables.Add("Sex", 1);
+                variables.Add("Generation", 1);
+
+                Tree myTree = new Tree(variables, "Risk");
+
+                myTree.training(setToTraining);
+
+                treesByCountry.Add(countryName, myTree);
+            }
+
+            risks = treesByCountry[countryName].Classifier(new Dictionary<string, object>() { { "Year", year }, { "Sex", sex }, { "Generation", generation } });
+
+            return risks;
         }
     }
 }

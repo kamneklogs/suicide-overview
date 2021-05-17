@@ -44,9 +44,11 @@ namespace suicide_overview.src.view
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(159, 15);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 13);
+            this.label1.Size = new System.Drawing.Size(361, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "STATISTICAL REPORTS ON SUICIDES GLOBALLY";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -112,6 +114,7 @@ namespace suicide_overview.src.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.graphic5);
             this.Controls.Add(this.graphic4);
             this.Controls.Add(this.graphic3);
