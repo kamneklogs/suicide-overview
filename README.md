@@ -82,6 +82,7 @@ The languague used in this program is C#
 
 
 Demo video v 1.0 [HERE](https://youtu.be/pzVcx0yo6co)
+Demo video v 2.0 [HERE](https://youtu.be/NBBiqeDW6jI)
 
 
 # Portable version 
