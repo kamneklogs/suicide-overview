@@ -20,10 +20,11 @@ The languague used in this program is C#
 # Documentation
 - Engineering method click [HERE](/docs/MetodoDeIngenieria.pdf)
 - Functional and not functional Requirements click [HERE](docs/FunctionalNotFunctionalRequirements.pdf)
-- Class diagram click [HERE](docs/SuicideProject_DiagramClass.pdf)
-- Objects diagram click [HERE](docs/ObjectDiagram.PNG)
-- Diagram of sequence filters click [HERE](docs/Filters.pdf)
-- Diagram of sequence graphs click [HERE](docs/Graficos.pdf)
+- Class diagram click [HERE](docs/ClassAndObjectDiagrams/SuicideProject_DiagramClass.pdf)
+- Objects diagram click [HERE](docs/ClassAndObjectDiagrams/ObjectDiagram.PNG)
+- Diagram of sequence filters click [HERE](docs/SecuenceDiagrams/Filters.pdf)
+- Diagram of sequence graphs click [HERE](docs/SecuenceDiagrams/Graphs.pdf)
+- Diagram of sequence risk simulation click [HERE](docs/SecuenceDiagrams/RiskSimulation.pdf)
 
 # References:
 
