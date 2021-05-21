@@ -14,6 +14,9 @@ namespace suicide_overview
             InitializeComponent();
 
             mc = new MasterClass();
+
+            BringToFront();
+          
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

@@ -55,9 +55,10 @@ namespace suicide_overview.src.view
             // 
             // graphViewer
             // 
-            this.graphViewer.Location = new System.Drawing.Point(162, 49);
+            this.graphViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.graphViewer.Location = new System.Drawing.Point(166, 55);
             this.graphViewer.Name = "graphViewer";
-            this.graphViewer.Size = new System.Drawing.Size(421, 374);
+            this.graphViewer.Size = new System.Drawing.Size(510, 450);
             this.graphViewer.TabIndex = 1;
             // 
             // graphic1
@@ -114,7 +115,7 @@ namespace suicide_overview.src.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.Controls.Add(this.graphic5);
             this.Controls.Add(this.graphic4);
             this.Controls.Add(this.graphic3);
@@ -123,7 +124,7 @@ namespace suicide_overview.src.view
             this.Controls.Add(this.graphViewer);
             this.Controls.Add(this.label1);
             this.Name = "Graphs";
-            this.Size = new System.Drawing.Size(599, 426);
+            this.Size = new System.Drawing.Size(690, 520);
             this.ResumeLayout(false);
             this.PerformLayout();
 

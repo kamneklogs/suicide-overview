@@ -60,10 +60,9 @@ namespace suicide_overview.src.view
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 29);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(11, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 30);
+            this.label1.Size = new System.Drawing.Size(83, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Log viewer";
             // 
@@ -83,12 +82,12 @@ namespace suicide_overview.src.view
             this.Column7,
             this.Column8,
             this.Column9});
-            this.dataGridView1.Location = new System.Drawing.Point(28, 312);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 182);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(10);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(1130, 467);
+            this.dataGridView1.Size = new System.Drawing.Size(670, 328);
             this.dataGridView1.TabIndex = 1;
             // 
             // Column1
@@ -165,29 +164,26 @@ namespace suicide_overview.src.view
             // 
             // CountryText
             // 
-            this.CountryText.Location = new System.Drawing.Point(27, 136);
-            this.CountryText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CountryText.Location = new System.Drawing.Point(10, 94);
             this.CountryText.Name = "CountryText";
-            this.CountryText.Size = new System.Drawing.Size(196, 31);
+            this.CountryText.Size = new System.Drawing.Size(100, 20);
             this.CountryText.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(22, 77);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(11, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(350, 25);
+            this.label2.Size = new System.Drawing.Size(171, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Enter country (Colombia by default)";
             // 
             // yearText
             // 
-            this.yearText.Location = new System.Drawing.Point(28, 241);
-            this.yearText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.yearText.Location = new System.Drawing.Point(10, 146);
             this.yearText.Name = "yearText";
-            this.yearText.Size = new System.Drawing.Size(196, 31);
+            this.yearText.Size = new System.Drawing.Size(100, 20);
             this.yearText.TabIndex = 5;
             // 
             // generationText
@@ -199,42 +195,47 @@ namespace suicide_overview.src.view
             "Boomers",
             "G.I. Generation",
             "Millenials"});
-            this.generationText.Location = new System.Drawing.Point(697, 136);
-            this.generationText.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.generationText.Location = new System.Drawing.Point(349, 94);
             this.generationText.Name = "generationText";
-            this.generationText.Size = new System.Drawing.Size(238, 33);
+            this.generationText.Size = new System.Drawing.Size(121, 21);
             this.generationText.TabIndex = 10;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1008, 208);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(605, 146);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 44);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 11;
-            this.button1.Text = "Reset";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Reset filters";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.ResetDataSet);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1008, 103);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(510, 92);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 44);
+            this.button2.Size = new System.Drawing.Size(75, 25);
             this.button2.TabIndex = 12;
             this.button2.Text = "Apply";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.applyFilters);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(692, 77);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Location = new System.Drawing.Point(346, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 25);
+            this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "Select Generation";
             // 
@@ -242,30 +243,27 @@ namespace suicide_overview.src.view
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(23, 191);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Location = new System.Drawing.Point(11, 130);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 25);
+            this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Enter year";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(442, 96);
-            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Location = new System.Drawing.Point(221, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 25);
+            this.label6.Size = new System.Drawing.Size(0, 13);
             this.label6.TabIndex = 16;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(442, 77);
-            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label7.Location = new System.Drawing.Point(221, 63);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 25);
+            this.label7.Size = new System.Drawing.Size(73, 13);
             this.label7.TabIndex = 17;
             this.label7.Text = "Select gender";
             // 
@@ -273,10 +271,9 @@ namespace suicide_overview.src.view
             // 
             this.femaleButton.AutoSize = true;
             this.femaleButton.ForeColor = System.Drawing.Color.White;
-            this.femaleButton.Location = new System.Drawing.Point(447, 208);
-            this.femaleButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.femaleButton.Location = new System.Drawing.Point(224, 108);
             this.femaleButton.Name = "femaleButton";
-            this.femaleButton.Size = new System.Drawing.Size(115, 29);
+            this.femaleButton.Size = new System.Drawing.Size(60, 17);
             this.femaleButton.TabIndex = 25;
             this.femaleButton.Text = "Female";
             this.femaleButton.UseVisualStyleBackColor = true;
@@ -285,18 +282,16 @@ namespace suicide_overview.src.view
             // 
             this.maleButton.AutoSize = true;
             this.maleButton.ForeColor = System.Drawing.Color.White;
-            this.maleButton.Location = new System.Drawing.Point(447, 128);
-            this.maleButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.maleButton.Location = new System.Drawing.Point(224, 85);
             this.maleButton.Name = "maleButton";
-            this.maleButton.Size = new System.Drawing.Size(91, 29);
+            this.maleButton.Size = new System.Drawing.Size(49, 17);
             this.maleButton.TabIndex = 26;
             this.maleButton.Text = "Male";
             this.maleButton.UseVisualStyleBackColor = true;
             // 
             // RecordsViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.Controls.Add(this.maleButton);
             this.Controls.Add(this.femaleButton);
@@ -312,9 +307,8 @@ namespace suicide_overview.src.view
             this.Controls.Add(this.CountryText);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "RecordsViewer";
-            this.Size = new System.Drawing.Size(1198, 819);
+            this.Size = new System.Drawing.Size(690, 520);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

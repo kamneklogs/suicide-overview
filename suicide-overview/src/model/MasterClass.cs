@@ -22,7 +22,6 @@ namespace suicide_overview.src.model
 
             Loader.LoadData(countries);
 
-            MessageBox.Show("Load successful");
         }
 
         //Retorna lista de strings con todos los paises

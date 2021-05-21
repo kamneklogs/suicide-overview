@@ -122,6 +122,7 @@ namespace suicide_overview.src.view
             // 
             // chart1
             // 
+            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -135,7 +136,7 @@ namespace suicide_overview.src.view
             series1.Legend = "Legend1";
             series1.Name = "s1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(405, 284);
+            this.chart1.Size = new System.Drawing.Size(483, 348);
             this.chart1.TabIndex = 9;
             this.chart1.Text = "chart1";
             // 
@@ -164,6 +165,7 @@ namespace suicide_overview.src.view
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.viewGraphic);
             this.Controls.Add(this.chart1);
@@ -177,7 +179,7 @@ namespace suicide_overview.src.view
             this.Controls.Add(this.country);
             this.Controls.Add(this.label1);
             this.Name = "GraphicDonnut1";
-            this.Size = new System.Drawing.Size(421, 374);
+            this.Size = new System.Drawing.Size(510, 450);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
