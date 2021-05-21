@@ -45,9 +45,11 @@ namespace suicide_overview
             this.panel3 = new System.Windows.Forms.Panel();
             this.viewColumnsReports = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tittleBar.SuspendLayout();
             this.mainPane.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tittleBar
@@ -103,6 +105,7 @@ namespace suicide_overview
             // mainPane
             // 
             this.mainPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.mainPane.Controls.Add(this.pictureBox1);
             this.mainPane.Controls.Add(this.label3);
             this.mainPane.Controls.Add(this.label1);
             resources.ApplyResources(this.mainPane, "mainPane");
@@ -182,6 +185,12 @@ namespace suicide_overview
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Name = "label2";
             // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -199,6 +208,7 @@ namespace suicide_overview
             this.mainPane.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -219,6 +229,7 @@ namespace suicide_overview
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button viewColumnsReports;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
