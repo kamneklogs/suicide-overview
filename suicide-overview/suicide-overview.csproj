@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="src\model\AccordFramework_Bridge\AccordAdapter.cs" />
     <Compile Include="src\model\DecisionTreeClassifier\Decision.cs" />
     <Compile Include="src\model\DecisionTreeClassifier\Node.cs" />
     <Compile Include="src\model\DecisionTreeClassifier\Tree.cs" />
@@ -193,6 +194,20 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\view\assets\close.png" />
+    <Content Include="src\view\assets\closeSmall.png" />
+    <Content Include="src\view\assets\closeSmall1.png" />
+    <Content Include="src\view\assets\computer.png" />
+    <Content Include="src\view\assets\depression_man.png" />
+    <Content Include="src\view\assets\icon.ico" />
+    <Content Include="src\view\assets\minimized.png" />
+    <Content Include="src\view\assets\minimizedSmall.png" />
+    <Content Include="src\view\assets\people.png" />
+    <Content Include="src\view\assets\reports.png" />
+    <Content Include="src\view\assets\reportsAlt.png" />
+    <Content Include="src\view\assets\sim1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('..\packages\Accord.3.8.0\build\Accord.targets')" />

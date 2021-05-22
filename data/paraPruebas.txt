@@ -113,6 +113,7 @@
             // For this task, in which we have only categorical variables, the simplest choice
             // to induce a decision tree is to use the ID3 algorithm by Quinlan. Let’s do it:
 
+//****************SECTION TO TRAINNING THE TREE
             // Create a teacher ID3 algorithm
             var id3learning = new ID3Learning()
 {
@@ -137,6 +138,9 @@
 
             // Compute the training error when predicting training instances
             double error = new ZeroOneLoss(outputs).Loss(tree.Decide(inputs));
+
+
+//****************SECTION TO SIMULATE QUERY
 
             // The tree can now be queried for new examples through
             // its decide method. For example, we can create a query

@@ -14,7 +14,7 @@ namespace suicide_overview.src.model.AccordFramework_Bridge
         private DataTable data;
         private Codification codebook;
         private int[][] inputs;
-        private int[] output;
+        private int[] outputs;
 
         public AccordAdapter(string treeName, List<Dictionary<string, object>> setToTraining, Dictionary<string, int> variables)
         {

@@ -314,6 +314,8 @@ namespace suicide_overview.src.model
 
         public Dictionary<string, double> simulateSuicideRisk_AccordImplementation(string countryName, int year, string generation, string sex)
         {
+
+
             return null;
         }
     }
