@@ -19,6 +19,8 @@ namespace suicide_overview
             //A partir de este momento estamos en development
 
             //Ya estamos en la rama AccordImplementation
+
+            //Ya tenemos accord
         }
     }
 }
