@@ -1,6 +1,5 @@
 ﻿using suicide_overview.src.model.DecisionTreeClassifier;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace suicide_overview.src.model
 {
@@ -21,7 +20,6 @@ namespace suicide_overview.src.model
             treesByCountry = new Dictionary<string, Tree>();
 
             Loader.LoadData(countries);
-
         }
 
         //Retorna lista de strings con todos los paises
@@ -281,7 +279,7 @@ namespace suicide_overview.src.model
             return count;
         }
 
-        public Dictionary<string, double> simulateSuicideRisk(string countryName, int year, string generation, string sex)
+        public Dictionary<string, double> simulateSuicideRisk_OwnImplementation(string countryName, int year, string generation, string sex)
         {
             Dictionary<string, double> risks;
 
@@ -312,6 +310,11 @@ namespace suicide_overview.src.model
             risks = treesByCountry[countryName].Classifier(new Dictionary<string, object>() { { "Year", year }, { "Sex", sex }, { "Generation", generation } });
 
             return risks;
+        }
+
+        public Dictionary<string, double> simulateSuicideRisk_AccordImplementation(string countryName, int year, string generation, string sex)
+        {
+            return null;
         }
     }
 }
