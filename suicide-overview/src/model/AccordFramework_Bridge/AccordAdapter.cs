@@ -61,7 +61,7 @@ namespace suicide_overview.src.model.AccordFramework_Bridge
             outputs = symbols.ToArray<int>(data.Columns[data.Columns.Count - 1].ColumnName);
         }
 
-        public void training()
+        public void Training()
         {
             DecisionVariable[] temp= DecisionVariable.FromCodebook(codebook);
             DecisionVariable[] preAttributes = new DecisionVariable[temp.Length-1];
@@ -73,5 +73,18 @@ namespace suicide_overview.src.model.AccordFramework_Bridge
             var id3learning = new ID3Learning(){ };
             DecisionTree decisionTree = id3learning.Learn(inputs, outputs);
         }
+
+        public void Simulate(ArrayList query)
+        {
+            object[,] queryMatrix = new object[2,query.Count];
+
+            for (int i = 0; i < data.Columns.Count-1; i++)
+            {
+                queryMatrix[0, i] = data.Columns[i].ColumnName;
+                queryMatrix[1, i] = query[i];
+            }
+
+        }
+
     }
 }
