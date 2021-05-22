@@ -1,4 +1,6 @@
-﻿using Accord.Math;
+﻿using Accord.MachineLearning.DecisionTrees;
+using Accord.MachineLearning.DecisionTrees.Learning;
+using Accord.Math;
 using Accord.Statistics.Filters;
 using System;
 using System.Collections;
@@ -61,6 +63,32 @@ namespace suicide_overview.src.model.AccordFramework_Bridge
 
         public void training()
         {
+            DecisionVariable[] temp= DecisionVariable.FromCodebook(codebook);
+            DecisionVariable[] preAttributes = new DecisionVariable[temp.Length-1];
+
+            for (int i = 0;i < preAttributes.Length; i++)
+            {
+                preAttributes[i] = temp[i];
+            }
+            var id3learning = new ID3Learning(preAttributes)
+{
+    // Now that we already have our learning input/ouput pairs, we should specify our
+    // decision tree. We will be trying to build a tree to predict the last column, entitled
+    // “PlayTennis”. For this, we will be using the “Outlook”, “Temperature”, “Humidity” and
+    // “Wind” as predictors (variables which will we will use for our decision). Since those
+    // are categorical, we must specify, at the moment of creation of our tree, the
+    // characteristics of each of those variables. So:
+
+  
+    new DecisionVariable("Outlook",     3), // 3 possible values (Sunny, overcast, rain)
+    new DecisionVariable("Temperature", 3), // 3 possible values (Hot, mild, cool)
+    new DecisionVariable("Humidity",    2), // 2 possible values (High, normal)
+    new DecisionVariable("Wind",        2)  // 2 possible values (Weak, strong)
+
+    // Note: It is also possible to create a DecisionVariable[] from a codebook:
+    // DecisionVariable[] attributes = DecisionVariable.FromCodebook(codebook);
+
+};
         }
     }
 }
