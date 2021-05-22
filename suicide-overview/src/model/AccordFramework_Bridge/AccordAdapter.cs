@@ -17,6 +17,7 @@ namespace suicide_overview.src.model.AccordFramework_Bridge
         private Codification codebook;
         private int[][] inputs;
         private int[] outputs;
+        private DecisionTree decisionTree;
 
         public AccordAdapter(string treeName, List<Dictionary<string, object>> setToTraining, Dictionary<string, int> variables)
         {
@@ -44,8 +45,14 @@ namespace suicide_overview.src.model.AccordFramework_Bridge
                         newRow.Add((string)cell);
                     }
                 }
+                DataRow dataRowNew = data.NewRow();
 
-                data.Rows.Add(newRow);
+                for (int i = 0; i < data.Columns.Count; i++)
+                {
+                    dataRowNew[data.Columns[i].ColumnName] = newRow[i];
+                }
+
+                data.Rows.Add(dataRowNew);
             }
 
             codebook = new Codification(data);
@@ -59,32 +66,69 @@ namespace suicide_overview.src.model.AccordFramework_Bridge
 
             inputs = symbols.ToJagged<int>(inputNames);
             outputs = symbols.ToArray<int>(data.Columns[data.Columns.Count - 1].ColumnName);
+
+            foreach (DataRow dataRow in data.Rows)
+            {
+                foreach (var item in dataRow.ItemArray)
+                {
+                    Console.Write(item + " ");
+                }
+
+                Console.WriteLine();
+            }
         }
 
         public void Training()
         {
-            DecisionVariable[] temp= DecisionVariable.FromCodebook(codebook);
-            DecisionVariable[] preAttributes = new DecisionVariable[temp.Length-1];
+            string[] columns = new string[data.Columns.Count];
 
-            for (int i = 0;i < preAttributes.Length; i++)
+            for (int i = 0; i < columns.Length; i++)
+            {
+                columns[i] = data.Columns[i].ColumnName;
+            }
+
+            DecisionVariable[] temp = DecisionVariable.FromCodebook(codebook, columns);
+            DecisionVariable[] preAttributes = new DecisionVariable[temp.Length - 1];
+
+            for (int i = 0; i < preAttributes.Length; i++)
             {
                 preAttributes[i] = temp[i];
             }
-            var id3learning = new ID3Learning(){ };
-            DecisionTree decisionTree = id3learning.Learn(inputs, outputs);
+
+            var id3learning = new ID3Learning() { };
+            decisionTree = id3learning.Learn(inputs, outputs);
         }
 
         public void Simulate(ArrayList query)
         {
-            object[,] queryMatrix = new object[2,query.Count];
 
-            for (int i = 0; i < data.Columns.Count-1; i++)
+            //verificar posible error en codebook
+
+            string[,] queryMatrix = new string[query.Count, 2];
+
+            for (int i = 0; i < data.Columns.Count - 1; i++)
             {
-                queryMatrix[0, i] = data.Columns[i].ColumnName;
-                queryMatrix[1, i] = query[i];
+                queryMatrix[i, 0] = data.Columns[i].ColumnName;
+                queryMatrix[i, 1] = (string)query[i];
             }
+            int[] queryInt = codebook.Transform(new[,]
+             {
+                { "Outlook",     "Sunny"  },
+                { "Temperature", "Hot"    },
+                { "Humidity",    "High"   },
+                { "Wind",        "Strong" }
+            });
 
+            int predicted = decisionTree.Decide(queryInt);  // result will be 0
+
+            // We can translate it back to strings using
+            string answer = codebook.Revert("PlayTennis", predicted); // Answer will be: "No"
+
+            Console.WriteLine(answer);
+
+
+
+            int inds = 18;
         }
-
     }
 }
