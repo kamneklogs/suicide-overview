@@ -14,7 +14,6 @@ namespace suicide_overview
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
-
             Application.Run(new MainWindow());
         }
     }

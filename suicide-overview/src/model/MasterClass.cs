@@ -1,12 +1,17 @@
-﻿using suicide_overview.src.model.DecisionTreeClassifier;
+﻿using Accord;
+using Accord.MachineLearning.DecisionTrees;
+using Accord.MachineLearning.DecisionTrees.Learning;
+using Accord.Math;
+using Accord.Statistics.Filters;
+using suicide_overview.src.model.DecisionTreeClassifier;
 using System.Collections.Generic;
-using System.Windows.Forms;
+using System.Data;
 
 namespace suicide_overview.src.model
 {
     internal class MasterClass
     {
-        private static readonly string[] p = { "Generation X", "Silent", "Millenials", "Boomers", "G.I.Generation" };
+        private static readonly string[] p = { "Generation X", "Silent", "Generation Z", "Millenials", "Boomers", "G.I.Generation" };
         public string[] GENERATIONS = p;
         private static readonly string[] p1 = { "Low risk", "Moderated risk", "High risk" };
         public string[] RISKLEVELS = p1;
@@ -14,14 +19,15 @@ namespace suicide_overview.src.model
         public Dictionary<string, List<Record>> countries;
 
         public Dictionary<string, Tree> treesByCountry;
+        public Dictionary<string, DecisionTree> treesByCountryWithAccord;
 
         public MasterClass()
         {
             countries = new Dictionary<string, List<Record>>();
             treesByCountry = new Dictionary<string, Tree>();
+            treesByCountryWithAccord = new Dictionary<string, DecisionTree>();
 
             Loader.LoadData(countries);
-
         }
 
         //Retorna lista de strings con todos los paises
@@ -281,7 +287,7 @@ namespace suicide_overview.src.model
             return count;
         }
 
-        public Dictionary<string, double> simulateSuicideRisk(string countryName, int year, string generation, string sex)
+        public Dictionary<string, double> simulateSuicideRisk_OwnImplementation(string countryName, int year, string generation, string sex)
         {
             Dictionary<string, double> risks;
 
@@ -312,6 +318,53 @@ namespace suicide_overview.src.model
             risks = treesByCountry[countryName].Classifier(new Dictionary<string, object>() { { "Year", year }, { "Sex", sex }, { "Generation", generation } });
 
             return risks;
+        }
+
+        public string simulateSuicideRisk_AccordImplementation(string countryName, int year, string generation, string sex)
+        {
+            DataTable data = new DataTable(countryName);
+            data.Columns.Add("year", "generation", "sex", "risk");
+
+            List<Record> rbc = countries[countryName];
+
+            foreach (Record record in rbc)
+            {
+                DataRow newRow = data.NewRow();
+                newRow["year"] = record.Year.ToString();
+                newRow["generation"] = record.Generation;
+                newRow["sex"] = record.Sex;
+                newRow["risk"] = record.Risk;
+
+                data.Rows.Add(newRow);
+            }
+
+            var codebook = new Codification(data);
+            DataTable symbols = codebook.Apply(data);
+
+            int[][] inputs = symbols.ToJagged<int>("year", "generation", "sex");
+            int[] outputs = symbols.ToArray<int>("risk");
+
+            var id3learning = new ID3Learning()
+            {
+                new DecisionVariable("year",     2016-1985),
+                new DecisionVariable("generation", p.Length),
+                new DecisionVariable("sex",    2),
+            };
+
+            DecisionTree tree = id3learning.Learn(inputs, outputs);
+
+            treesByCountryWithAccord.Add(countryName, tree);
+
+            int[] query = codebook.Transform(new[,]
+           {
+                { "year",    year.ToString() },
+                { "generation", generation    },
+                { "sex",    sex   },
+            });
+            int predicted = tree.Decide(query);
+            string answer = codebook.Revert("risk", predicted);
+
+            return answer;
         }
     }
 }
