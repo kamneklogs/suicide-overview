@@ -18,8 +18,8 @@ namespace suicide_overview.src.model
 
         public Dictionary<string, List<Record>> countries;
 
-        public Dictionary<string, Tree> treesByCountry;
-        public Dictionary<string, DecisionTree> treesByCountryWithAccord;
+        private Dictionary<string, Tree> treesByCountry;
+        private Dictionary<string, DecisionTree> treesByCountryWithAccord;
 
         public MasterClass()
         {
@@ -317,7 +317,15 @@ namespace suicide_overview.src.model
 
             risks = treesByCountry[countryName].Classifier(new Dictionary<string, object>() { { "Year", year }, { "Sex", sex }, { "Generation", generation } });
 
-            string answer = "Riesgo prueba";
+            string answer = "";
+
+            foreach (string riskLevelTag in risks.Keys)
+            {
+                if (risks[riskLevelTag] != 0.0)
+                {
+                    answer += riskLevelTag + " " + (risks[riskLevelTag] * 100) + "%";
+                }
+            }
 
             return answer;
         }
