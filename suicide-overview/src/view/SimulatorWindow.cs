@@ -17,7 +17,7 @@ namespace suicide_overview.src.view
 
         private void executeSimulation(object sender, EventArgs e)
         {
-            Dictionary<string, double> probabilities = mc.simulateSuicideRisk((string)countries.SelectedItem, Convert.ToInt32(year.Text), (string)generation.SelectedItem, maleRB.Checked ? "male" : "female");
+            Dictionary<string, double> probabilities = mc.simulateSuicideRisk_OwnImplementation((string)countries.SelectedItem, Convert.ToInt32(year.Text), (string)generation.SelectedItem, maleRB.Checked ? "male" : "female");
 
             string result = "";
 
