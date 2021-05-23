@@ -287,7 +287,7 @@ namespace suicide_overview.src.model
             return count;
         }
 
-        public Dictionary<string, double> simulateSuicideRisk_OwnImplementation(string countryName, int year, string generation, string sex)
+        public string simulateSuicideRisk_OwnImplementation(string countryName, int year, string generation, string sex)
         {
             Dictionary<string, double> risks;
 
@@ -317,7 +317,9 @@ namespace suicide_overview.src.model
 
             risks = treesByCountry[countryName].Classifier(new Dictionary<string, object>() { { "Year", year }, { "Sex", sex }, { "Generation", generation } });
 
-            return risks;
+            string answer = "Riesgo prueba";
+
+            return answer;
         }
 
         public string simulateSuicideRisk_AccordImplementation(string countryName, int year, string generation, string sex)
