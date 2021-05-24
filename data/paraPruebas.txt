@@ -161,3 +161,10 @@
 
             Console.WriteLine(answer);
         }
+
+//*******************PARA PRUEBAS CON NUESTRO CONTEXTO*************+++
+
+  MasterClass mc = new MasterClass();
+            Console.WriteLine(mc.simulateSuicideRisk_AccordImplementation("Colombia", 2000, "Millenials", "male"));
+
+            Console.ReadLine();

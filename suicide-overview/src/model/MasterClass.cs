@@ -1,8 +1,6 @@
 ﻿using Accord;
-using Accord.MachineLearning.DecisionTrees;
-using Accord.MachineLearning.DecisionTrees.Learning;
 using Accord.Math;
-using Accord.Statistics.Filters;
+using suicide_overview.src.model.AccordFramework_Bridge;
 using suicide_overview.src.model.DecisionTreeClassifier;
 using System.Collections.Generic;
 using System.Data;
@@ -18,14 +16,16 @@ namespace suicide_overview.src.model
 
         public Dictionary<string, List<Record>> countries;
 
-        public Dictionary<string, Tree> treesByCountry;
-        public Dictionary<string, DecisionTree> treesByCountryWithAccord;
+        private Dictionary<string, Tree> treesByCountry;
+        private Dictionary<string, AccordAdapter> treesByCountryWithAccord;
+
+        public static DoubleRange Generations { get; internal set; }
 
         public MasterClass()
         {
             countries = new Dictionary<string, List<Record>>();
             treesByCountry = new Dictionary<string, Tree>();
-            treesByCountryWithAccord = new Dictionary<string, DecisionTree>();
+            treesByCountryWithAccord = new Dictionary<string, AccordAdapter>();
 
             Loader.LoadData(countries);
         }
@@ -287,7 +287,7 @@ namespace suicide_overview.src.model
             return count;
         }
 
-        public Dictionary<string, double> simulateSuicideRisk_OwnImplementation(string countryName, int year, string generation, string sex)
+        public string simulateSuicideRisk_OwnImplementation(string countryName, int year, string generation, string sex)
         {
             Dictionary<string, double> risks;
 
@@ -317,10 +317,37 @@ namespace suicide_overview.src.model
 
             risks = treesByCountry[countryName].Classifier(new Dictionary<string, object>() { { "Year", year }, { "Sex", sex }, { "Generation", generation } });
 
-            return risks;
+            string answer = "";
+
+            foreach (string riskLevelTag in risks.Keys)
+            {
+                if (risks[riskLevelTag] != 0.0)
+                {
+                    answer += riskLevelTag + " " + (risks[riskLevelTag] * 100) + "%";
+                }
+            }
+
+            return answer;
         }
 
         public string simulateSuicideRisk_AccordImplementation(string countryName, int year, string generation, string sex)
+        {
+            if (!treesByCountryWithAccord.ContainsKey(countryName))
+            {
+                DataTable data = RecordsInDataTable(countryName);
+
+                AccordAdapter newAccordAdapter = new AccordAdapter(countryName, data);
+
+                newAccordAdapter.Learn();
+
+                treesByCountryWithAccord.Add(countryName, newAccordAdapter);
+            }
+
+            string answer = treesByCountryWithAccord[countryName].simulate(year, generation, sex);
+            return answer;
+        }
+
+        private DataTable RecordsInDataTable(string countryName)
         {
             DataTable data = new DataTable(countryName);
             data.Columns.Add("year", "generation", "sex", "risk");
@@ -338,33 +365,7 @@ namespace suicide_overview.src.model
                 data.Rows.Add(newRow);
             }
 
-            var codebook = new Codification(data);
-            DataTable symbols = codebook.Apply(data);
-
-            int[][] inputs = symbols.ToJagged<int>("year", "generation", "sex");
-            int[] outputs = symbols.ToArray<int>("risk");
-
-            var id3learning = new ID3Learning()
-            {
-                new DecisionVariable("year",     2016-1985),
-                new DecisionVariable("generation", p.Length),
-                new DecisionVariable("sex",    2),
-            };
-
-            DecisionTree tree = id3learning.Learn(inputs, outputs);
-
-            treesByCountryWithAccord.Add(countryName, tree);
-
-            int[] query = codebook.Transform(new[,]
-           {
-                { "year",    year.ToString() },
-                { "generation", generation    },
-                { "sex",    sex   },
-            });
-            int predicted = tree.Decide(query);
-            string answer = codebook.Revert("risk", predicted);
-
-            return answer;
+            return data;
         }
     }
 }

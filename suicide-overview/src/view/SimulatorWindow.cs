@@ -1,6 +1,5 @@
 ﻿using suicide_overview.src.model;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace suicide_overview.src.view
@@ -17,14 +16,7 @@ namespace suicide_overview.src.view
 
         private void executeSimulation(object sender, EventArgs e)
         {
-            Dictionary<string, double> probabilities = mc.simulateSuicideRisk_OwnImplementation((string)countries.SelectedItem, Convert.ToInt32(year.Text), (string)generation.SelectedItem, maleRB.Checked ? "male" : "female");
-
-            string result = "";
-
-            foreach (string lr in probabilities.Keys)
-            {
-                result += lr + " probability: " + (probabilities[lr] * 100.0) + "%\n";
-            }
+            string result = mc.simulateSuicideRisk_OwnImplementation((string)countries.SelectedItem, Convert.ToInt32(year.Text), (string)generation.SelectedItem, maleRB.Checked ? "male" : "female");
 
             MessageBox.Show(result);
         }

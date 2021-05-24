@@ -2,133 +2,63 @@
 using Accord.MachineLearning.DecisionTrees.Learning;
 using Accord.Math;
 using Accord.Statistics.Filters;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 
 namespace suicide_overview.src.model.AccordFramework_Bridge
 {
     internal class AccordAdapter
     {
-        private Dictionary<string, object> query;
-        private DataTable data;
+        public string CountryName { get; }
+        private DecisionTree tree;
+
+        private DataTable symbols;
         private Codification codebook;
-        private int[][] inputs;
-        private int[] outputs;
-        private DecisionTree decisionTree;
+        private readonly int[][] inputs;
+        private readonly int[] outputs;
 
-        public AccordAdapter(string treeName, List<Dictionary<string, object>> setToTraining, Dictionary<string, int> variables)
+        public AccordAdapter(string treeName, DataTable originalData)
         {
-            data = new DataTable(treeName);
-
-            foreach (string item in variables.Keys)
-            {
-                data.Columns.Add(item);
-            }
-
-            foreach (Dictionary<string, object> record in setToTraining)
-            {
-                ArrayList newRow = new ArrayList();
-
-                foreach (string variableName in variables.Keys)
-                {
-                    object cell = record[variableName];
-
-                    if (variables[variableName] == 0)
-                    {
-                        newRow.Add(Convert.ToDouble(cell));
-                    }
-                    else
-                    {
-                        newRow.Add((string)cell);
-                    }
-                }
-                DataRow dataRowNew = data.NewRow();
-
-                for (int i = 0; i < data.Columns.Count; i++)
-                {
-                    dataRowNew[data.Columns[i].ColumnName] = newRow[i];
-                }
-
-                data.Rows.Add(dataRowNew);
-            }
-
-            codebook = new Codification(data);
-            DataTable symbols = codebook.Apply(data);
-
-            string[] inputNames = new string[data.Columns.Count - 1];
-            for (int i = 0; i < data.Columns.Count - 1; i++)
-            {
-                inputNames[i] = data.Columns[i].ColumnName;
-            }
-
-            inputs = symbols.ToJagged<int>(inputNames);
-            outputs = symbols.ToArray<int>(data.Columns[data.Columns.Count - 1].ColumnName);
-
-            foreach (DataRow dataRow in data.Rows)
-            {
-                foreach (var item in dataRow.ItemArray)
-                {
-                    Console.Write(item + " ");
-                }
-
-                Console.WriteLine();
-            }
+            CountryName = treeName;
+            codebook = new Codification(originalData);
+            symbols = codebook.Apply(originalData);
+            inputs = symbols.ToJagged<int>("year", "generation", "sex");
+            outputs = symbols.ToArray<int>("risk");
         }
 
-        public void Training()
+        public void Learn()
         {
-            string[] columns = new string[data.Columns.Count];
-
-            for (int i = 0; i < columns.Length; i++)
+            var id3learning = new ID3Learning()
             {
-                columns[i] = data.Columns[i].ColumnName;
-            }
+                new DecisionVariable("year",     2016-1985),
+                new DecisionVariable("generation", 6),
+                new DecisionVariable("sex",    2),
+            };
 
-            DecisionVariable[] temp = DecisionVariable.FromCodebook(codebook, columns);
-            DecisionVariable[] preAttributes = new DecisionVariable[temp.Length - 1];
-
-            for (int i = 0; i < preAttributes.Length; i++)
-            {
-                preAttributes[i] = temp[i];
-            }
-
-            var id3learning = new ID3Learning() { };
-            decisionTree = id3learning.Learn(inputs, outputs);
+            tree = id3learning.Learn(inputs, outputs);
         }
 
-        public void Simulate(ArrayList query)
+        public string simulate(int year, string generation, string sex)
         {
-
-            //verificar posible error en codebook
-
-            string[,] queryMatrix = new string[query.Count, 2];
-
-            for (int i = 0; i < data.Columns.Count - 1; i++)
+            var id3learning = new ID3Learning()
             {
-                queryMatrix[i, 0] = data.Columns[i].ColumnName;
-                queryMatrix[i, 1] = (string)query[i];
-            }
-            int[] queryInt = codebook.Transform(new[,]
-             {
-                { "Outlook",     "Sunny"  },
-                { "Temperature", "Hot"    },
-                { "Humidity",    "High"   },
-                { "Wind",        "Strong" }
+                new DecisionVariable("year",     2016-1985),
+                new DecisionVariable("generation", 6),
+                new DecisionVariable("sex",    2),
+            };
+
+            tree = id3learning.Learn(inputs, outputs);
+
+            int[] query = codebook.Transform(new[,]
+          {
+                { "year",    year.ToString() },
+                { "generation", generation    },
+                { "sex",    sex   },
             });
 
-            int predicted = decisionTree.Decide(queryInt);  // result will be 0
+            int predicted = tree.Decide(query);
+            string answer = codebook.Revert("risk", predicted);
 
-            // We can translate it back to strings using
-            string answer = codebook.Revert("PlayTennis", predicted); // Answer will be: "No"
-
-            Console.WriteLine(answer);
-
-
-
-            int inds = 18;
+            return answer;
         }
     }
 }
