@@ -16,8 +16,14 @@ namespace suicide_overview.src.view
 
         private void executeSimulation(object sender, EventArgs e)
         {
-            string result = mc.simulateSuicideRisk_OwnImplementation((string)countries.SelectedItem, Convert.ToInt32(year.Text), (string)generation.SelectedItem, maleRB.Checked ? "male" : "female");
-
+            string result = "";
+            if (comboBox1.SelectedItem.Equals("Own implementation"))
+            {
+                result = mc.simulateSuicideRisk_OwnImplementation((string)countries.SelectedItem, Convert.ToInt32(year.Text), (string)generation.SelectedItem, maleRB.Checked ? "male" : "female");
+            } else if (comboBox1.SelectedItem.Equals("External implementation"))
+            {
+                result = mc.simulateSuicideRisk_AccordImplementation((string)countries.SelectedItem, Convert.ToInt32(year.Text), (string)generation.SelectedItem, maleRB.Checked ? "male" : "female");
+            }
             MessageBox.Show(result);
         }
 
