@@ -171,6 +171,9 @@ namespace suicide_overview.src.view
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Own implementation",
+            "External implementation"});
             this.comboBox1.Location = new System.Drawing.Point(1014, 639);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(6);
             this.comboBox1.Name = "comboBox1";
@@ -181,7 +184,7 @@ namespace suicide_overview.src.view
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(1050, 589);
+            this.label5.Location = new System.Drawing.Point(1058, 589);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(157, 25);
