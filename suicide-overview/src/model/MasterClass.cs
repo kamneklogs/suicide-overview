@@ -326,7 +326,7 @@ namespace suicide_overview.src.model
                     answer += riskLevelTag + " " + (risks[riskLevelTag] * 100) + "%";
                 }
             }
-            answer += "\n Simulation error: " + treesByCountry[countryName].Error();
+            answer += "\n Simulation error: " + (treesByCountry[countryName].Error() * 100) + "%";
 
             return answer;
         }
@@ -348,7 +348,7 @@ namespace suicide_overview.src.model
 
             answer += treesByCountryWithAccord[countryName].simulate(year, generation, sex);
 
-            answer += "\n Simulation error: " + treesByCountryWithAccord[countryName].Error();
+            answer += "\n Simulation error: " + (treesByCountryWithAccord[countryName].Error() * 100) + "%";
 
             return answer;
         }
