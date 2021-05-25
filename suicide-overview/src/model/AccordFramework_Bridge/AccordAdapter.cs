@@ -1,6 +1,7 @@
 ﻿using Accord.MachineLearning.DecisionTrees;
 using Accord.MachineLearning.DecisionTrees.Learning;
 using Accord.Math;
+using Accord.Math.Optimization.Losses;
 using Accord.Statistics.Filters;
 using System.Data;
 
@@ -59,6 +60,13 @@ namespace suicide_overview.src.model.AccordFramework_Bridge
             string answer = codebook.Revert("risk", predicted);
 
             return answer;
+        }
+
+        public double Error()
+        {
+            double error = new ZeroOneLoss(outputs).Loss(tree.Decide(inputs));
+
+            return error;
         }
     }
 }
