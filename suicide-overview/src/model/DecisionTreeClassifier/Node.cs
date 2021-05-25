@@ -14,6 +14,9 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
         public Node trueNode { get; set; }
         public Node falseNode { get; set; }
 
+        public double minGini { get; private set; }
+        public double giniTotal { get; private set; }
+
         public Dictionary<string, int> variables { get; set; }
 
         public string targetVariableName { get; set; }
@@ -23,6 +26,9 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
 
         public Node(Dictionary<string, int> variables, string targetVariableName, HashSet<string> targetValues)
         {
+
+            minGini = 1.1;
+
             this.variables = variables;
 
             this.targetValues = targetValues;
@@ -30,6 +36,8 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
             this.targetVariableName = targetVariableName;
 
             Probabilities = new Dictionary<string, double>();
+
+            
         }
 
         public void training(List<Dictionary<string, object>> values)
@@ -80,7 +88,7 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
                 double giniTrue = calculateGini(trueList);
                 double giniFalse = calculateGini(falseList);
 
-                double giniTotal = (giniTrue * (Convert.ToDouble(trueList.Count) / Convert.ToDouble(values.Count))) + (giniFalse * (Convert.ToDouble(falseList.Count) / Convert.ToDouble(values.Count)));
+            giniTotal = (giniTrue * (Convert.ToDouble(trueList.Count) / Convert.ToDouble(values.Count))) + (giniFalse * (Convert.ToDouble(falseList.Count) / Convert.ToDouble(values.Count)));
 
                 if (giniTotal < minGini)
                 {
@@ -239,6 +247,30 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
             }
 
             return decisionsList;
+        }
+
+        public void AccumulativeError(List<Double> errors)
+        {
+
+            if (isLeaf)
+            {
+                errors.Add(giniTotal);
+            }
+            else
+            {
+                if (trueNode != null)
+                {
+                    trueNode.AccumulativeError(errors);
+                }
+
+                if(falseNode != null)
+                {
+                    falseNode.AccumulativeError(errors);
+                }
+            }
+
+
+            
         }
     }
 }

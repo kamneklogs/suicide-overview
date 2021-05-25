@@ -317,7 +317,7 @@ namespace suicide_overview.src.model
 
             risks = treesByCountry[countryName].Classifier(new Dictionary<string, object>() { { "Year", year }, { "Sex", sex }, { "Generation", generation } });
 
-            string answer = "";
+            string answer = "Simulation with external library\n";
 
             foreach (string riskLevelTag in risks.Keys)
             {
@@ -326,6 +326,7 @@ namespace suicide_overview.src.model
                     answer += riskLevelTag + " " + (risks[riskLevelTag] * 100) + "%";
                 }
             }
+            answer += "\n Simulation error: " + treesByCountry[countryName].Error();
 
             return answer;
         }
@@ -343,7 +344,12 @@ namespace suicide_overview.src.model
                 treesByCountryWithAccord.Add(countryName, newAccordAdapter);
             }
 
-            string answer = treesByCountryWithAccord[countryName].simulate(year, generation, sex);
+            string answer = "Simulation with external library\n";
+
+            answer += treesByCountryWithAccord[countryName].simulate(year, generation, sex);
+
+            answer += "\n Simulation error: " + treesByCountryWithAccord[countryName].Error();
+
             return answer;
         }
 

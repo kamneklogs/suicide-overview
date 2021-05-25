@@ -39,6 +39,24 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
             root.training(values);
         }
 
+        public double Error()
+        {
+            List<Double> totalLeafErrors = new List<double>();
+
+            root.AccumulativeError(totalLeafErrors);
+
+            double average = 0;
+
+            foreach (double singularError in totalLeafErrors)
+            {
+                average += singularError;
+            }
+
+            average /= totalLeafErrors.Count;
+
+            return average;
+        }
+
         public Dictionary<string, double> Classifier(Dictionary<string, object> input)
         {
             Dictionary<string, double> probabilities = root.Classifier(input);
