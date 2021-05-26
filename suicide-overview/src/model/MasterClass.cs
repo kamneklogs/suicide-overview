@@ -346,7 +346,7 @@ namespace suicide_overview.src.model
 
             string answer = "Simulation with external library\n";
 
-            answer += treesByCountryWithAccord[countryName].simulate(year, generation, sex);
+            answer += treesByCountryWithAccord[countryName].Simulate(year, generation, sex);
 
             answer += "\n Simulation error: " + (treesByCountryWithAccord[countryName].Error() * 100) + "%";
 

@@ -38,7 +38,7 @@ namespace suicide_overview.src.model.AccordFramework_Bridge
             tree = id3learning.Learn(inputs, outputs);
         }
 
-        public string simulate(int year, string generation, string sex)
+        public string Simulate(int year, string generation, string sex)
         {
             var id3learning = new ID3Learning()
             {
