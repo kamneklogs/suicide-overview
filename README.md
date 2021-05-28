@@ -73,8 +73,8 @@ The languague used in this program is C#
 - Graph 5: Suicides of generations given a country
 <img src="/img/Sc9.png" width = 600>
 
-- Simulation with decision tree
-<img src="/img/Sc10.png" width = 600>
+- Simulation with own decision tree and acord.net
+<img src="/img/Sc13.png" width = 600>
 
 - Simulation example
 <img src="/img/Sc11.png" width = 600>
