@@ -77,7 +77,7 @@ The languague used in this program is C#
 <img src="/img/Sc13.png" width = 600>
 
 - Simulation with own implementation example
-<img src="/img/Sc11.png" width = 600>
+<img src="/img/S11.png" width = 600>
 <img src="/img/Sc15.png" width = 600>
 
 - Tree graphic with own implementation 
