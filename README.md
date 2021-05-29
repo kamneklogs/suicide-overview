@@ -50,10 +50,10 @@ The languague used in this program is C#
 <img src="/img/Sc1.png" width = 600>
 
 - Table view and filters 
-<img src="/img/Sc2.png" width = 600>
+<img src="/img/S2.png" width = 600>
 
 - Table working
-<img src="/img/Sc3.png" width = 600>
+<img src="/img/S3.png" width = 600>
 
 - Graph interface
 <img src="/img/Sc4.png" width = 600>
