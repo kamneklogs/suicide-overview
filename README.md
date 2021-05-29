@@ -76,10 +76,15 @@ The languague used in this program is C#
 - Simulation with own decision tree and acord.net
 <img src="/img/Sc13.png" width = 600>
 
-- Simulation example
+- Simulation with own implementation example
 <img src="/img/Sc11.png" width = 600>
 
+- Tree graphic with own implementation 
+<img src="/img/S14.png" width =600>
+
 <img src="/img/Sc12.png" width = 600>
+
+-
 
 
 - Demo video v 1.0 [HERE](https://youtu.be/pzVcx0yo6co)
