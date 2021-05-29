@@ -37,6 +37,7 @@ namespace suicide_overview
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.mainPane = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.riskSimulator = new System.Windows.Forms.Button();
@@ -45,11 +46,10 @@ namespace suicide_overview
             this.panel3 = new System.Windows.Forms.Panel();
             this.viewColumnsReports = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tittleBar.SuspendLayout();
             this.mainPane.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tittleBar
@@ -110,6 +110,12 @@ namespace suicide_overview
             this.mainPane.Controls.Add(this.label1);
             resources.ApplyResources(this.mainPane, "mainPane");
             this.mainPane.Name = "mainPane";
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -185,12 +191,6 @@ namespace suicide_overview
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Name = "label2";
             // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
             // MainWindow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -201,14 +201,13 @@ namespace suicide_overview
             this.Controls.Add(this.tittleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainWindow";
-            this.TopMost = true;
             this.tittleBar.ResumeLayout(false);
             this.tittleBar.PerformLayout();
             this.mainPane.ResumeLayout(false);
             this.mainPane.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -7,7 +7,7 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
     {
         private List<Dictionary<string, Object>> values;
 
-        private Node root;
+        public Node root;
 
         private Dictionary<string, int> variables;
 
@@ -34,7 +34,7 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
                 }
             }
 
-            root = new Node(variables, targetVariableName, targetValues);
+            root = new Node(variables, targetVariableName, targetValues, "Root -> ");
 
             root.training(values);
         }

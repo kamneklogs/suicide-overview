@@ -1,6 +1,6 @@
 ﻿namespace suicide_overview.src.model.DecisionTreeClassifier
 {
-    internal class Decision
+    public class Decision
     {
         public string variableName { get; set; }
 
@@ -17,7 +17,7 @@
 
         public string toString()
         {
-            return "Nombre: " + variableName + " Tipo: " + typeVariable +  " Valor: " + value;
+            return " Name: " + variableName +  " and Value: " + value+" ";
         }
     }
 }

@@ -2,6 +2,7 @@
 using Accord.Math;
 using suicide_overview.src.model.AccordFramework_Bridge;
 using suicide_overview.src.model.DecisionTreeClassifier;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -326,7 +327,7 @@ namespace suicide_overview.src.model
                     answer += riskLevelTag + " " + (risks[riskLevelTag] * 100) + "%";
                 }
             }
-            answer += "\n Simulation error: " + (treesByCountry[countryName].Error() * 100) + "%";
+            answer += "\n Simulation error: " + Math.Round((treesByCountry[countryName].Error() * 100), 4) + "%";
 
             return answer;
         }
@@ -348,7 +349,7 @@ namespace suicide_overview.src.model
 
             answer += treesByCountryWithAccord[countryName].simulate(year, generation, sex);
 
-            answer += "\n Simulation error: " + (treesByCountryWithAccord[countryName].Error() * 100) + "%";
+            answer += "\n Simulation error: " + Math.Round((treesByCountryWithAccord[countryName].Error() * 100), 4) + "%";
 
             return answer;
         }
@@ -372,6 +373,11 @@ namespace suicide_overview.src.model
             }
 
             return data;
+        }
+
+        public Node GetRootNodeByCountry(string country)
+        {
+            return treesByCountry[country].root;
         }
     }
 }

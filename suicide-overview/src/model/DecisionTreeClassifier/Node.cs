@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace suicide_overview.src.model.DecisionTreeClassifier
 
 {
-    internal class Node
+    public class Node
     {
         //static readonly int
         public bool isLeaf { get; set; }
@@ -17,6 +17,8 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
         public double minGini { get; private set; }
         public double giniTotal { get; private set; }
 
+        public string Tag { get; set; }
+
         public Dictionary<string, int> variables { get; set; }
 
         public string targetVariableName { get; set; }
@@ -24,9 +26,9 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
 
         public Dictionary<string, double> Probabilities { get; set; }
 
-        public Node(Dictionary<string, int> variables, string targetVariableName, HashSet<string> targetValues)
+        public Node(Dictionary<string, int> variables, string targetVariableName, HashSet<string> targetValues, string tag)
         {
-
+            Tag = tag;
             minGini = 1.1;
 
             this.variables = variables;
@@ -36,8 +38,6 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
             this.targetVariableName = targetVariableName;
 
             Probabilities = new Dictionary<string, double>();
-
-            
         }
 
         public void training(List<Dictionary<string, object>> values)
@@ -88,7 +88,7 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
                 double giniTrue = calculateGini(trueList);
                 double giniFalse = calculateGini(falseList);
 
-            giniTotal = (giniTrue * (Convert.ToDouble(trueList.Count) / Convert.ToDouble(values.Count))) + (giniFalse * (Convert.ToDouble(falseList.Count) / Convert.ToDouble(values.Count)));
+                giniTotal = (giniTrue * (Convert.ToDouble(trueList.Count) / Convert.ToDouble(values.Count))) + (giniFalse * (Convert.ToDouble(falseList.Count) / Convert.ToDouble(values.Count)));
 
                 if (giniTotal < minGini)
                 {
@@ -101,8 +101,8 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
 
             if (giniValue > minGini)
             {
-                trueNode = new Node(variables, targetVariableName, targetValues);
-                falseNode = new Node(variables, targetVariableName, targetValues);
+                trueNode = new Node(variables, targetVariableName, targetValues, "True -> ");
+                falseNode = new Node(variables, targetVariableName, targetValues, "False -> ");
 
                 trueNode.training(minGiniTrueList);
                 falseNode.training(minGiniFalseList);
@@ -251,7 +251,6 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
 
         public void AccumulativeError(List<Double> errors)
         {
-
             if (isLeaf)
             {
                 errors.Add(giniTotal);
@@ -263,14 +262,30 @@ namespace suicide_overview.src.model.DecisionTreeClassifier
                     trueNode.AccumulativeError(errors);
                 }
 
-                if(falseNode != null)
+                if (falseNode != null)
                 {
                     falseNode.AccumulativeError(errors);
                 }
             }
+        }
 
+        public string GetFinalTag()
+        {
+            string finalTag = Tag;
 
-            
+            if (isLeaf)
+            {
+                foreach (string item in targetValues)
+                {
+                    finalTag += " Probability of: " + item + ": " + Math.Round((Probabilities[item] * 100), 4) + "%\n ";
+                }
+            }
+            else
+            {
+                finalTag += decision.toString() + " with probability of " + Math.Round(((1 - giniTotal * 100)) * (-1), 4) + "% ";
+            }
+
+            return finalTag;
         }
     }
 }
