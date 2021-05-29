@@ -77,15 +77,15 @@ The languague used in this program is C#
 <img src="/img/Sc13.png" width = 600>
 
 - Simulation with own implementation example
-<img src="/img/S11.png" width = 600>
-<img src="/img/Sc15.png" width = 600>
+<img src="/img/S16.png" width = 600>
+<img src="/img/S17.png" width = 600>
 
 - Tree graphic with own implementation 
-<img src="/img/S16.png" width =600>
+<img src="/img/S18.png" width =600>
 
 - Simulation with accord implementation example
-<img src="/img/Sc17.png" width = 600>
-<img src="/img/Sc18.png" width = 600>
+<img src="/img/S11.png" width = 600>
+<img src="/img/S15.png" width = 600>
 
 
 - Demo video v 1.0 [HERE](https://youtu.be/pzVcx0yo6co)
