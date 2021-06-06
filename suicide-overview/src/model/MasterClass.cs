@@ -5,6 +5,7 @@ using suicide_overview.src.model.DecisionTreeClassifier;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 
 namespace suicide_overview.src.model
 {
@@ -20,6 +21,8 @@ namespace suicide_overview.src.model
         private Dictionary<string, Tree> treesByCountry;
         private Dictionary<string, AccordAdapter> treesByCountryWithAccord;
 
+        private List<string> probabilities;
+
         public static DoubleRange Generations { get; internal set; }
 
         public MasterClass()
@@ -27,6 +30,7 @@ namespace suicide_overview.src.model
             countries = new Dictionary<string, List<Record>>();
             treesByCountry = new Dictionary<string, Tree>();
             treesByCountryWithAccord = new Dictionary<string, AccordAdapter>();
+            probabilities = new List<string>();
 
             Loader.LoadData(countries);
         }
@@ -382,57 +386,69 @@ namespace suicide_overview.src.model
 
         public List<string> GetProbabilitiesAllTrees()
         {
-            List<string> probabilities = new List<string>();
-
-            foreach (string countryName in countries.Keys)
+            if (probabilities.Count == 0)
             {
-                string simulationLine = countryName + ";";
-
-                if (!treesByCountry.ContainsKey(countryName))
+                foreach (string countryName in countries.Keys)
                 {
-                    List<Record> records = RecordsByCountry(countryName);
+                    string simulationLine = countryName + ";";
 
-                    List<Dictionary<string, object>> setToTraining = new List<Dictionary<string, object>>();
-
-                    for (int i = 0; i < records.Count; i++)
+                    if (!treesByCountry.ContainsKey(countryName))
                     {
-                        setToTraining.Add(records[i].getData());
+                        List<Record> records = RecordsByCountry(countryName);
+
+                        List<Dictionary<string, object>> setToTraining = new List<Dictionary<string, object>>();
+
+                        for (int i = 0; i < records.Count; i++)
+                        {
+                            setToTraining.Add(records[i].getData());
+                        }
+
+                        Dictionary<string, int> variables = new Dictionary<string, int>();
+
+                        variables.Add("Year", 0);
+                        variables.Add("Sex", 1);
+                        variables.Add("Generation", 1);
+
+                        Tree myTree = new Tree(variables, "Risk");
+
+                        myTree.training(setToTraining);
+
+                        treesByCountry.Add(countryName, myTree);
                     }
 
-                    Dictionary<string, int> variables = new Dictionary<string, int>();
+                    simulationLine += Math.Round((treesByCountry[countryName].Error()), 4) + ";";
 
-                    variables.Add("Year", 0);
-                    variables.Add("Sex", 1);
-                    variables.Add("Generation", 1);
+                    if (!treesByCountryWithAccord.ContainsKey(countryName))
+                    {
+                        DataTable data = RecordsInDataTable(countryName);
 
-                    Tree myTree = new Tree(variables, "Risk");
+                        AccordAdapter newAccordAdapter = new AccordAdapter(countryName, data);
 
-                    myTree.training(setToTraining);
+                        newAccordAdapter.Learn();
 
-                    treesByCountry.Add(countryName, myTree);
+                        treesByCountryWithAccord.Add(countryName, newAccordAdapter);
+                    }
+                    simulationLine += Math.Round((treesByCountryWithAccord[countryName].Error()), 4);
+                    probabilities.Add(simulationLine);
                 }
-
-                simulationLine += Math.Round((treesByCountry[countryName].Error()), 4) + ";";
-
-                if (!treesByCountryWithAccord.ContainsKey(countryName))
-                {
-                    DataTable data = RecordsInDataTable(countryName);
-
-                    AccordAdapter newAccordAdapter = new AccordAdapter(countryName, data);
-
-                    newAccordAdapter.Learn();
-
-                    treesByCountryWithAccord.Add(countryName, newAccordAdapter);
-                }
-                simulationLine += Math.Round((treesByCountryWithAccord[countryName].Error()), 4);
-                probabilities.Add(simulationLine);
             }
-
             return probabilities;
         }
 
         public bool GenerateCSV(string path)
         {
+            if (path.Equals(""))
+                return false;
+
+            StreamWriter sw = new StreamWriter(path);
+
+            foreach (string line in probabilities)
+            {
+                sw.WriteLine(line);
+            }
+
+            sw.Close();
+
             return true;
         }
     }
