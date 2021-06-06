@@ -379,5 +379,17 @@ namespace suicide_overview.src.model
         {
             return treesByCountry[country].root;
         }
+
+        public List<string> GetProbabilitiesAllTrees()
+        {
+            List<string> probabilities = new List<string>();
+
+            return probabilities;
+        }
+
+        public bool GenerateCSV(string path)
+        {
+            return true;
+        }
     }
 }
