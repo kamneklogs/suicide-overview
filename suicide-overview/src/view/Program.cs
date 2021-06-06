@@ -13,8 +13,6 @@ namespace suicide_overview
         private static void Main()
 
         {
-            MasterClass mc = new MasterClass();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
             Application.Run(new MainWindow());
