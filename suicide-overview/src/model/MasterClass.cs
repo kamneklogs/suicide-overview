@@ -384,6 +384,50 @@ namespace suicide_overview.src.model
         {
             List<string> probabilities = new List<string>();
 
+            foreach (string countryName in countries.Keys)
+            {
+                string simulationLine = countryName + ";";
+
+                if (!treesByCountry.ContainsKey(countryName))
+                {
+                    List<Record> records = RecordsByCountry(countryName);
+
+                    List<Dictionary<string, object>> setToTraining = new List<Dictionary<string, object>>();
+
+                    for (int i = 0; i < records.Count; i++)
+                    {
+                        setToTraining.Add(records[i].getData());
+                    }
+
+                    Dictionary<string, int> variables = new Dictionary<string, int>();
+
+                    variables.Add("Year", 0);
+                    variables.Add("Sex", 1);
+                    variables.Add("Generation", 1);
+
+                    Tree myTree = new Tree(variables, "Risk");
+
+                    myTree.training(setToTraining);
+
+                    treesByCountry.Add(countryName, myTree);
+                }
+
+                simulationLine += Math.Round((treesByCountry[countryName].Error()), 4) + ";";
+
+                if (!treesByCountryWithAccord.ContainsKey(countryName))
+                {
+                    DataTable data = RecordsInDataTable(countryName);
+
+                    AccordAdapter newAccordAdapter = new AccordAdapter(countryName, data);
+
+                    newAccordAdapter.Learn();
+
+                    treesByCountryWithAccord.Add(countryName, newAccordAdapter);
+                }
+                simulationLine += Math.Round((treesByCountryWithAccord[countryName].Error()), 4);
+                probabilities.Add(simulationLine);
+            }
+
             return probabilities;
         }
 
