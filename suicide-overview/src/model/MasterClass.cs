@@ -440,6 +440,8 @@ namespace suicide_overview.src.model
             if (path.Equals(""))
                 return false;
 
+            GetProbabilitiesAllTrees();
+
             StreamWriter sw = new StreamWriter(path);
 
             foreach (string line in probabilities)
