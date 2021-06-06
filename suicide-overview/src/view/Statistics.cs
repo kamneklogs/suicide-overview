@@ -41,7 +41,7 @@ namespace suicide_overview.src.view
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void generateTableWithProbabilities(object sender, EventArgs e)
         {
              List<string> probabilities =  mc.GetProbabilitiesAllTrees();
 
