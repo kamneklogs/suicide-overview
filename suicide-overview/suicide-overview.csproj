@@ -137,6 +137,12 @@
     <Compile Include="src\view\SimulatorWindow.Designer.cs">
       <DependentUpon>SimulatorWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\view\Statistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\view\Statistics.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\view\TreeViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\view\SimulatorWindow.resx">
       <DependentUpon>SimulatorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\view\Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\view\TreeViewer.resx">
       <DependentUpon>TreeViewer.cs</DependentUpon>
