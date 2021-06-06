@@ -30,13 +30,13 @@ namespace suicide_overview.src.view
 
             if (saveCSVDialog.FileName != "")
             {
-                MessageBox.Show(saveCSVDialog.FileName);
+                MessageBox.Show("File generated and saved succesfully in " +saveCSVDialog.FileName);
                 mc.GenerateCSV(saveCSVDialog.FileName);
 
             }
             else
             {
-                MessageBox.Show("No selecciono una ruta válida");
+                MessageBox.Show("You didn't select a valid directory");
             }
            
         }

@@ -17,7 +17,7 @@ namespace suicide_overview.src.view
         private void executeSimulation(object sender, EventArgs e)
         {
             string result = "";
-            mc.GenerateCSV("Desktop/DATA.csv");
+           
             if (comboBox1.SelectedItem.Equals("Own implementation"))
             {
                 result = mc.simulateSuicideRisk_OwnImplementation((string)countries.SelectedItem, Convert.ToInt32(year.Text), (string)generation.SelectedItem, maleRB.Checked ? "male" : "female");
