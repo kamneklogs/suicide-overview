@@ -21,7 +21,7 @@ namespace suicide_overview.src.view
             this.mc = mc;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void exportToCSVFile(object sender, EventArgs e)
         {
             SaveFileDialog saveCSVDialog = new SaveFileDialog();
             saveCSVDialog.Filter = "CSV file|*.csv";

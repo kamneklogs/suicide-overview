@@ -105,7 +105,7 @@ namespace suicide_overview.src.view
             this.button2.TabIndex = 4;
             this.button2.Text = "Export";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.exportToCSVFile);
             // 
             // Statistics
             // 
