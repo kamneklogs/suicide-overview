@@ -23,8 +23,17 @@ namespace suicide_overview.src.view
 
         private void button2_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.ShowDialog();
-            mc.GenerateCSV(saveFileDialog1.FileName);
+            SaveFileDialog saveCSVDialog = new SaveFileDialog();
+            saveCSVDialog.Filter = "CSV file|*.csv";
+            saveCSVDialog.Title = "Save an CSV";
+            saveCSVDialog.ShowDialog();
+
+            if (saveCSVDialog.FileName != "")
+            {
+                MessageBox.Show(saveCSVDialog.FileName);
+
+            }
+            mc.GenerateCSV(saveCSVDialog.FileName);
         }
 
         private void button1_Click(object sender, EventArgs e)
