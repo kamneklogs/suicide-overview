@@ -55,14 +55,19 @@ namespace suicide_overview.src.model
                         string generation = temp[temp.Length - 1];
 
                         Record record = new Record(year, sex, ageLower, ageUpper, suicide_no, population, ratio, generation);
-                        if (countries.ContainsKey(temp[0]))
+                        if (countries.ContainsKey(temp[0]) && !temp[0].Equals("Austria") && !temp[0].Equals("Iceland") && !temp[0].Equals("Mauritius") && !temp[0].Equals("Netherlands"))
                         {
-                            countries[temp[0]].Add(record);
+                           
+
+                               countries[temp[0]].Add(record);
                         }
                         else
                         {
-                            countries.Add(temp[0], new List<Record>());
-                            countries[temp[0]].Add(record);
+                            if (!temp[0].Equals("Austria") && !temp[0].Equals("Iceland")&& !temp[0].Equals("Mauritius") && !temp[0].Equals("Netherlands"))
+                            {
+                                countries.Add(temp[0], new List<Record>());
+                                countries[temp[0]].Add(record);
+                            }
                         }
 
                         //Codigo para sacar registro 0,1,2,3,4,5,6, arr.le-1

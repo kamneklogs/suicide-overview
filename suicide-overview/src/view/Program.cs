@@ -1,4 +1,5 @@
-﻿using System;
+﻿using suicide_overview.src.model;
+using System;
 using System.Windows.Forms;
 
 namespace suicide_overview

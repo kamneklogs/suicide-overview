@@ -61,5 +61,12 @@ namespace suicide_overview
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            mainPane.Controls.Clear();
+            Statistics st = new Statistics(mc);
+            mainPane.Controls.Add(st);
+        }
     }
 }
